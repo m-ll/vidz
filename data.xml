@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ffmpeg="c:/vidz/ffmpeg-3.3.3-win64-static/bin/ffmpeg.exe" output="c:/vidz">
+
+<!-- for example: -->
+    <source index="28">
+        <scene qscale="3" name="planes-2">
+            <interval ss="00:06:03.200" to="00:06:37.440" />
+            <interval ss="00:08:55.600" to="00:09:11.000" />
+            <interval ss="00:09:30.440" to="00:10:13.120" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-07">
+            <interval ss="00:01:42.680" to="00:02:14.520" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-08">
+            <interval ss="00:02:14.680" to="00:02:46.480" />
+        </scene>
+    </source>
+    <source index="27">
+        <scene qscale="3" name="turbo">
+            <interval ss="00:06:03.200" to="00:06:37.440" />
+            <interval ss="00:12:55.600" to="00:13:11.000" />
+        </scene>
+    </source>
+    <source index="26">
+        <scene qscale="5" name="zig2">
+            <interval ss="00:01:42.680" to="00:02:14.520" />
+        </scene>
+        <scene qscale="5" name="oggy2">
+            <interval ss="00:02:14.680" to="00:02:46.480" />
+        </scene>
+    </source>
+    <source index="25">
+        <scene qscale="5" name="zig">
+            <interval ss="00:01:42.680" to="00:02:14.520" vmap="0:0" amap="0:1" />
+        </scene>
+    </source>
+</root>
