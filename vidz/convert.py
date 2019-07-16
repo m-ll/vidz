@@ -43,41 +43,34 @@ class cConvert:
 
     ## Create a 'clean' file (without ads) of the scene (for 1 interval scene)
     def _RunClean1( self ):
+        self._RunCleanInterval( self.mScene.Intervals()[0], self.mScene.OutputClean() )
+
+    ## Create multiple 'clean' files of the scene (for a scene with multiple intervals)
+    def _RunCleanN( self ):
+        for interval, clean in zip( self.mScene.Intervals(), self.mScene.OutputParts() ):
+            self._RunCleanInterval( interval, clean )
+
+    ## Create a 'clean' file for an interval
+    #
+    #  @param  iInterval  cInterval     The interval to make a clean
+    #  @param  iOutput    pathlib.Path  The output 'clean' file of the interval
+    def _RunCleanInterval( self, iInterval, iOutput ):
         command = [ self.mFFmpeg, 
                     '-i', self.mSource.PathFile() ]
 
-        interval = self.mScene.Intervals()[0]
-        if interval.VMap() and interval.AMap():
-            command += [ 'map', interval.VMap(), 'map', interval.AMap() ]
+        if iInterval.VMap() and iInterval.AMap():
+            command += [ 'map', iInterval.VMap(), 'map', iInterval.AMap() ]
 
         command += ['-vcodec', 'copy', '-acodec', 'copy', 
-                    '-ss', interval.SS(), 
-                    '-to', interval.To(), 
-                    self.mScene.OutputClean() ]
+                    '-ss', iInterval.SS(), 
+                    '-to', iInterval.To(), 
+                    iOutput ]
 
         self._PrintHeader( command )
         cp = self._Run( command )
         self._PrintFooter( cp )
 
-    ## Create multiple 'clean' files (without ads) of the scene (for scene with multiple intervals)
-    def _RunCleanN( self ):
-        for interval, clean in zip( self.mScene.Intervals(), self.mScene.OutputParts() ):
-            command = [ self.mFFmpeg, 
-                        '-i', self.mSource.PathFile() ]
-
-            if interval.VMap() and interval.AMap():
-                command += [ 'map', interval.VMap(), 'map', interval.AMap() ]
-
-            command += ['-vcodec', 'copy', '-acodec', 'copy', 
-                        '-ss', interval.SS(), 
-                        '-to', interval.To(), 
-                        clean ]
-
-            self._PrintHeader( command )
-            cp = self._Run( command )
-            self._PrintFooter( cp )
-
-    ## Concatenate multiple 'clean' files (without ads) of the scene
+    ## Concatenate multiple 'clean' files (from multiple intervals) of the scene
     def _RunConcat( self ):
         with open( self.mScene.OutputList(), 'w' ) as outfile:
             outfile.write( "# this is a comment\n" )
@@ -96,7 +89,7 @@ class cConvert:
         self._PrintFooter( cp )
 
     ## Convert a 'clean' file (without ads) of the scene to an AVI-XVID file
-    def RunAvi( self ):
+    def RunConvert( self ):
         if not self.mScene.OutputClean().exists():
             return
         

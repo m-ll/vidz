@@ -15,47 +15,97 @@
 from pathlib import Path
 
 ## Manage source file
-#
-#  It can only manage a harddisk on drive f: and g:
-#  and the structure inside must be like dvd (f:/LGDVR/000000XXREC/*.TS)
 class cSource:
 
+    ## Create a source
+    #
+    #  @param  iXMLNode  int      The node of the source
+    #  @return           cSource  The source depending of the node
+    #  @return           None     No source was found for the node
+    def Create( iXMLNode ):
+        id = iXMLNode.get( 'id' )
+        if id is None:
+            return None
+
+        input = iXMLNode.get( 'file' )
+        if input is not None:
+            return cSourceFile( id, input )
+
+        return cSourceDVD( id )
+
+    #---
+
     ## The constructor
-    def __init__( self ):
-        self.mIndex = -1
-        self.mPath = None
+    def __init__( self, iId ):
+        self.mId = iId
         self.mPathFile = None
 
-    ## Build the path from the index
+    ## Build the source path
     #
-    #  @param  iIndex  int   The index of the file to retrive
-    #  @return         bool  The file (corresponding to the index) has been build and found
-    def Build( self, iIndex ):
-        self.mPath = Path( f'f:/LGDVR/000000{iIndex}REC' )
-        source_pathfile = list( self.mPath.glob( '*.TS' ) )
-        if source_pathfile:
-            self.mIndex = iIndex
-            self.mPathFile = Path( source_pathfile[0] )
-            return True
-
-        self.mPath = Path( f'g:/LGDVR/000000{iIndex}REC' )
-        source_pathfile = list( self.mPath.glob( '*.TS' ) )
-        if source_pathfile:
-            self.mIndex = iIndex
-            self.mPathFile = Path( source_pathfile[0] )
-            return True
-
+    #  @return  bool  The file has been build and found
+    def Build( self ):
         return False
 
-    ## Get the index
+    ## Get the id
     #
-    #  @return  int  The index
-    def Index( self ):
-        return self.mIndex
+    #  @return  string  The id
+    def Id( self ):
+        return self.mId
         
-    ## Get the pathfile corresponding to the index
+    ## Get the pathfile
     #
     #  @return  pathlib.Path  The source pathfile
     def PathFile( self ):
         return self.mPathFile
         
+#---
+
+## Manage dvd source file
+#
+#  It can only manage a harddisk on drive f: and g:
+#  and the structure inside must be like dvd (f:/LGDVR/000000XXREC/*.TS)
+class cSourceDVD( cSource ):
+
+    ## The constructor
+    def __init__( self, iId ):
+        super().__init__( iId )
+
+    ## Build the source path
+    #
+    #  @return  bool  The file has been build and found
+    def Build( self ):
+        path = Path( f'f:/LGDVR/000000{self.Id()}REC' )
+        source_pathfile = list( path.glob( '*.TS' ) )
+        if source_pathfile:
+            self.mPathFile = Path( source_pathfile[0] )
+            return True
+
+        path = Path( f'g:/LGDVR/000000{self.Id()}REC' )
+        source_pathfile = list( path.glob( '*.TS' ) )
+        if source_pathfile:
+            self.mPathFile = Path( source_pathfile[0] )
+            return True
+
+        return False
+
+#---
+
+## Manage regular source file
+class cSourceFile( cSource ):
+
+    ## The constructor
+    def __init__( self, iId, iInput ):
+        super().__init__( iId )
+        self.mInput = iInput
+
+    ## Build the source path
+    #
+    #  @return  bool  The file has been build and found
+    def Build( self ):
+        path = Path( self.mInput )
+        if not path.exists():
+            return False
+        
+        self.mPathFile = path
+
+        return True

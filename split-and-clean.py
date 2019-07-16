@@ -49,17 +49,22 @@ if not output.exists():
 #---
 
 for entry in args.entries:
-    xml_source = root.find( f'./source[@index="{entry}"]' )
-    if xml_source is None:
-        continue
-    
-    index = xml_source.get( 'index' )
-    source = cSource()
-    if not source.Build( index ):
-        print( Back.RED + f'can\'t build source from index: {index}' )
+    xml_sources = root.findall( f'./source[@id="{entry}"]' )
+    if not xml_sources:
+        print( Back.RED + f'no source for this id: {entry}' )
+        break
+    if len( xml_sources ) > 1:
+        print( Back.RED + f'multiple sources with same id: {entry}' )
+        break
+
+    xml_source = xml_sources[0]
+
+    source = cSource.Create( xml_source )
+    if not source.Build():
+        print( Back.RED + f'can\'t build source: {entry}' )
         sys.exit()
 
-    print( Fore.CYAN + f'source: {source.Index()}' )
+    print( Fore.CYAN + f'source: {source.PathFile()}' )
 
     for xml_scene in xml_source.findall( 'scene' ):
         scene = cScene( source )
@@ -80,5 +85,5 @@ for entry in args.entries:
         
         convert = cConvert( ffmpeg, source, scene )
         convert.RunClean()
-        convert.RunAvi()
+        convert.RunConvert()
         

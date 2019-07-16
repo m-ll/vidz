@@ -77,12 +77,12 @@ class cScene:
     #
     #  @param  iOutputRoot  pathlib.Path  The directory in which all the output files will be created
     def BuildOutput( self, iOutputRoot ):
-        self.mOutputDirectory = iOutputRoot / f'index{self.mSource.Index()}-{self.mName}'
+        self.mOutputDirectory = iOutputRoot / f'tmp-{self.mSource.Id()}-{self.mName}'
         self.mOutputDirectory.mkdir( exist_ok=True )
+        self.mOutputAvi = iOutputRoot / f'{self.mName}.avi'
 
         self.mOutputClean = self.mOutputDirectory / f'{self.mName}.clean.ts'
         self.mOutputList = self.mOutputDirectory / f'{self.mName}.list.txt'
-        self.mOutputAvi = self.mOutputDirectory / f'{self.mName}.avi'
         
         for i, interval in enumerate( self.mIntervals ):
             self.mOutputParts.append( self.mOutputDirectory / f'{self.mName}.{i+1}.ts' )
@@ -110,6 +110,8 @@ class cScene:
     #  @return  Path  The avi file
     def OutputAvi( self ):
         return self.mOutputAvi
+
+#---
         
 ## Manage interval
 #
