@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="c:/vidz/ffmpeg-3.3.3-win64-static/bin/ffmpeg.exe" output="c:/vidz">
 
-<!-- for example: -->
     <source id="tt" file="c:/vidz/test.ts">
         <scene qscale="5" name="sharko">
             <interval ss="00:01:42.680" to="00:02:14.520" />
         </scene>
     </source>
+    
     <source id="28">
         <scene qscale="3" name="planes-2">
             <interval ss="00:06:03.200" to="00:06:37.440" />
@@ -36,6 +36,7 @@
     </source>
     <source id="25">
         <scene qscale="5" name="zig">
+            <!-- To be able to switch audio stream if the default one is not french -->
             <interval ss="00:01:42.680" to="00:02:14.520" vmap="0:0" amap="0:1" />
         </scene>
     </source>

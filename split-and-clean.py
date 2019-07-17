@@ -33,7 +33,12 @@ if not args.entries:
 
 #---
 
-tree = ET.parse( 'data.xml' )
+data = Path( './data.xml' )
+if not data.exists():
+	print( Back.RED + f'data.xml file doesn\'t exist: {data}' )
+	sys.exit()
+
+tree = ET.parse( data )
 root = tree.getroot()
 
 ffmpeg = Path( root.get( 'ffmpeg' ) )
