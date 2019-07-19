@@ -19,7 +19,7 @@ class cSource:
 
     ## Create a source
     #
-    #  @param  iXMLNode  int      The node of the source
+    #  @param  iXMLNode  xml.etree.ElementTree.Element      The node of the source
     #  @return           cSource  The source depending of the node
     #  @return           None     No source was found for the node
     def Create( iXMLNode ):
@@ -36,6 +36,8 @@ class cSource:
     #---
 
     ## The constructor
+    #
+    #  @param  iId  int  The id of the source
     def __init__( self, iId ):
         self.mId = iId
         self.mPathFile = None
@@ -67,6 +69,8 @@ class cSource:
 class cSourceDVD( cSource ):
 
     ## The constructor
+    #
+    #  @param  iId  int  The id of the source
     def __init__( self, iId ):
         super().__init__( iId )
 
@@ -94,6 +98,9 @@ class cSourceDVD( cSource ):
 class cSourceFile( cSource ):
 
     ## The constructor
+    #
+    #  @param  iId     int     The id of the source
+    #  @param  iInput  string  The input pathfile
     def __init__( self, iId, iInput ):
         super().__init__( iId )
         self.mInput = iInput
