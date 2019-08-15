@@ -1,5 +1,6 @@
 # Custom
 /data.xml
+/ffmpeg*/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

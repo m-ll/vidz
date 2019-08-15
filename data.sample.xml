@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root ffmpeg="c:/vidz/ffmpeg-3.3.3-win64-static/bin/ffmpeg.exe" output="c:/vidz">
+<root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
-    <source id="tt" file="c:/vidz/test.ts">
+    <source id="tt" file="/mnt/f/vidz/test.ts">
         <scene qscale="5" name="sharko">
             <interval ss="00:01:42.680" to="00:02:14.520" />
         </scene>
