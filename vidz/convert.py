@@ -59,7 +59,7 @@ class cConvert:
                     '-i', self.mSource.PathFile() ]
 
         if iInterval.VMap() and iInterval.AMap():
-            command += [ 'map', iInterval.VMap(), 'map', iInterval.AMap() ]
+            command += [ '-map', iInterval.VMap(), '-map', iInterval.AMap() ]
 
         command += ['-vcodec', 'copy', '-acodec', 'copy', 
                     '-ss', iInterval.SS(), 
