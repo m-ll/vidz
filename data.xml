@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
+    <source id="3a">
+        <scene qscale="3" name="rox-et-rouky">
+            <interval ss="00:01:34.920" to="00:28:17.400" vmap="0:0" amap="0:2" />
+            <interval ss="00:34:34.400" to="01:13:27.840" vmap="0:0" amap="0:2" />
+            <interval ss="01:19:47.840" to="01:33:34.480" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+
+    <source id="39">
+        <scene qscale="3" name="les-schtroumpfs-et-le-village-perdu">
+            <interval ss="00:10:53.600" to="00:37:10.400" />
+            <interval ss="00:44:07.080" to="01:11:38.720" />
+            <interval ss="01:17:39.080" to="01:43:13.200" />
+        </scene>
+    </source>
+
     <source id="38">
         <scene qscale="3" name="comme-des-betes">
             <interval ss="00:04:50.760" to="01:23:49.480" vmap="0:0" amap="0:2" />
@@ -119,6 +135,269 @@
     <source id="29">
         <scene qscale="3" name="rango">
             <interval ss="00:05:22.120" to="01:41:45.880" />
+        </scene>
+    </source>
+
+    <!-- after this point check vmap/amap -->
+    
+    <source id="28">
+        <scene qscale="5" name="les-as-de-la-jungle-2-07-chasse-au-tigre">
+            <interval ss="00:01:42.680" to="00:12:14.520" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-08-abracadabra">
+            <interval ss="00:12:14.680" to="00:22:46.480" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-09-a-la-poursuite-de-la-papaye-verte">
+            <interval ss="00:22:46.680" to="00:33:18.200" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-10-rien-ne-va-plus">
+            <interval ss="00:33:18.680" to="00:43:50.280" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-11-catch-ou-pas-catch">
+            <interval ss="00:43:50.680" to="00:54:22.320" />
+        </scene>
+        <scene qscale="5" name="les-as-de-la-jungle-2-12-le-regne-des-mammouths">
+            <interval ss="00:54:22.680" to="01:04:58.440" />
+        </scene>
+    </source>
+
+    <source id="27">
+        <scene qscale="3" name="plane-2">
+            <interval ss="00:05:19.520" to="01:08:37.440" />
+            <interval ss="01:12:55.600" to="01:23:11.000" />
+        </scene>
+    </source>
+
+    <source id="26">
+        <scene qscale="3" name="turbo">
+            <interval ss="00:12:50.120" to="00:44:53.760" />
+            <interval ss="00:51:17.400" to="01:17:53.520" />
+            <interval ss="01:22:30.440" to="01:49:13.120" />
+        </scene>
+    </source>
+
+    <source id="25">
+        <scene qscale="3" name="la-belle-au-bois-dormant">
+            <interval ss="00:10:08.920" to="00:41:49.720" />
+            <interval ss="00:44:34.600" to="01:09:16.240" />
+            <interval ss="01:12:26.840" to="01:28:08.160" />
+        </scene>
+    </source>
+    
+    <source id="24">
+        <scene qscale="3" name="oggy-et-les-cafards-film">
+            <interval ss="00:06:44.600" to="00:32:43.440" />
+            <interval ss="00:36:24.960" to="01:08:56.560" />
+            <interval ss="01:13:14.200" to="01:32:47.480" />
+        </scene>
+    </source>
+    
+    <!-- <source id="23">
+        <scene qscale="3" name="oggy-et-les-cafards-film">
+            <interval ss="" to="" />
+            <interval ss="" to="" />
+            <interval ss="" to="" />
+        </scene>
+    </source> -->
+    
+    <source id="22">
+        <scene qscale="3" name="l-apprenti-pere-noel">
+            <interval ss="00:07:09.800" to="00:36:20.000" />
+            <interval ss="00:42:32.360" to="01:23:39.600" />
+        </scene>
+    </source>
+    
+    <source id="21">
+        <scene qscale="3" name="la-reine-des-neiges-joyeuses-fetes-avec-olaf">
+            <interval ss="00:11:56.560" to="00:32:35.640" />
+        </scene>
+    </source>
+    
+    <source id="20">
+        <scene qscale="3" name="madagascar">
+            <interval ss="00:20:27.040" to="01:39:31.600" />
+        </scene>
+        <scene qscale="3" name="madagascar-3">
+            <interval ss="01:46:35.360" to="03:09:53.360" />
+        </scene>
+    </source>
+    
+    <source id="1f">
+        <scene qscale="3" name="festin-de-requin-2">
+            <interval ss="00:13:24.080" to="00:38:17.880" />
+            <interval ss="00:40:10.440" to="01:30:19.400" />
+        </scene>
+        <scene qscale="3" name="festin-de-requin">
+            <interval ss="01:34:54.000" to="02:22:39.360" />
+            <interval ss="02:25:13.200" to="02:52:52.160" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-25-une-hyene-en-hiver">
+            <interval ss="02:57:41.120" to="03:04:20.760" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-26-a-votre-service">
+            <interval ss="03:04:22.040" to="03:11:00.480" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-31-liberez-marina">
+            <interval ss="03:11:01.920" to="03:17:40.120" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-27-la-copine-de-marina">
+            <interval ss="03:17:40.840" to="03:24:20.000" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-28-le-fan">
+            <interval ss="03:28:46.000" to="03:42:05.120" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-5-au-sec">
+            <interval ss="03:42:06.320" to="03:48:45.000" />
+        </scene>
+    </source>
+    
+    <source id="1e">
+        <scene qscale="3" name="gus-petit-oiseau-grand-voyage">
+            <interval ss="00:01:49.440" to="00:31:24.840" />
+            <interval ss="00:32:20.320" to="01:28:57.120" />
+        </scene>
+    </source>
+    
+    <source id="11">
+        <scene qscale="3" name="paddington">
+            <interval ss="00:05:09.044" to="00:49:48.164" />
+            <interval ss="00:55:58.964" to="01:26:35.404" />
+            <interval ss="01:32:48.164" to="01:42:49.764" />
+        </scene>
+    </source>
+    
+    <source id="10">
+        <scene qscale="3" name="shaun">
+            <interval ss="00:00:00.400" to="01:09:17.800" />
+        </scene>
+    </source>
+    
+    <source id="0f">
+        <scene qscale="3" name="la-belle-et-le-clochard-2">
+            <interval ss="00:07:07.840" to="00:25:42.600" />
+            <interval ss="00:31:52.000" to="01:00:03.200" />
+            <interval ss="01:06:22.400" to="01:20:07.160" />
+        </scene>
+    </source>
+    
+    <!-- <source id="0e">
+        <scene qscale="3" name="la-grande-marche-des-dinosaures-without-begin">
+        </scene>
+    </source> -->
+    
+    <source id="0d">
+        <scene qscale="3" name="le-monde-de-narnia-2">
+            <interval ss="00:06:40.200" to="01:14:00.920" />
+            <interval ss="01:20:15.080" to="01:44:20.600" />
+            <interval ss="01:50:18.720" to="02:30:24.400" />
+        </scene>
+    </source>
+
+    <source id="0c">
+        <scene qscale="3" name="l-age-de-glace-4">
+            <interval ss="00:01:48.360" to="00:38:23.960" />
+            <interval ss="00:44:29.760" to="01:09:21.400" />
+            <interval ss="01:15:36.120" to="01:31:57.320" />
+        </scene>
+    </source>
+
+    <source id="0b">
+        <scene qscale="3" name="maya">
+            <interval ss="00:00:00.160" to="00:12:48.960" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-48-a-toutes-jambes">
+            <interval ss="00:16:26.960" to="00:23:05.440" />
+        </scene>
+        <scene qscale="5" name="zig-et-sharko-1-13-mon-ami-la-crevette">
+            <interval ss="00:23:06.480" to="00:29:44.520" />
+        </scene>
+    </source>
+
+    <source id="0a">
+        <scene qscale="3" name="le-monde-de-narnia-1">
+            <interval ss="00:07:11.080" to="00:51:03.000" />
+            <interval ss="00:57:14.680" to="01:26:36.840" />
+            <interval ss="01:31:23.080" to="02:25:36.960" />
+        </scene>
+    </source>
+
+    <source id="09">
+        <scene qscale="3" name="l-age-de-glace-4">
+        </scene>
+    </source>
+
+    <source id="08">
+        <scene qscale="3" name="le-monde-de-nemo">
+            <interval ss="00:00:55.560" to="00:34:51.600" />
+            <interval ss="00:41:01.640" to="01:04:45.960" />
+            <interval ss="01:10:29.880" to="01:43:41.360" />
+        </scene>
+        <scene qscale="3" name="sammy-2-without-end">
+            <interval ss="01:44:07.960" to="02:35:16.880" />
+            <interval ss="02:41:23.680" to="02:59:57.360" />
+        </scene>
+    </source>
+
+    <source id="07">
+        <scene qscale="3" name="rox-et-rouky-2">
+            <interval ss="00:13:00.320" to="00:45:06.800" />
+            <interval ss="00:51:25.520" to="01:19:16.120" />
+        </scene>
+    </source>
+
+    <source id="06">
+        <scene qscale="3" name="cendrillon-3-le-sortilege-de-cendrillon">
+            <interval ss="00:15:58.160" to="00:48:06.440" />
+            <interval ss="00:54:22.240" to="01:17:47.480" />
+            <interval ss="01:23:58.760" to="01:32:10.240" />
+        </scene>
+        <scene qscale="3" name="la-reine-des-neiges-une-fete-givree">
+            <interval ss="01:34:37.280" to="01:41:47.720" />
+        </scene>
+        <scene qscale="3" name="ariel-la-petite-sirene-2-retour-a-l-ocean">
+            <interval ss="01:44:22.160" to="02:11:17.120" />
+            <interval ss="02:17:31.240" to="02:44:21.920" />
+            <interval ss="02:50:38.920" to="03:03:01.360" />
+        </scene>
+        <scene qscale="3" name="le-mariage-de-raiponce">
+            <interval ss="03:05:52.080" to="03:12:06.840" />
+        </scene>
+    </source>
+
+    <source id="05">
+        <scene qscale="3" name="rio-2">
+            <interval ss="00:13:16.200" to="00:58:00.800" />
+            <interval ss="01:04:12.000" to="01:32:35.760" />
+            <interval ss="01:38:40.680" to="01:55:27.000" />
+        </scene>
+    </source>
+
+    <source id="04">
+        <scene qscale="3" name="rio">
+            <interval ss="00:00:00.040" to="00:38:39.920" />
+            <interval ss="00:44:48.760" to="01:10:16.000" />
+            <interval ss="01:16:30.400" to="01:32:15.520" />
+        </scene>
+    </source>
+
+    <source id="03">
+        <scene qscale="3" name="niko">
+            <interval ss="00:08:12.560" to="00:47:57.120" />
+            <interval ss="00:54:14.080" to="01:29:16.840" />
+        </scene>
+    </source>
+
+    <!-- <source id="02">
+        <scene qscale="3" name="cendrillon-3-le-sortilege-de-cendrillon">
+        </scene>
+    </source> -->
+
+    <source id="01">
+        <scene qscale="3" name="zorro">
+            <interval ss="00:00:00.120" to="00:16:49.559" />
+        </scene>
+        <scene qscale="3" name="niko-2">
+            <interval ss="00:20:15.479" to="01:28:14.039" />
         </scene>
     </source>
     
