@@ -56,7 +56,7 @@ class cScene:
             return self.mQScale
         
         previous_value = self.mQScale
-        self.mQScale = iQScale
+        self.mQScale = int( iQScale )
         return previous_value
 
     ## Get all the intervals

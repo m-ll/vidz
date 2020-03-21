@@ -95,7 +95,7 @@ class cConvert:
         
         command = [ self.mFFmpeg, 
                     '-i', self.mScene.OutputClean(), 
-                    '-qscale:v', self.mScene.QScale(), 
+                    '-qscale:v', str( self.mScene.QScale() ), 
                     '-vtag', 'XVID', 
                     self.mScene.OutputAvi() ]
 

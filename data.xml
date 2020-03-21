@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
+
+    <source id="38">
+        <scene qscale="3" name="comme-des-betes">
+            <interval ss="00:04:50.760" to="01:23:49.480" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+    
+    <source id="37">
+        <scene qscale="3" name="l-age-de-glace-3">
+            <interval ss="00:12:26.840" to="00:32:18.200" />
+            <interval ss="00:34:02.200" to="01:12:03.200" />
+            <interval ss="01:14:28.960" to="01:39:41.800" />
+        </scene>
+    </source>
+    
+    <source id="36">
+        <scene qscale="3" name="ballerina">
+            <interval ss="00:11:46.800" to="00:44:51.240" />
+            <interval ss="00:50:49.480" to="01:20:25.720" />
+            <interval ss="01:24:15.080" to="01:43:23.200" />
+        </scene>
+    </source>
+    
+    <source id="35">
+        <scene qscale="3" name="les-5-legendes">
+            <interval ss="00:09:12.200" to="01:33:40.560" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+    
+    <source id="34">
+        <scene qscale="3" name="tous-en-scene">
+            <interval ss="00:08:48.800" to="00:42:54.920" vmap="0:3" amap="0:1" />
+            <interval ss="00:48:12.880" to="01:23:50.120" vmap="0:3" amap="0:1" />
+            <interval ss="01:27:34.040" to="01:53:54.760" vmap="0:3" amap="0:1" />
+        </scene>
+    </source>
+    
+    <source id="33">
+        <scene qscale="3" name="les-as-de-la-jungle-film">
+            <interval ss="00:05:07.240" to="01:36:28.360" />
+        </scene>
+    </source>
+    
+    <source id="32">
+        <scene qscale="3" name="cendrillon">
+            <interval ss="00:11:54.960" to="01:23:04.720" />
+        </scene>
+        <scene qscale="3" name="blanche-neige">
+            <interval ss="01:25:04.120" to="02:44:39.000" />
+        </scene>
+    </source>
+    
+    <source id="31">
+        <scene qscale="3" name="hotel-transylvanie">
+            <interval ss="00:24:08.680" to="00:57:57.840" />
+            <interval ss="01:03:57.200" to="01:49:35.960" />
+        </scene>
+        <scene qscale="3" name="hotel-transylvanie-2">
+            <interval ss="01:52:20.720" to="02:23:06.480" />
+            <interval ss="02:29:18.760" to="03:16:01.440" />
+        </scene>
+    </source>
+    
+    <source id="30">
+        <scene qscale="3" name="aladdin">
+            <interval ss="00:11:13.720" to="01:37:44.360" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+    
+    <source id="2f">
+        <scene qscale="3" name="la-reine-des-neiges-une-fete-givree">
+            <interval ss="02:13:12.160" to="02:20:27.400" />
+        </scene>
+        
+        <scene qscale="3" name="la-reine-des-neiges-joyeuses-fetes-avec-olaf">
+            <interval ss="01:51:57.720" to="02:12:36.800" />
+        </scene>
+        
+        <scene qscale="3" name="la-reine-des-neiges">
+            <interval ss="00:10:33.040" to="00:37:54.800" />
+            <interval ss="00:44:11.440" to="01:15:53.040" />
+            <interval ss="01:22:10.880" to="01:51:25.080" />
+        </scene>
+    </source>
+    
+    <source id="2d">
+        <scene qscale="3" name="sahara">
+            <interval ss="00:03:56.560" to="00:38:10.520" />
+            <interval ss="00:44:22.480" to="01:13:35.840" />
+            <interval ss="01:19:32.640" to="01:34:28.120" />
+        </scene>
+    </source>
+    
+    <source id="2c">
+        <scene qscale="3" name="planete-dinosaures">
+            <interval ss="00:13:53.560" to="01:40:16.640" />
+        </scene>
+        <scene qscale="3" name="la-grande-marche-des-dinosaures">
+            <interval ss="01:41:22.520" to="03:08:15.040" />
+        </scene>
+    </source>
+    
+    <source id="2b">
+        <scene qscale="3" name="le-museum-prend-vie">
+            <interval ss="00:16:12.840" to="01:20:07.120" />
+        </scene>
+    </source>
+    
+    <source id="2a">
+        <scene qscale="3" name="le-petit-prince">
+            <interval ss="00:07:43.680" to="00:26:09.160" />
+            <interval ss="00:31:50.920" to="01:11:01.640" />
+            <interval ss="01:14:32.280" to="01:51:58.320" />
+        </scene>
+    </source>
+    
+    <source id="29">
+        <scene qscale="3" name="rango">
+            <interval ss="00:05:22.120" to="01:41:45.880" />
+        </scene>
+    </source>
+    
+</root>
