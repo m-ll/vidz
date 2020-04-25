@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
+    <source id="3f">
+        <scene qscale="3" name="moi-moche-et-mechant-3">
+            <interval ss="00:00:29.200" to="00:50:21.960" />
+            <interval ss="00:51:58.600" to="01:20:17.680" />
+        </scene>
+    </source>
+
+    <source id="3e">
+        <scene qscale="3" name="shrek-2">
+            <interval ss="00:09:04.920" to="00:33:15.040" />
+            <interval ss="00:34:48.520" to="01:03:03.880" />
+            <interval ss="01:04:27.920" to="01:34:12.160" />
+        </scene>
+    </source>
+
+    <source id="3d">
+        <scene qscale="3" name="harry-potter-1-a-l-ecole-des-sorciers">
+            <interval ss="00:04:28.720" to="00:57:01.640" vmap="0:0" amap="0:2" />
+            <interval ss="01:00:37.720" to="02:26:43.880" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+
+    <source id="3c">
+        <scene qscale="3" name="shrek-4">
+            <interval ss="00:05:04.680" to="00:36:32.000" />
+            <interval ss="00:38:20.200" to="01:35:48.120" />
+        </scene>
+    </source>
+
+    <source id="3b">
+        <scene qscale="3" name="harry-potter-2-et-la-chambre-des-secrets">
+            <interval ss="00:02:05.520" to="00:52:54.360" vmap="0:0" amap="0:2" />
+            <interval ss="00:58:07.760" to="02:33:37.800" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+
     <source id="3a">
         <scene qscale="3" name="rox-et-rouky">
             <interval ss="00:01:34.920" to="00:28:17.400" vmap="0:0" amap="0:2" />
