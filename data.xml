@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
+    <source id="41">
+        <scene qscale="3" name="le-monde-magique-de-salma">
+            <interval ss="00:13:44.320" to="00:46:23.840" />
+            <interval ss="00:54:23.960" to="01:16:25.320" />
+            <interval ss="01:22:53.200" to="01:47:08.120" />
+        </scene>
+    </source>
+
+    <source id="40">
+        <scene qscale="3" name="norm">
+            <interval ss="00:06:06.800" to="00:39:21.120" />
+            <interval ss="00:45:58.520" to="01:11:17.040" />
+            <interval ss="01:17:56.280" to="01:42:36.640" />
+        </scene>
+    </source>
+
     <source id="3f">
         <scene qscale="3" name="moi-moche-et-mechant-3">
             <interval ss="00:00:29.200" to="00:50:21.960" />
