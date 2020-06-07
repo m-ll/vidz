@@ -25,6 +25,7 @@ from vidz.source import cSource
 
 parser = argparse.ArgumentParser( description='Clean and convert .ts to .avi.' )
 parser.add_argument( 'entries', metavar='Entries', nargs='*', help='One (or multiple) entry(ies) in the xml' )
+parser.add_argument( '-t', '--test-sound', type=int, nargs='?', const=10, help='Test sound on small interval' )
 args = parser.parse_args()
 
 if not args.entries:
@@ -82,9 +83,19 @@ for entry in args.entries:
             interval = cInterval()
             interval.SS( xml_interval.get( 'ss' ) )
             interval.To( xml_interval.get( 'to' ) )
+            if args.test_sound is not None:
+                tc_ss = xml_interval.get( 'ss' ).split( ':' )
+                tc_to = xml_interval.get( 'ss' ).split( ':' ) # tc_to = tc_ss will share the same data
+                tc_ss[1] = f'{ int( tc_ss[1] ) + args.test_sound }'
+                tc_to[1] = f'{ int( tc_ss[1] ) + 1 }'
+                interval.SS( ':'.join( tc_ss ) )
+                interval.To( ':'.join( tc_to ) )
             interval.VMap( xml_interval.get( 'vmap' ) )
             interval.AMap( xml_interval.get( 'amap' ) )
             scene.AddInterval( interval )
+            
+            if args.test_sound is not None:
+                break
         
         scene.BuildOutput( output )
         

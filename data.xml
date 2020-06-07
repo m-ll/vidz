@@ -1,5 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
+<root ffmpeg="./ffmpeg-4.2.3-amd64-static/ffmpeg" output="/mnt/f/vidz">
+
+    <source id="4d">
+        <scene qscale="3" name="karate-kid-3">
+            <interval ss="00:12:53.200" to="00:42:29.960" />
+            <interval ss="00:48:25.560" to="01:17:44.040" />
+            <interval ss="01:23:30.880" to="02:10:03.920" />
+        </scene>
+    </source>
+    <source id="4c">
+        <scene qscale="3" name="harry-potter-7-et-les-reliques-de-la-mort-1">
+            <interval ss="00:12:00.120" to="00:56:20.680" vmap="0:0" amap="0:3" />
+            <interval ss="01:00:52.280" to="01:35:23.840" vmap="0:0" amap="0:3" />
+            <interval ss="01:37:49.280" to="02:28:48.920" vmap="0:0" amap="0:3" />
+        </scene>
+    </source>
+    <source id="4b">
+        <scene qscale="3" name="marry-poppins">
+            <interval ss="00:05:04.720" to="00:29:46.640" />
+            <interval ss="00:32:24.120" to="01:14:53.680" />
+            <interval ss="01:16:43.720" to="02:21:47.160" />
+        </scene>
+    </source>
+    <source id="4a">
+        <scene qscale="3" name="harry-potter-7-et-les-reliques-de-la-mort-2">
+            <interval ss="00:14:21.280" to="00:53:10.600" vmap="0:3" amap="0:1" />
+            <interval ss="00:58:35.400" to="01:28:11.480" vmap="0:3" amap="0:1" />
+            <interval ss="01:33:32.080" to="02:18:58.240" vmap="0:3" amap="0:1" />
+        </scene>
+    </source>
+        <!-- <source id="49">
+            <scene qscale="5" name="t-rex">
+                <interval ss="00:00:00.400" to="00:44:55.640" /> pas complet: samedi prochain
+            </scene>
+        </source> -->
+
+    <source id="48">
+        <scene qscale="3" name="karate-kid-2">
+            <interval ss="00:10:05.800" to="00:44:00.480" />
+            <interval ss="00:48:10.560" to="01:27:32.840" />
+            <interval ss="01:31:49.200" to="02:04:20.120" />
+        </scene>
+    </source>
+    <source id="47">
+        <scene qscale="3" name="karate-kid-1-1-2">
+            <interval ss="00:00:50.920" to="00:27:38.920" />
+            <interval ss="00:31:57.160" to="01:18:25.360" />
+        </scene>
+    </source>
+    <source id="46">
+        <scene qscale="3" name="karate-kid-1-2-2">
+            <interval ss="00:00:48.720" to="00:46:21.320" />
+        </scene>
+    </source>
+<!--
+$ /mnt/d/Users/Mike/work/vidz/ffmpeg-4.2-amd64-static/ffmpeg -f concat -safe 0 -i kk.txt -c copy karate-kid-1.avi
+
+# this is a comment
+file '/mnt/f/vidz/karate-kid-1-1-2.avi'
+file '/mnt/f/vidz/karate-kid-1-2-2.avi'
+-->
+
+    <source id="45">
+        <scene qscale="3" name="harry-potter-6-et-le-prince-de-sang-mele">
+            <interval ss="00:12:33.200" to="00:55:28.640" />
+            <interval ss="01:00:09.680" to="01:38:20.760" />
+            <interval ss="01:41:16.680" to="02:38:41.960" />
+        </scene>
+    </source>
+
+    <source id="44">
+        <scene qscale="3" name="harry-potter-3-et-le-prisionnier-d-azkaban">
+            <interval ss="00:12:49.347" to="01:06:55.147" vmap="0:0" amap="0:2" />
+            <interval ss="01:11:33.187" to="02:22:26.267" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+
+    <source id="43">
+        <scene qscale="3" name="harry-potter-4-et-la-coupe-de-feu">
+            <interval ss="00:10:18.600" to="01:02:09.000" vmap="0:0" amap="0:2" />
+            <interval ss="01:07:45.880" to="02:34:16.760" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
+
+    <source id="42">
+        <scene qscale="3" name="harry-potter-5-et-l-ordre-du-phenix">
+            <interval ss="00:12:30.880" to="00:55:35.000" vmap="0:0" amap="0:2" />
+            <interval ss="01:01:40.960" to="02:22:20.000" vmap="0:0" amap="0:2" />
+        </scene>
+    </source>
 
     <source id="41">
         <scene qscale="3" name="le-monde-magique-de-salma">
