@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2.3-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
+    <source id="50">
+        <scene qscale="3" name="le-seigneur-des-anneaux-1-la-communaute-de-l-anneau">
+            <interval ss="00:13:24.080" to="00:58:03.240" />
+            <interval ss="01:04:07.600" to="01:38:24.600" />
+            <interval ss="01:44:20.040" to="03:09:14.000" />
+        </scene>
+    </source>
+    <source id="4f">
+        <scene qscale="3" name="le-seigneur-des-anneaux-2-les-2-tours">
+            <interval ss="00:12:54.400" to="00:56:29.240" />
+            <interval ss="01:02:46.840" to="01:36:11.520" />
+            <interval ss="01:42:18.040" to="03:10:07.720" />
+        </scene>
+    </source>
+    <source id="4e">
+        <scene qscale="3" name="la-verite-sur-le-t-rex">
+            <interval ss="00:13:13.200" to="01:01:43.160" />
+        </scene>
+    </source>
     <source id="4d">
         <scene qscale="3" name="karate-kid-3">
             <interval ss="00:12:53.200" to="00:42:29.960" />
@@ -31,10 +50,9 @@
     </source>
         <!-- <source id="49">
             <scene qscale="5" name="t-rex">
-                <interval ss="00:00:00.400" to="00:44:55.640" /> pas complet: samedi prochain
+                <interval ss="00:00:00.400" to="00:44:55.640" /> pas complet
             </scene>
         </source> -->
-
     <source id="48">
         <scene qscale="3" name="karate-kid-2">
             <interval ss="00:10:05.800" to="00:44:00.480" />
@@ -42,6 +60,13 @@
             <interval ss="01:31:49.200" to="02:04:20.120" />
         </scene>
     </source>
+<!--
+$ /mnt/d/Users/Mike/work/vidz/ffmpeg-4.2-amd64-static/ffmpeg -f concat -safe 0 -i kk.txt -c copy karate-kid-1.avi
+
+# this is a comment
+file '/mnt/f/vidz/karate-kid-1-1-2.avi'
+file '/mnt/f/vidz/karate-kid-1-2-2.avi'
+-->
     <source id="47">
         <scene qscale="3" name="karate-kid-1-1-2">
             <interval ss="00:00:50.920" to="00:27:38.920" />
@@ -53,13 +78,6 @@
             <interval ss="00:00:48.720" to="00:46:21.320" />
         </scene>
     </source>
-<!--
-$ /mnt/d/Users/Mike/work/vidz/ffmpeg-4.2-amd64-static/ffmpeg -f concat -safe 0 -i kk.txt -c copy karate-kid-1.avi
-
-# this is a comment
-file '/mnt/f/vidz/karate-kid-1-1-2.avi'
-file '/mnt/f/vidz/karate-kid-1-2-2.avi'
--->
 
     <source id="45">
         <scene qscale="3" name="harry-potter-6-et-le-prince-de-sang-mele">
