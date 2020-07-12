@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2.3-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
+    <source id="55">
+        <scene qscale="3" name="jurassic-park-2">
+            <interval ss="00:13:04.520" to="00:47:52.840" />
+            <interval ss="00:54:07.120" to="01:22:58.880" />
+            <interval ss="01:29:09.400" to="02:22:42.240" />
+        </scene>
+    </source>
+    <source id="54">
+        <scene qscale="3" name="minuscule-la-vallee-des-fourmis-perdues">
+            <interval ss="00:06:03.800" to="01:26:49.520" />
+        </scene>
+    </source>
+    <source id="53">
+        <scene qscale="3" name="jurassic-park-1">
+            <interval ss="00:12:40.160" to="00:48:50.800" />
+            <interval ss="00:54:53.400" to="01:29:43.240" />
+            <interval ss="01:35:55.040" to="02:20:01.160" />
+        </scene>
+    </source>
+    <source id="52">
+        <scene qscale="5" name="planete-animal">
+            <interval ss="00:07:24.400" to="01:39:25.960" />
+            <interval ss="01:42:28.320" to="03:13:02.760" />
+        </scene>
+    </source>
+    <source id="51">
+        <scene qscale="3" name="le-seigneur-des-anneaux-3-le-retour-du-roi">
+            <interval ss="00:13:13.720" to="00:55:00.160" />
+            <interval ss="01:01:12.640" to="01:39:02.520" />
+            <interval ss="01:45:14.400" to="03:30:11.240" />
+        </scene>
+    </source>
     <source id="50">
         <scene qscale="3" name="le-seigneur-des-anneaux-1-la-communaute-de-l-anneau">
             <interval ss="00:13:24.080" to="00:58:03.240" />
