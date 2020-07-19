@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2.3-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
+    <source id="56">
+        <scene qscale="3" name="jurassic-park-3">
+            <interval ss="00:13:46.880" to="00:47:52.000" />
+            <interval ss="00:54:03.160" to="01:21:48.840" />
+            <interval ss="01:28:03.080" to="01:47:00.480" />
+        </scene>
+    </source>
     <source id="55">
         <scene qscale="3" name="jurassic-park-2">
             <interval ss="00:13:04.520" to="00:47:52.840" />
