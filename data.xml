@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root ffmpeg="./ffmpeg-4.2.3-amd64-static/ffmpeg" output="/mnt/f/vidz">
+<root 
+    ffmpeg="./ffmpeg-4.3.1-amd64-static/ffmpeg"
+    ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
+    output="/mnt/f/vidz">
+
+    <source id="5a">
+        <scene qscale="7" name="too-cute">
+            <interval ss="00:07:07.920" to="00:30:43.120" />
+            <interval ss="00:34:55.200" to="00:51:12.760" />
+            <interval ss="00:58:23.800" to="01:38:07.800" />
+            <interval ss="01:41:29.440" to="02:21:25.640" />
+            <interval ss="02:24:52.760" to="03:04:38.480" />
+        </scene>
+    </source>
+    <source id="59">
+        <scene qscale="3" name="beethoven-1">
+            <interval ss="00:01:39.040" to="00:47:40.080" />
+            <interval ss="00:50:36.360" to="01:12:40.920" />
+            <interval ss="01:15:22.000" to="01:26:49.320" />
+        </scene>
+        <scene qscale="3" name="beethoven-2-prime">
+            <interval ss="01:27:26.920" to="01:35:08.200" />
+        </scene>
+    </source>
+    <source id="58">
+        <scene qscale="3" name="beethoven-2-bis">
+            <interval ss="00:00:05.200" to="00:31:21.560" />
+            <interval ss="00:34:22.840" to="00:55:08.960" />
+            <interval ss="00:58:14.080" to="01:18:18.560" />
+        </scene>
+    </source>
+<!--
+$ /mnt/d/Users/Mike/work/vidz/ffmpeg-4.3.1-amd64-static/ffmpeg -f concat -safe 0 -i /mnt/f/vidz/kk.txt -c copy /mnt/f/vidz/beethoven-2.avi
+
+# this is a comment
+file '/mnt/f/vidz/beethoven-2-prime.avi'
+file '/mnt/f/vidz/beethoven-2-bis.avi'
+-->
+    <source id="57">
+        <scene qscale="3" name="nicky-larson-private-eyes">
+            <interval ss="" to="" />
+            <interval ss="" to="" />
+            <interval ss="" to="" />
+        </scene>
+    </source>
 
     <source id="56">
         <scene qscale="3" name="jurassic-park-3">

@@ -47,6 +47,11 @@ if not ffmpeg.exists():
 	print( Back.RED + f'ffmpeg binary path doesn\'t exist: {ffmpeg}' )
 	sys.exit()
 
+ffprobe = Path( root.get( 'ffprobe' ) )
+if not ffprobe.exists():
+	print( Back.RED + f'ffprobe binary path doesn\'t exist: {ffprobe}' )
+	sys.exit()
+
 output = Path( root.get( 'output' ) )
 if not output.exists():
 	print( Back.RED + f'output path doesn\'t exist: {output}' )
@@ -99,7 +104,7 @@ for entry in args.entries:
         
         scene.BuildOutput( output )
         
-        convert = cConvert( ffmpeg, source, scene )
+        convert = cConvert( ffmpeg, ffprobe, source, scene )
         convert.RunClean()
         convert.RunConvert()
         

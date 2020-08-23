@@ -26,8 +26,9 @@ class cConvert:
     #  @param  iFFmpeg  string   The ffmpeg command pathfile
     #  @param  iSource  cSource  The source file
     #  @param  iScene   cScene   The scene to convert
-    def __init__( self, iFFmpeg, iSource, iScene ):
+    def __init__( self, iFFmpeg, iFFprobe, iSource, iScene ):
         self.mFFmpeg = iFFmpeg
+        self.mFFprobe = iFFprobe
         self.mSource = iSource
         self.mScene = iScene
 
@@ -93,10 +94,82 @@ class cConvert:
         if not self.mScene.OutputClean().exists():
             return
         
+        # Make convertion
         command = [ self.mFFmpeg, 
                     '-i', self.mScene.OutputClean(), 
                     '-qscale:v', str( self.mScene.QScale() ), 
                     '-vtag', 'XVID', 
+                    self.mScene.OutputAviTmp() ]
+
+        self._PrintHeader( command )
+        cp = self._Run( command )
+        self._PrintFooter( cp )
+        
+        # Extract the video only
+        command = [ self.mFFmpeg, 
+                    '-i', self.mScene.OutputAviTmp(), 
+                    '-c:v', 'copy', 
+                    '-an', 
+                    self.mScene.OutputAviWithoutSound() ]
+
+        self._PrintHeader( command )
+        cp = self._Run( command )
+        self._PrintFooter( cp )
+        
+        # Extract the sound only
+        command = [ self.mFFmpeg, 
+                    '-i', self.mScene.OutputAviTmp(),  
+                    '-vn', 
+                    '-c:a', 'copy', 
+                    self.mScene.OutputMP3() ]
+
+        self._PrintHeader( command )
+        cp = self._Run( command )
+        self._PrintFooter( cp )
+
+        # Get length of video/audio (with ffprobe) to compute the ratio
+        command = [ self.mFFprobe, 
+                    '-i', self.mScene.OutputAviWithoutSound(), 
+                    '-show_entries', 'format=duration', 
+                    '-v', 'quiet', 
+                    '-of', 'csv=p=0' # or maybe xml
+                     ]
+        print( f'\tffprobe: {self.mScene.OutputAviWithoutSound()}' )
+        r = subprocess.run( command, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
+        # r = subprocess.run( command, capture_output=True ) # python 3.7 ...
+        video_duration = float( r.stdout )
+        print( f'\tduration: {video_duration}' )
+
+        command = [ self.mFFprobe, 
+                    '-i', self.mScene.OutputMP3(), 
+                    '-show_entries', 'format=duration', 
+                    '-v', 'quiet', 
+                    '-of', 'csv=p=0' # or maybe xml
+                     ]
+        print( f'\tffprobe: {self.mScene.OutputMP3()}' )
+        r = subprocess.run( command, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
+        # r = subprocess.run( command, capture_output=True ) # python 3.7 ...
+        audio_duration = float( r.stdout )
+        print( f'\tduration: {audio_duration}' )
+
+        ratio = audio_duration / video_duration
+        print( f'\tratio audio/video: {ratio}' )
+
+        # Stretch the sound to match the video length
+        command = [ self.mFFmpeg, 
+                    '-i', self.mScene.OutputMP3(), 
+                    '-filter:a', f'atempo={ratio}', 
+                    self.mScene.OutputMP3Stretched() ]
+
+        self._PrintHeader( command )
+        cp = self._Run( command )
+        self._PrintFooter( cp )
+
+        # Merge video and sound to the final avi
+        command = [ self.mFFmpeg, 
+                    '-i', self.mScene.OutputAviWithoutSound(), 
+                    '-i', self.mScene.OutputMP3Stretched(), 
+                    '-c', 'copy', 
                     self.mScene.OutputAvi() ]
 
         self._PrintHeader( command )
