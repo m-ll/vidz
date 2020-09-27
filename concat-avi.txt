@@ -1,0 +1,3 @@
+# this is a comment
+file '/mnt/f/vidz/lucky-luke-tous-a-l-ouest-1-2.avi'
+file '/mnt/f/vidz/lucky-luke-tous-a-l-ouest-2-2.avi'
