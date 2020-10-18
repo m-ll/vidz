@@ -18,19 +18,17 @@ from colorama import init, Fore, Back, Style
 init( autoreset=True )
 
 from vidz.convert import cConvert
+from vidz.concat import cConcat
 from vidz.scene import cScene, cInterval
 from vidz.source import cSource
 
 #---
 
 parser = argparse.ArgumentParser( description='Clean and convert .ts to .avi.' )
-parser.add_argument( 'entries', metavar='Entries', nargs='*', help='One (or multiple) entry(ies) in the xml' )
-parser.add_argument( '-t', '--test-sound', type=int, nargs='?', const=10, help='Test sound on small interval' )
+parser.add_argument( '-i', '--input',                   nargs='+', default=[],  help='One (or multiple) entry(ies) id in the xml' )
+parser.add_argument( '-t', '--test-sound', type=int,    nargs='?', const=10,    help='Test sound on small interval' )
+parser.add_argument( '-c', '--concat',                  nargs='+', default=[],  help='Concatenate following entry(ies)' )
 args = parser.parse_args()
-
-if not args.entries:
-	print( Back.RED + 'At least 1 entry is required' )
-	sys.exit()
 
 #---
 
@@ -59,24 +57,25 @@ if not output.exists():
 
 #---
 
-for entry in args.entries:
-    xml_sources = root.findall( f'./source[@id="{entry}"]' )
+def BuildSourceScenes( iXMLRoot, iEntry ):
+    xml_sources = iXMLRoot.findall( f'./source[@id="{iEntry}"]' )
     if not xml_sources:
-        print( Back.RED + f'no source for this id: {entry}' )
-        break
+        print( Back.RED + f'no source for this id: {iEntry}' )
+        return None
     if len( xml_sources ) > 1:
-        print( Back.RED + f'multiple sources with same id: {entry}' )
-        break
+        print( Back.RED + f'multiple sources with same id: {iEntry}' )
+        return None
 
     xml_source = xml_sources[0]
 
     source = cSource.Create( xml_source )
     if not source.Build():
-        print( Back.RED + f'can\'t build source: {entry}' )
+        print( Back.RED + f'can\'t build source: {iEntry}' )
         sys.exit()
 
     print( Fore.CYAN + f'source: {source.PathFile()}' )
 
+    scenes = []
     for xml_scene in xml_source.findall( 'scene' ):
         scene = cScene( source )
         scene.Name( xml_scene.get( 'name' ) )
@@ -90,9 +89,12 @@ for entry in args.entries:
             interval.To( xml_interval.get( 'to' ) )
             if args.test_sound is not None:
                 tc_ss = xml_interval.get( 'ss' ).split( ':' )
-                tc_to = xml_interval.get( 'ss' ).split( ':' ) # tc_to = tc_ss will share the same data
-                tc_ss[1] = f'{ int( tc_ss[1] ) + args.test_sound }'
-                tc_to[1] = f'{ int( tc_ss[1] ) + 1 }'
+                tc_to = xml_interval.get( 'ss' ).split( ':' ) # with tc_to = tc_ss, they will share the same data
+                new_start = int( tc_ss[1] ) + args.test_sound
+                if( new_start > 59 ):
+                    new_start = 58
+                tc_ss[1] = f'{ new_start }'
+                tc_to[1] = f'{ new_start + 1 }' # add 1 min
                 interval.SS( ':'.join( tc_ss ) )
                 interval.To( ':'.join( tc_to ) )
             interval.VMap( xml_interval.get( 'vmap' ) )
@@ -103,8 +105,42 @@ for entry in args.entries:
                 break
         
         scene.BuildOutput( output )
-        
+        scenes.append( scene )
+    
+    return source, scenes
+
+#---
+
+for entry in args.input:
+    source, scenes = BuildSourceScenes( root, entry )
+    if source is None:
+        continue
+
+    for scene in scenes:
         convert = cConvert( ffmpeg, ffprobe, source, scene )
         convert.RunClean()
         convert.RunConvert()
+
+#---
+
+scenes = []
+for entry in args.concat:
+    scene_index = 0
+    tabs = entry.split( '-' )
+    if len( tabs ):
+        source_id = tabs.pop( 0 )
+    if len( tabs ):
+        scene_index = int( tabs.pop( 0 ) )
+
+    source, source_scenes = BuildSourceScenes( root, source_id )
+    if source is None:
+        continue
+
+    if not 0 <= scene_index < len( source_scenes ):
+        print( Back.RED + f'wrong scene index: {scene_index}/{len( source_scenes )-1}' )
+        sys.exit()
         
+    scenes.append( source_scenes[scene_index] )
+
+concat = cConcat( ffmpeg, ffprobe, scenes )
+concat.RunConcat()
