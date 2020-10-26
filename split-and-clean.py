@@ -25,9 +25,9 @@ from vidz.source import cSource
 #---
 
 parser = argparse.ArgumentParser( description='Clean and convert .ts to .avi.' )
-parser.add_argument( '-i', '--input',                   nargs='+', default=[],  help='One (or multiple) entry(ies) id in the xml' )
-parser.add_argument( '-t', '--test-sound', type=int,    nargs='?', const=10,    help='Test sound on small interval' )
-parser.add_argument( '-c', '--concat',                  nargs='+', default=[],  help='Concatenate following entry(ies)' )
+parser.add_argument( '-i', '--input',                       nargs='+', default=[],  help='One (or multiple) entry(ies) id in the xml' )
+parser.add_argument( '-t', '-d', '--test-sound', type=int,  nargs='?', const=10,    help='Test sound on small interval' )
+parser.add_argument( '-c', '--concat',                      nargs='+', default=[],  help='Concatenate following entry(ies)' )
 args = parser.parse_args()
 
 #---
