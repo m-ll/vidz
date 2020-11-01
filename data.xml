@@ -4,6 +4,28 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <source id="6a">
+        <scene qscale="3" name="kung-fu-panda-2">
+            <interval ss="00:10:25.280" to="00:39:06.000" />
+            <interval ss="00:45:34.520" to="01:13:40.280" />
+            <interval ss="01:20:09.280" to="01:41:15.480" />
+        </scene>
+    </source>
+    <source id="69">
+        <scene qscale="3" name="coco">
+            <interval ss="00:04:56.317" to="00:35:08.077" vmap="0:0" amap="0:3" />
+            <interval ss="00:41:10.677" to="01:11:06.437" vmap="0:0" amap="0:3" />
+            <interval ss="01:16:23.917" to="01:48:05.357" vmap="0:0" amap="0:3" />
+        </scene>
+    </source>
+    <source id="68">
+        <scene qscale="3" name="scooby-doo-2">
+            <interval ss="00:00:50.600" to="00:29:12.040" />
+            <interval ss="00:35:34.600" to="01:04:05.640" />
+            <interval ss="01:10:19.840" to="01:37:54.120" />
+        </scene>
+    </source>
+
     <source id="67">
         <scene qscale="3" name="les-croods">
             <interval ss="00:07:52.800" to="00:34:19.680" />

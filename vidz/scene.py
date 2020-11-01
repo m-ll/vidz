@@ -36,9 +36,6 @@ class cScene:
         self.mOutputAvi = None
         
         self.mOutputAviTmp = None
-        self.mOutputAviWithoutSound = None
-        self.mOutputMP3 = None
-        self.mOutputMP3Stretched = None
 
     ## Manage the name of the scene
     #
@@ -87,9 +84,6 @@ class cScene:
         self.mOutputAvi = iOutputRoot / f'{self.mName}.avi'
 
         self.mOutputTmp = self.mOutputDirectory / f'{self.mName}.tmp.avi'
-        self.mOutputAviWithoutSound = self.mOutputDirectory / f'{self.mName}.without-sound.avi'
-        self.mOutputMP3 = self.mOutputDirectory / f'{self.mName}.original.mp3'
-        self.mOutputMP3Stretched = self.mOutputDirectory / f'{self.mName}.stretched.mp3'
 
         self.mOutputClean = self.mOutputDirectory / f'{self.mName}.clean.ts'
         self.mOutputList = self.mOutputDirectory / f'{self.mName}.list.txt'
@@ -120,24 +114,6 @@ class cScene:
     #  @return  Path  The avi file
     def OutputAviTmp( self ):
         return self.mOutputTmp
-
-    ## Get pathfile of the avi (without sound) file
-    #
-    #  @return  Path  The avi file
-    def OutputAviWithoutSound( self ):
-        return self.mOutputAviWithoutSound
-
-    ## Get pathfile of the mp3 file
-    #
-    #  @return  Path  The mp3 file
-    def OutputMP3( self ):
-        return self.mOutputMP3
-
-    ## Get pathfile of the mp3 (stretched) file
-    #
-    #  @return  Path  The mp3 file
-    def OutputMP3Stretched( self ):
-        return self.mOutputMP3Stretched
 
     ## Get pathfile of the avi (final) file
     #

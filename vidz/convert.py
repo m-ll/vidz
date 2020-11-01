@@ -12,6 +12,7 @@
 ## @package scene
 #  Manage conversion
 
+import json
 import subprocess
 
 from colorama import init, deinit, Fore, Back, Style
@@ -31,6 +32,8 @@ class cConvert:
         self.mFFprobe = iFFprobe
         self.mSource = iSource
         self.mScene = iScene
+
+    #---
 
     ## Create a 'clean' file (without ads) of the scene
     def RunClean( self ):
@@ -89,6 +92,8 @@ class cConvert:
         cp = self._Run( command )
         self._PrintFooter( cp )
 
+    #---
+
     ## Convert a 'clean' file (without ads) of the scene to an AVI-XVID file
     def RunConvert( self ):
         if not self.mScene.OutputClean().exists():
@@ -105,71 +110,118 @@ class cConvert:
         cp = self._Run( command )
         self._PrintFooter( cp )
         
-        # Extract the video only
-        command = [ self.mFFmpeg, 
-                    '-i', self.mScene.OutputAviTmp(), 
-                    '-c:v', 'copy', 
-                    '-an', 
-                    self.mScene.OutputAviWithoutSound() ]
+        #---
 
-        self._PrintHeader( command )
-        cp = self._Run( command )
-        self._PrintFooter( cp )
+        #
+        # Example of Scooby Doo 2 to see sound problems after converting to avi:
+        #
+        #                             [                 video                    ]
+        # with ratio=1.00        :    [                                ]                    <-- sound before image
+        # with ratio=0.999965268 :    [                                       ]             <-- sound still before image  (with only ratio_avitmp)
+        # with ratio=0.99991775  :    [                                          ]          <-- should be as it should be (with ratio) 
+        # with ratio=0.99 :           [                                                                                                     ]  <-- sound after image
+        #
+        #
+        #
+        # Example of Scooby Doo 2 to compute ratio for stretching sound:
+        #
+        # clean.ts:
+        #                          0                                            5067.3944   <--------------\               # <--\
+        #                          |                                                |                       |              #    |---- Don't know which one is the good one, but with small starttime, there are nearly the same
+        #          0                                                           (5068.7944)                  |              # <--/
+        #          |       start_time                   duration                    |                       |
+        # video:   |         1.9368         [           5066.8576                   ]                       |
+        #                                   |                                                               |
+        #                          | 0.5368 |                                                               |----- a/v = ratio_clean
+        #                          | starttime_diff                                                         |
+        #                          |                                                                        |
+        # audio:   |      1.4      [              5067.1536                   ]                             |
+        #          |   start_time                  duration                   |                             |
+        #          0                                                     (5068.5536)                        |
+        #                          |                                          |                             |
+        #                          0                                      5067.1536         <--------------/
+        #
+        # tmp.avi:
+        #
+        #          0
+        #          |           duration                    |
+        # video:   [           5067.44                     ]  <--------------\
+        #                                                                     |
+        #                                                                     |----- a/v = ratio_avitmp
+        #                                                                     |
+        # audio:   [           5067.264              ]        <--------------/
+        #          |           duration              |
+        #          0
+        #
+        #          ratio = ratio_avitmp * ratio_clean
+        #
         
-        # Extract the sound only
-        command = [ self.mFFmpeg, 
-                    '-i', self.mScene.OutputAviTmp(),  
-                    '-vn', 
-                    '-c:a', 'copy', 
-                    self.mScene.OutputMP3() ]
-
-        self._PrintHeader( command )
-        cp = self._Run( command )
-        self._PrintFooter( cp )
-
-        # Get length of video/audio (with ffprobe) to compute the ratio
+        # Get length of clean video/audio (with ffprobe) to compute the ratio
         command = [ self.mFFprobe, 
-                    '-i', self.mScene.OutputAviWithoutSound(), 
-                    '-show_entries', 'format=duration', 
+                    '-i', self.mScene.OutputClean(), 
                     '-v', 'quiet', 
-                    '-of', 'csv=p=0' # or maybe xml
+                    '-show_streams',
+                    '-of', 'json'
                      ]
-        print( f'\tffprobe: {self.mScene.OutputAviWithoutSound()}' )
+        print( Fore.YELLOW + f'\tffprobe: {self.mScene.OutputClean()}' )
         r = subprocess.run( command, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
         # r = subprocess.run( command, capture_output=True ) # python 3.7 ...
-        video_duration = float( r.stdout )
-        print( f'\tduration: {video_duration}' )
+        root = json.loads( r.stdout )
+        streams = root['streams']
+        for stream in streams:
+            if stream['codec_type'] == 'video':
+                clean_video_duration = float( stream['duration'] )
+                clean_video_starttime = float( stream['start_time'] )
+            elif stream['codec_type'] == 'audio':
+                clean_audio_duration = float( stream['duration'] )
+                clean_audio_starttime = float( stream['start_time'] )
+        
+        starttime_diff = clean_video_starttime - clean_audio_starttime
+        # ratio_clean = ( clean_audio_duration + clean_audio_starttime ) / ( clean_video_duration + clean_video_starttime )
+        ratio_clean = clean_audio_duration / ( clean_video_duration + starttime_diff )
 
+        print( Fore.YELLOW + f'\tvideo starttime          : {clean_video_duration}' )
+        print( Fore.YELLOW + f'\tvideo duration           : {clean_video_starttime}' )
+        print( Fore.YELLOW + f'\taudio starttime          : {clean_audio_duration}' )
+        print( Fore.YELLOW + f'\taudio duration           : {clean_audio_starttime}' )
+        print( Fore.YELLOW + f'\tratio audio/video (clean): {ratio_clean}' )
+
+        # Get length of avi video/audio (with ffprobe) to compute the ratio
         command = [ self.mFFprobe, 
-                    '-i', self.mScene.OutputMP3(), 
-                    '-show_entries', 'format=duration', 
+                    '-i', self.mScene.OutputAviTmp(), 
                     '-v', 'quiet', 
-                    '-of', 'csv=p=0' # or maybe xml
+                    '-show_streams',
+                    '-of', 'json'
                      ]
-        print( f'\tffprobe: {self.mScene.OutputMP3()}' )
+        print( Fore.YELLOW + f'\tffprobe: {self.mScene.OutputAviTmp()}' )
         r = subprocess.run( command, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
         # r = subprocess.run( command, capture_output=True ) # python 3.7 ...
-        audio_duration = float( r.stdout )
-        print( f'\tduration: {audio_duration}' )
+        root = json.loads( r.stdout )
+        streams = root['streams']
+        for stream in streams:
+            if stream['codec_type'] == 'video':
+                avi_video_duration = float( stream['duration'] )
+            elif stream['codec_type'] == 'audio':
+                avi_audio_duration = float( stream['duration'] )
+                
+        ratio_avitmp = ( avi_audio_duration / avi_video_duration )
 
-        ratio = audio_duration / video_duration
-        print( f'\tratio audio/video: {ratio}' )
+        print( Fore.YELLOW + f'\tvideo duration           : {avi_video_duration}' )
+        print( Fore.YELLOW + f'\taudio duration           : {avi_audio_duration}' )
+        print( Fore.YELLOW + f'\tratio audio/video (tmp)  : {ratio_avitmp}' )
 
-        # Stretch the sound to match the video length
-        command = [ self.mFFmpeg, 
-                    '-i', self.mScene.OutputMP3(), 
-                    '-filter:a', f'atempo={ratio}', 
-                    self.mScene.OutputMP3Stretched() ]
+        ratio = ratio_avitmp * ratio_clean
 
-        self._PrintHeader( command )
-        cp = self._Run( command )
-        self._PrintFooter( cp )
+        print( '' )
+        print( Fore.YELLOW + f'\tnew ratio audio/video    : {ratio}' )
+
+        #---
 
         # Merge video and sound to the final avi
         command = [ self.mFFmpeg, 
-                    '-i', self.mScene.OutputAviWithoutSound(), 
-                    '-i', self.mScene.OutputMP3Stretched(), 
-                    '-c', 'copy', 
+                    '-i', self.mScene.OutputAviTmp(), 
+                    '-c:v', 'copy', 
+                    '-filter:a', f'atempo={ratio}', 
                     self.mScene.OutputAvi() ]
 
         self._PrintHeader( command )
