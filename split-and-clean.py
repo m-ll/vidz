@@ -80,6 +80,7 @@ def BuildSourceScenes( iXMLRoot, iEntry ):
         scene = cScene( source )
         scene.Name( xml_scene.get( 'name' ) )
         scene.QScale( xml_scene.get( 'qscale' ) )
+        scene.RestretchAudio( xml_scene.get( 'restretch-audio' ).lower() in [ '1', 'true' ] if xml_scene.get( 'restretch-audio' ) is not None else True )
 
         print( Fore.CYAN + f'scene: {scene.Name()}' )
 
@@ -88,8 +89,8 @@ def BuildSourceScenes( iXMLRoot, iEntry ):
             interval.SS( xml_interval.get( 'ss' ) )
             interval.To( xml_interval.get( 'to' ) )
             if args.test_sound is not None:
-                tc_ss = xml_interval.get( 'ss' ).split( ':' )
-                tc_to = xml_interval.get( 'ss' ).split( ':' ) # with tc_to = tc_ss, they will share the same data
+                tc_ss = interval.SS().split( ':' )
+                tc_to = interval.SS().split( ':' ) # with tc_to = tc_ss, they will share the same data
                 new_start = int( tc_ss[1] ) + args.test_sound
                 if( new_start > 59 ):
                     new_start = 58

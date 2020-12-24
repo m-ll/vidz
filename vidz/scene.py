@@ -27,6 +27,7 @@ class cScene:
         
         self.mName = ''
         self.mQScale = -1
+        self.mRestretchAudio = True
         self.mIntervals = []
         
         self.mOutputDirectory = None
@@ -59,6 +60,18 @@ class cScene:
         
         previous_value = self.mQScale
         self.mQScale = int( iQScale )
+        return previous_value
+
+    ## To know if restretch audio should be applied
+    #
+    #  @param  iRestretchAudio  bool  Set the restretchaudio (if not None)
+    #  @return                  bool  The previous/current restretchaudio
+    def RestretchAudio( self, iRestretchAudio=None ):
+        if iRestretchAudio is None:
+            return self.mRestretchAudio
+        
+        previous_value = self.mRestretchAudio
+        self.mRestretchAudio = iRestretchAudio
         return previous_value
 
     ## Get all the intervals

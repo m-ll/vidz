@@ -53,6 +53,30 @@ class cConvert:
     def _RunCleanN( self ):
         for interval, clean in zip( self.mScene.Intervals(), self.mScene.OutputParts() ):
             self._RunCleanInterval( interval, clean )
+    
+    def _GetAMapParameters( self, iInterval ):
+        # All audio streams
+        if iInterval.AMap() is None:
+            return [ '-map', '0:a' ]
+
+        # Legacy: only 1 audio stream
+        if iInterval.AMap().startswith( '0:' ):
+            return [ '-map', iInterval.AMap() ]
+
+        indexes = iInterval.AMap().split( ',' )
+        maps = []
+        for index in indexes:
+            maps.append( '-map' )
+            maps.append( '0:a:' + index )
+        return maps
+
+    def _GetVMapParameters( self, iInterval ):
+        # All video streams
+        if iInterval.VMap() is None:
+            return [ '-map', '0:v' ]
+
+        # Legacy: only 1 video stream
+        return [ '-map', iInterval.VMap() ]
 
     ## Create a 'clean' file for an interval
     #
@@ -62,8 +86,7 @@ class cConvert:
         command = [ self.mFFmpeg, 
                     '-i', self.mSource.PathFile() ]
 
-        if iInterval.VMap() and iInterval.AMap():
-            command += [ '-map', iInterval.VMap(), '-map', iInterval.AMap() ]
+        command += self._GetVMapParameters( iInterval ) + self._GetAMapParameters( iInterval )
 
         command += ['-vcodec', 'copy', '-acodec', 'copy', 
                     '-ss', iInterval.SS(), 
@@ -85,6 +108,7 @@ class cConvert:
                     '-f', 'concat', 
                     '-safe', '0', 
                     '-i', self.mScene.OutputList(), 
+                    '-map', '0', 
                     '-c', 'copy', 
                     self.mScene.OutputClean() ]
 
@@ -98,10 +122,27 @@ class cConvert:
     def RunConvert( self ):
         if not self.mScene.OutputClean().exists():
             return
+
+        if not self.mScene.RestretchAudio():
+            # Make convertion
+            command = [ self.mFFmpeg, 
+                        '-i', self.mScene.OutputClean(), 
+                        '-map', '0', 
+                        '-qscale:v', str( self.mScene.QScale() ), 
+                        '-vtag', 'XVID', 
+                        # '-c:a', 'copy', 
+                        self.mScene.OutputAvi() ]
+
+            self._PrintHeader( command )
+            cp = self._Run( command )
+            self._PrintFooter( cp )
+
+            return
         
         # Make convertion
         command = [ self.mFFmpeg, 
                     '-i', self.mScene.OutputClean(), 
+                    '-map', '0', 
                     '-qscale:v', str( self.mScene.QScale() ), 
                     '-vtag', 'XVID', 
                     self.mScene.OutputAviTmp() ]
@@ -109,7 +150,7 @@ class cConvert:
         self._PrintHeader( command )
         cp = self._Run( command )
         self._PrintFooter( cp )
-        
+
         #---
 
         #
@@ -220,6 +261,7 @@ class cConvert:
         # Merge video and sound to the final avi
         command = [ self.mFFmpeg, 
                     '-i', self.mScene.OutputAviTmp(), 
+                    '-map', '0', 
                     '-c:v', 'copy', 
                     '-filter:a', f'atempo={ratio}', 
                     self.mScene.OutputAvi() ]

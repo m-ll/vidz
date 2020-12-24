@@ -4,6 +4,105 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+<!-- https://trac.ffmpeg.org/wiki/Map
+
+~/work/vidz/ffmpeg-4.3.1-amd64-static/ffmpeg -i "concat:VTS_01_1.VOB|VTS_01_2.VOB|VTS_01_3.VOB|VTS_01_4.VOB" -c copy -map 0:v -map 0:a retraite.vob -->
+
+    <source id="77">
+        <scene qscale="5" name="nes-en-chine">
+            <interval ss="00:11:16.760" to="00:18:30.920" amap="1,2,0" />
+            <interval ss="00:24:52.080" to="00:46:21.920" amap="1,2,0" />
+            <interval ss="00:52:45.560" to="01:35:53.000" amap="1,2,0" />
+        </scene>
+    </source>
+    <source id="76">
+        <scene qscale="3" name="niko-2">
+            <interval ss="00:14:17.097" to="00:29:39.737" />
+            <interval ss="00:30:36.497" to="00:57:59.817" />
+            <interval ss="01:03:08.057" to="01:28:17.857" />
+        </scene>
+    </source>
+    <!-- <source id="75">
+        <scene qscale="3" name="yeti-et-compagnie-sd"> // en SD, reenregistré
+            <interval ss="00:12:05.480" to="00:44:30.480" />
+            <interval ss="00:49:04.960" to="01:26:37.280" />
+            <interval ss="01:31:05.960" to="01:53:19.760" />
+        </scene>
+    </source> -->
+    <source id="74">
+        <scene qscale="3" name="zootopie">
+            <interval ss="01:12:06.520" to="01:36:11.160" amap="1,0,2" />
+            <interval ss="01:42:20.560" to="02:10:49.880" amap="1,0,2" />
+            <interval ss="02:16:55.440" to="02:56:34.760" amap="1,0,2" />
+        </scene>
+    </source>
+    <!-- <source id="73">
+        <scene qscale="3" name="balto-2-1"> // reenregistré
+            <interval ss="00:03:25.280" to="" />
+            <interval ss="" to="" />
+            <interval ss="" to="" />
+        </scene>
+    </source>
+    <source id="72">
+        <scene qscale="3" name="balto-2-2">
+            <interval ss="00:00:00.640" to="00:01:37.600" /> // reenregistré
+        </scene>
+        <scene qscale="3" name="balto-3">
+            <interval ss="00:10:08.960" to="00:59:31.920" />
+            <interval ss="01:05:3" to="" />                          // pas fini, reenregistré
+            <interval ss="" to="" />
+        </scene>
+    </source> -->
+
+    <source id="71">
+        <scene qscale="5" name="kirikou-et-la-sorciere">
+            <interval ss="00:01:37.840" to="00:24:42.600" />
+            <interval ss="00:31:12.080" to="00:53:27.240" />
+            <interval ss="00:59:54.960" to="01:21:41.480" />
+        </scene>
+    </source>
+    <source id="70">
+        <scene qscale="5" name="belle-et-sebastien-2">
+            <interval ss="00:06:45.557" to="00:36:52.077" />
+            <interval ss="00:43:05.357" to="01:18:24.037" />
+            <interval ss="01:24:37.157" to="01:47:36.117" />
+        </scene>
+    </source>
+    <source id="6f">
+        <scene qscale="3" name="asterix-et-cleopatre">
+            <interval ss="00:04:23.488" to="00:25:39.768" />
+            <interval ss="00:31:46.128" to="00:51:53.888" />
+            <interval ss="00:56:20.728" to="01:24:11.248" />
+        </scene>
+    </source>
+    <source id="6e">
+        <scene qscale="5" name="belle-et-sebastien">
+            <interval ss="00:05:42.960" to="00:28:38.000" amap="1,2,0" />
+            <interval ss="00:34:52.360" to="00:56:29.320" amap="1,2,0" />
+            <interval ss="01:02:41.440" to="01:50:28.720" amap="1,2,0" />
+        </scene>
+    </source>
+    <source id="6d">
+        <scene qscale="3" name="asterix-et-le-coup-du-menhir">
+            <interval ss="00:06:25.032" to="00:31:51.752" />
+            <interval ss="00:38:10.352" to="01:00:39.632" />
+            <interval ss="01:07:00.272" to="01:33:19.792" />
+        </scene>
+    </source>
+    <!-- <source id="6c">
+        <scene qscale="5" name="nes-en-chine">
+            <interval ss="00:00:00.584" to="00:25:24.344" /> // pas complet, reenregistré
+            <interval ss="00:31:50.584" to="00:54:13.624" />
+            <interval ss="01:00:32.744" to="01:23:47.864" />
+        </scene>
+    </source> -->
+    <source id="6b">
+        <scene qscale="3" name="asterix-et-la-surprise-de-cesar" restretch-audio="false">
+            <interval ss="00:09:38.776" to="00:35:37.416" />
+            <interval ss="00:36:38.936" to="01:21:19.336" />
+        </scene>
+    </source>
+
     <source id="6a">
         <scene qscale="3" name="kung-fu-panda-2">
             <interval ss="00:10:25.280" to="00:39:06.000" />
@@ -25,6 +124,8 @@
             <interval ss="01:10:19.840" to="01:37:54.120" />
         </scene>
     </source>
+
+    <!-- New way to compute ration stretching for sound -->
 
     <source id="67">
         <scene qscale="3" name="les-croods">
