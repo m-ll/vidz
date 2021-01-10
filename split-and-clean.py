@@ -27,33 +27,33 @@ from vidz.source import cSource
 parser = argparse.ArgumentParser( description='Clean and convert .ts to .avi.' )
 parser.add_argument( '-i', '--input',                       nargs='+', default=[],  help='One (or multiple) entry(ies) id in the xml' )
 parser.add_argument( '-t', '-d', '--test-sound', type=int,  nargs='?', const=10,    help='Test sound on small interval' )
-parser.add_argument( '-c', '--concat',                      nargs='+', default=[],  help='Concatenate following entry(ies)' )
+parser.add_argument( '-c', '--concat',                      nargs='+', default=[],  help='Concatenate following entry(ies) ("source-id"-"scene-index")' )
 args = parser.parse_args()
 
 #---
 
 data = Path( './data.xml' )
 if not data.exists():
-	print( Back.RED + f'data.xml file doesn\'t exist: {data}' )
-	sys.exit()
+    print( Back.RED + f'data.xml file doesn\'t exist: {data}' )
+    sys.exit()
 
 tree = ET.parse( data )
 root = tree.getroot()
 
 ffmpeg = Path( root.get( 'ffmpeg' ) )
 if not ffmpeg.exists():
-	print( Back.RED + f'ffmpeg binary path doesn\'t exist: {ffmpeg}' )
-	sys.exit()
+    print( Back.RED + f'ffmpeg binary path doesn\'t exist: {ffmpeg}' )
+    sys.exit()
 
 ffprobe = Path( root.get( 'ffprobe' ) )
 if not ffprobe.exists():
-	print( Back.RED + f'ffprobe binary path doesn\'t exist: {ffprobe}' )
-	sys.exit()
+    print( Back.RED + f'ffprobe binary path doesn\'t exist: {ffprobe}' )
+    sys.exit()
 
 output = Path( root.get( 'output' ) )
 if not output.exists():
-	print( Back.RED + f'output path doesn\'t exist: {output}' )
-	sys.exit()
+    print( Back.RED + f'output path doesn\'t exist: {output}' )
+    sys.exit()
 
 #---
 
@@ -80,7 +80,6 @@ def BuildSourceScenes( iXMLRoot, iEntry ):
         scene = cScene( source )
         scene.Name( xml_scene.get( 'name' ) )
         scene.QScale( xml_scene.get( 'qscale' ) )
-        scene.RestretchAudio( xml_scene.get( 'restretch-audio' ).lower() in [ '1', 'true' ] if xml_scene.get( 'restretch-audio' ) is not None else True )
 
         print( Fore.CYAN + f'scene: {scene.Name()}' )
 

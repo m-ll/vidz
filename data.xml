@@ -4,120 +4,203 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
-<!-- https://trac.ffmpeg.org/wiki/Map
+    <source id="6b">
+        <scene qscale="3" name="le-livre-de-la-jungle">
+            <interval ss="00:11:50.020" to="00:49:26.660" amap="1,0,2" />
+            <interval ss="00:53:17.300" to="01:30:59.140" amap="1,0,2" />
+        </scene>
+    </source>
 
-~/work/vidz/ffmpeg-4.3.1-amd64-static/ffmpeg -i "concat:VTS_01_1.VOB|VTS_01_2.VOB|VTS_01_3.VOB|VTS_01_4.VOB" -c copy -map 0:v -map 0:a retraite.vob -->
+    <source id="6a">
+        <scene qscale="3" name="monstres-et-compagnie">
+            <interval ss="00:12:00.468" to="00:31:05.948" />
+            <interval ss="00:35:17.388" to="01:02:09.588" />
+            <interval ss="01:05:36.708" to="01:41:26.348" />
+        </scene>
+    </source>
+    <source id="69">
+        <scene qscale="3" name="moi-moche-et-mechant-2">
+            <interval ss="00:14:33.041" to="00:56:32.801" amap="1,0,2" />
+            <interval ss="01:00:44.801" to="01:24:13.561" amap="1,0,2" />
+            <interval ss="01:26:54.001" to="01:51:19.201" amap="1,0,2" />
+        </scene>
+    </source>
 
-    <source id="77">
-        <scene qscale="5" name="nes-en-chine">
+    <source id="66">
+        <scene qscale="5" name="paddington-2">
+            <interval ss="00:10:37.520" to="01:47:19.040" />
+        </scene>
+    </source>
+    <source id="65">
+        <scene qscale="3" name="le-monde-de-dory">
+            <interval ss="00:09:24.600" to="00:32:34.960" amap="2,0,1" />
+            <interval ss="00:34:29.120" to="01:35:02.480" amap="2,0,1" />
+        </scene>
+    </source>
+
+    <!-- Use the new way to create avi (ts -> mp4 -> avi) from here: sound ok !!! do it with the previous ones and move this comment -->
+
+    <source id="68">
+    <!-- <source id="80"> -->
+        <scene qscale="3" name="belle-et-sebastien-3">
+            <interval ss="00:12:31.680" to="00:35:47.240" />
+            <interval ss="00:41:48.880" to="01:29:50.560" />
+            <interval ss="01:36:02.080" to="01:47:29.960" />
+        </scene>
+    </source>
+    <source id="67">
+    <!-- <source id="7f"> -->
+        <scene qscale="3" name="kirikou-2-et-les-betes-sauvages">
+            <interval ss="00:02:07.728" to="00:23:47.808" amap="1,2,0" />
+            <interval ss="00:30:15.208" to="00:54:29.008" amap="1,2,0" />
+            <interval ss="01:00:39.368" to="01:21:43.248" amap="1,2,0" />
+        </scene>
+    </source>
+    <source id="5d">
+    <!-- <source id="7e"> -->
+        <scene qscale="3" name="l-apprenti-pere-noel-2-et-le-flocon-magique">
+            <interval ss="00:00:03.704" to="00:22:59.904" />
+            <interval ss="00:27:44.904" to="00:52:11.424" />
+            <interval ss="00:56:30.264" to="01:23:49.024" />
+        </scene>
+    </source>
+
+    <source id="5e">
+    <!-- <source id="7d"> -->
+        <scene qscale="3" name="mary-poppins-2">
+            <interval ss="00:10:36.560" to="00:34:54.160" amap="1,2,0" />
+            <interval ss="00:41:00.480" to="01:29:54.640" amap="1,2,0" />
+            <interval ss="01:36:54.600" to="02:25:04.760" amap="1,2,0" />
+        </scene>
+    </source>
+    <source id="5f">
+    <!-- <source id="7c"> -->
+        <scene qscale="3" name="balto-2">
+            <interval ss="00:06:24.320" to="00:30:27.240" />
+            <interval ss="00:31:27.840" to="00:55:54.000" />
+            <interval ss="00:56:54.160" to="01:18:49.160" />
+        </scene>
+        <scene qscale="3" name="balto-3">
+            <interval ss="01:19:33.080" to="01:44:34.920" />
+            <interval ss="01:46:34.080" to="02:35:34.640" />
+        </scene>
+    </source>
+    <source id="62">
+    <!-- <source id="7b"> -->
+        <scene qscale="3" name="yeti-et-compagnie">
+            <interval ss="00:14:02.480" to="00:46:46.840" amap="1,0,2" />
+            <interval ss="00:52:54.800" to="01:14:50.360" amap="1,0,2" />
+            <interval ss="01:21:04.680" to="01:51:10.000" amap="1,0,2" />
+        </scene>
+    </source>
+    <source id="61">
+    <!-- <source id="79"> -->
+        <scene qscale="3" name="la-belle-et-le-clochard">
+            <interval ss="00:11:01.240" to="00:37:19.240" />
+            <interval ss="00:43:29.160" to="01:08:30.360" />
+            <interval ss="01:14:40.720" to="01:36:08.760" />
+        </scene>
+    </source>
+    <source id="60">
+    <!-- <source id="78"> -->
+        <scene qscale="3" name="peter-pan">
+            <interval ss="00:06:27.292" to="00:41:25.772" amap="1,0,2" />
+            <interval ss="00:47:36.532" to="01:15:16.772" amap="1,0,2" />
+            <interval ss="01:21:21.612" to="01:32:23.092" amap="1,0,2" />
+        </scene>
+    </source>
+
+    <source id="63">
+    <!-- <source id="77"> -->
+        <scene qscale="5" name="nes-en-chine___without-end">
             <interval ss="00:11:16.760" to="00:18:30.920" amap="1,2,0" />
             <interval ss="00:24:52.080" to="00:46:21.920" amap="1,2,0" />
             <interval ss="00:52:45.560" to="01:35:53.000" amap="1,2,0" />
         </scene>
     </source>
-    <source id="76">
+    <source id="64">
+    <!-- <source id="76"> -->
         <scene qscale="3" name="niko-2">
             <interval ss="00:14:17.097" to="00:29:39.737" />
             <interval ss="00:30:36.497" to="00:57:59.817" />
             <interval ss="01:03:08.057" to="01:28:17.857" />
         </scene>
     </source>
-    <!-- <source id="75">
-        <scene qscale="3" name="yeti-et-compagnie-sd"> // en SD, reenregistré
-            <interval ss="00:12:05.480" to="00:44:30.480" />
-            <interval ss="00:49:04.960" to="01:26:37.280" />
-            <interval ss="01:31:05.960" to="01:53:19.760" />
-        </scene>
-    </source> -->
-    <source id="74">
+    <source id="56">
+    <!-- <source id="74"> -->
         <scene qscale="3" name="zootopie">
             <interval ss="01:12:06.520" to="01:36:11.160" amap="1,0,2" />
             <interval ss="01:42:20.560" to="02:10:49.880" amap="1,0,2" />
             <interval ss="02:16:55.440" to="02:56:34.760" amap="1,0,2" />
         </scene>
     </source>
-    <!-- <source id="73">
-        <scene qscale="3" name="balto-2-1"> // reenregistré
-            <interval ss="00:03:25.280" to="" />
-            <interval ss="" to="" />
-            <interval ss="" to="" />
-        </scene>
-    </source>
-    <source id="72">
-        <scene qscale="3" name="balto-2-2">
-            <interval ss="00:00:00.640" to="00:01:37.600" /> // reenregistré
-        </scene>
-        <scene qscale="3" name="balto-3">
-            <interval ss="00:10:08.960" to="00:59:31.920" />
-            <interval ss="01:05:3" to="" />                          // pas fini, reenregistré
-            <interval ss="" to="" />
-        </scene>
-    </source> -->
-
-    <source id="71">
-        <scene qscale="5" name="kirikou-et-la-sorciere">
+    
+    <source id="58">
+    <!-- <source id="71"> -->
+        <scene qscale="5" name="kirikou-1-et-la-sorciere">
             <interval ss="00:01:37.840" to="00:24:42.600" />
             <interval ss="00:31:12.080" to="00:53:27.240" />
             <interval ss="00:59:54.960" to="01:21:41.480" />
         </scene>
     </source>
-    <source id="70">
+    <source id="57">
+    <!-- <source id="70"> -->
         <scene qscale="5" name="belle-et-sebastien-2">
             <interval ss="00:06:45.557" to="00:36:52.077" />
             <interval ss="00:43:05.357" to="01:18:24.037" />
             <interval ss="01:24:37.157" to="01:47:36.117" />
         </scene>
     </source>
-    <source id="6f">
+    <source id="5c">
+    <!-- <source id="6f"> -->
         <scene qscale="3" name="asterix-et-cleopatre">
             <interval ss="00:04:23.488" to="00:25:39.768" />
             <interval ss="00:31:46.128" to="00:51:53.888" />
             <interval ss="00:56:20.728" to="01:24:11.248" />
         </scene>
     </source>
-    <source id="6e">
+    <source id="5b">
+    <!-- <source id="6e"> -->
         <scene qscale="5" name="belle-et-sebastien">
             <interval ss="00:05:42.960" to="00:28:38.000" amap="1,2,0" />
             <interval ss="00:34:52.360" to="00:56:29.320" amap="1,2,0" />
             <interval ss="01:02:41.440" to="01:50:28.720" amap="1,2,0" />
         </scene>
     </source>
-    <source id="6d">
+    <source id="5a">
+    <!-- <source id="6d"> -->
         <scene qscale="3" name="asterix-et-le-coup-du-menhir">
             <interval ss="00:06:25.032" to="00:31:51.752" />
             <interval ss="00:38:10.352" to="01:00:39.632" />
             <interval ss="01:07:00.272" to="01:33:19.792" />
         </scene>
     </source>
-    <!-- <source id="6c">
-        <scene qscale="5" name="nes-en-chine">
-            <interval ss="00:00:00.584" to="00:25:24.344" /> // pas complet, reenregistré
-            <interval ss="00:31:50.584" to="00:54:13.624" />
-            <interval ss="01:00:32.744" to="01:23:47.864" />
-        </scene>
-    </source> -->
-    <source id="6b">
+    <source id="59">
+    <!-- <source id="6b"> -->
         <scene qscale="3" name="asterix-et-la-surprise-de-cesar" restretch-audio="false">
             <interval ss="00:09:38.776" to="00:35:37.416" />
             <interval ss="00:36:38.936" to="01:21:19.336" />
         </scene>
     </source>
 
-    <source id="6a">
+    <source id="51">
+    <!-- <source id="6a"> -->
         <scene qscale="3" name="kung-fu-panda-2">
             <interval ss="00:10:25.280" to="00:39:06.000" />
             <interval ss="00:45:34.520" to="01:13:40.280" />
             <interval ss="01:20:09.280" to="01:41:15.480" />
         </scene>
     </source>
-    <source id="69">
+    <source id="50">
+    <!-- <source id="69"> -->
         <scene qscale="3" name="coco">
             <interval ss="00:04:56.317" to="00:35:08.077" vmap="0:0" amap="0:3" />
             <interval ss="00:41:10.677" to="01:11:06.437" vmap="0:0" amap="0:3" />
             <interval ss="01:16:23.917" to="01:48:05.357" vmap="0:0" amap="0:3" />
         </scene>
     </source>
-    <source id="68">
+    <source id="4f">
+    <!-- <source id="68"> -->
         <scene qscale="3" name="scooby-doo-2">
             <interval ss="00:00:50.600" to="00:29:12.040" />
             <interval ss="00:35:34.600" to="01:04:05.640" />
@@ -127,21 +210,24 @@
 
     <!-- New way to compute ration stretching for sound -->
 
-    <source id="67">
+    <source id="54">
+    <!-- <source id="67"> -->
         <scene qscale="3" name="les-croods">
             <interval ss="00:07:52.800" to="00:34:19.680" />
             <interval ss="00:40:39.800" to="01:15:07.640" />
             <interval ss="01:21:33.520" to="01:47:54.280" />
         </scene>
     </source>
-    <source id="66">
+    <source id="53">
+    <!-- <source id="66"> -->
         <scene qscale="3" name="kung-fu-panda">
             <interval ss="00:08:05.336" to="00:33:16.536" />
             <interval ss="00:39:38.896" to="01:07:28.816" />
             <interval ss="01:13:49.656" to="01:40:34.136" />
         </scene>
     </source>
-    <source id="65">
+    <source id="52">
+    <!-- <source id="65"> -->
         <scene qscale="3" name="scooby-doo">
             <interval ss="00:08:13.440" to="00:33:00.640" />
             <interval ss="00:38:56.440" to="01:08:50.760" />
@@ -149,7 +235,8 @@
         </scene>
     </source>
 
-    <source id="64">
+    <source id="47">
+    <!-- <source id="64"> -->
         <scene qscale="7" name="too-cute-1-2">
             <interval ss="00:00:46.480" to="00:23:19.080" />
             <interval ss="00:29:24.440" to="00:45:59.520" />
@@ -157,15 +244,17 @@
             <interval ss="01:14:07.000" to="01:29:54.840" />
         </scene>
     </source>
-    <source id="63">
-        <scene qscale="7" name="too-cute-2-2">
+    <source id="46">
+    <!-- <source id="63"> -->
+        <scene qscale="7" name="too-cute-2-2___without-end">
             <interval ss="00:00:01.920" to="00:01:44.480" />
             <interval ss="00:10:15.680" to="00:33:45.560" />
             <interval ss="00:40:05.680" to="00:55:50.160" />
             <interval ss="01:03:24.960" to="01:34:52.960" />
         </scene>
     </source>
-    <source id="62">
+    <source id="55">
+    <!-- <source id="62"> -->
         <scene qscale="3" name="madagascar-2">
             <interval ss="00:10:01.520" to="00:43:21.000" />
             <interval ss="00:49:45.840" to="01:11:29.760" />
@@ -173,8 +262,9 @@
         </scene>
     </source>
 
-    <source id="61">
-        <scene qscale="3" name="le-grand-mechant-renard-et-autres-contes">
+    <source id="4c">
+    <!-- <source id="61"> -->
+        <scene qscale="3" name="le-grand-mechant-renard-et-autres-contes___without-start">
             <interval ss="00:00:00.200" to="00:21:38.120" />
             <interval ss="00:28:17.240" to="00:53:04.200" />
             <interval ss="00:57:25.360" to="01:21:06.240" />
@@ -183,43 +273,39 @@
             <interval ss="01:28:50.360" to="01:29:54.760" />
         </scene>
     </source>
-    <source id="60">
+    <source id="4b">
+    <!-- <source id="60"> -->
         <scene qscale="3" name="lucky-luke-tous-a-l-ouest-2-2">
             <interval ss="00:00:00.568" to="00:28:42.248" />
             <interval ss="00:35:21.568" to="00:56:44.768" />
             <interval ss="01:03:27.088" to="01:32:35.608" />
         </scene>
     </source>
-    <!--
-    $ ./ffmpeg-4.3.1-amd64-static/ffmpeg -f concat -safe 0 -i merge-avi.txt -c copy /mnt/f/vidz/lucky-luke-tous-a-l-ouest.avi
-
-    # this is a comment
-    file '/mnt/f/vidz/lucky-luke-tous-a-l-ouest-1-2.avi'
-    file '/mnt/f/vidz/lucky-luke-tous-a-l-ouest-2-2.avi'
-    -->
-    <source id="5f">
+    <source id="4a">
+    <!-- <source id="5f"> -->
         <scene qscale="3" name="volt-star-malgre-lui">
             <interval ss="00:02:50.953" to="00:30:38.273" />
             <interval ss="00:31:40.913" to="01:02:30.793" />
             <interval ss="01:05:09.313" to="01:32:12.513" />
         </scene>
     </source>
-    <source id="5e">
+    <source id="49">
+    <!-- <source id="5e"> -->
         <scene qscale="3" name="cro-man">
             <interval ss="00:06:14.440" to="00:32:33.680" />
             <interval ss="00:38:34.840" to="01:00:51.480" />
             <interval ss="01:07:08.560" to="01:32:00.480" />
         </scene>
     </source>
-    <source id="5d">
+    <source id="48">
+    <!-- <source id="5d"> -->
         <scene qscale="3" name="l-ours">
             <interval ss="00:14:24.453" to="01:42:29.613" />
         </scene>
     </source>
 
-
-
-    <source id="5c-nl" file="/mnt/f/vidz/nicky.ts">
+    <source id="41-nl" file="/mnt/f/vidz/nicky.ts">
+    <!-- <source id="5c-nl" file="/mnt/f/vidz/nicky.ts"> -->
         <scene qscale="3" name="nicky-larson-private-eyes">
             <interval ss="00:07:24.628" to="00:43:34.548" />
             <interval ss="00:49:54.228" to="01:19:32.628" />
@@ -228,7 +314,8 @@
     </source>
     <!-- /mnt/d/Users/Mike/work/vidz/ffmpeg-4.3.1-amd64-static/ffmpeg -i /mnt/g/LGDVR/0000005cREC/0000005c00000001.TS -c copy /mnt/f/vidz/nicky.ts -->
     
-    <source id="5a">
+    <source id="40">
+    <!-- <source id="5a"> -->
         <scene qscale="7" name="too-cute">
             <interval ss="00:07:07.920" to="00:30:43.120" />
             <interval ss="00:34:55.200" to="00:51:12.760" />
@@ -237,7 +324,8 @@
             <interval ss="02:24:52.760" to="03:04:38.480" />
         </scene>
     </source>
-    <source id="59">
+    <source id="4e">
+    <!-- <source id="59"> -->
         <scene qscale="3" name="beethoven-1">
             <interval ss="00:01:39.040" to="00:47:40.080" />
             <interval ss="00:50:36.360" to="01:12:40.920" />
@@ -247,140 +335,141 @@
             <interval ss="01:27:26.920" to="01:35:08.200" />
         </scene>
     </source>
-    <source id="58">
+    <source id="4d">
+    <!-- <source id="58"> -->
         <scene qscale="3" name="beethoven-2-bis">
             <interval ss="00:00:05.200" to="00:31:21.560" />
             <interval ss="00:34:22.840" to="00:55:08.960" />
             <interval ss="00:58:14.080" to="01:18:18.560" />
         </scene>
     </source>
-    <!--
-    $ /mnt/d/Users/Mike/work/vidz/ffmpeg-4.3.1-amd64-static/ffmpeg -f concat -safe 0 -i /mnt/f/vidz/kk.txt -c copy /mnt/f/vidz/beethoven-2.avi
 
-    # this is a comment
-    file '/mnt/f/vidz/beethoven-2-prime.avi'
-    file '/mnt/f/vidz/beethoven-2-bis.avi'
-    -->
-
-    <source id="56">
+    <source id="42">
+    <!-- <source id="56"> -->
         <scene qscale="3" name="jurassic-park-3">
             <interval ss="00:13:46.880" to="00:47:52.000" />
             <interval ss="00:54:03.160" to="01:21:48.840" />
             <interval ss="01:28:03.080" to="01:47:00.480" />
         </scene>
     </source>
-    <source id="55">
+    <source id="44">
+    <!-- <source id="55"> -->
         <scene qscale="3" name="jurassic-park-2">
             <interval ss="00:13:04.520" to="00:47:52.840" />
             <interval ss="00:54:07.120" to="01:22:58.880" />
             <interval ss="01:29:09.400" to="02:22:42.240" />
         </scene>
     </source>
-    <source id="54">
+    <source id="43">
+    <!-- <source id="54"> -->
         <scene qscale="3" name="minuscule-la-vallee-des-fourmis-perdues">
             <interval ss="00:06:03.800" to="01:26:49.520" />
         </scene>
     </source>
-    <source id="53">
+    <source id="45">
+    <!-- <source id="53"> -->
         <scene qscale="3" name="jurassic-park-1">
             <interval ss="00:12:40.160" to="00:48:50.800" />
             <interval ss="00:54:53.400" to="01:29:43.240" />
             <interval ss="01:35:55.040" to="02:20:01.160" />
         </scene>
     </source>
-<!-- synchro du son à partir de là -->
-    <source id="52">
+
+    <!-- synchro du son à partir de là -->
+
+    <source id="18">
+    <!-- <source id="52"> -->
         <scene qscale="5" name="planete-animal">
             <interval ss="00:07:24.400" to="01:39:25.960" />
             <interval ss="01:42:28.320" to="03:13:02.760" />
         </scene>
     </source>
-    <source id="51">
+    <source id="3e">
+    <!-- <source id="51"> -->
         <scene qscale="3" name="le-seigneur-des-anneaux-3-le-retour-du-roi">
             <interval ss="00:13:13.720" to="00:55:00.160" />
             <interval ss="01:01:12.640" to="01:39:02.520" />
             <interval ss="01:45:14.400" to="03:30:11.240" />
         </scene>
     </source>
-    <source id="50">
+    <source id="3c">
+    <!-- <source id="50"> -->
         <scene qscale="3" name="le-seigneur-des-anneaux-1-la-communaute-de-l-anneau">
             <interval ss="00:13:24.080" to="00:58:03.240" />
             <interval ss="01:04:07.600" to="01:38:24.600" />
             <interval ss="01:44:20.040" to="03:09:14.000" />
         </scene>
     </source>
-    <source id="4f">
+    <source id="3d">
+    <!-- <source id="4f"> -->
         <scene qscale="3" name="le-seigneur-des-anneaux-2-les-2-tours">
             <interval ss="00:12:54.400" to="00:56:29.240" />
             <interval ss="01:02:46.840" to="01:36:11.520" />
             <interval ss="01:42:18.040" to="03:10:07.720" />
         </scene>
     </source>
-    <source id="4e">
+    <source id="3f">
+    <!-- <source id="4e"> -->
         <scene qscale="3" name="la-verite-sur-le-t-rex">
             <interval ss="00:13:13.200" to="01:01:43.160" />
         </scene>
     </source>
-    <source id="4d">
+    <source id="36">
+    <!-- <source id="4d"> -->
         <scene qscale="3" name="karate-kid-3">
             <interval ss="00:12:53.200" to="00:42:29.960" />
             <interval ss="00:48:25.560" to="01:17:44.040" />
             <interval ss="01:23:30.880" to="02:10:03.920" />
         </scene>
     </source>
-    <source id="4c">
+    <source id="35">
+    <!-- <source id="4c"> -->
         <scene qscale="3" name="harry-potter-7-et-les-reliques-de-la-mort-1">
             <interval ss="00:12:00.120" to="00:56:20.680" vmap="0:0" amap="0:3" />
             <interval ss="01:00:52.280" to="01:35:23.840" vmap="0:0" amap="0:3" />
             <interval ss="01:37:49.280" to="02:28:48.920" vmap="0:0" amap="0:3" />
         </scene>
     </source>
-    <source id="4b">
+    <source id="3a">
+    <!-- <source id="4b"> -->
         <scene qscale="3" name="marry-poppins">
             <interval ss="00:05:04.720" to="00:29:46.640" />
             <interval ss="00:32:24.120" to="01:14:53.680" />
             <interval ss="01:16:43.720" to="02:21:47.160" />
         </scene>
     </source>
-    <source id="4a">
+    <source id="37">
+    <!-- <source id="4a"> -->
         <scene qscale="3" name="harry-potter-7-et-les-reliques-de-la-mort-2">
             <interval ss="00:14:21.280" to="00:53:10.600" vmap="0:3" amap="0:1" />
             <interval ss="00:58:35.400" to="01:28:11.480" vmap="0:3" amap="0:1" />
             <interval ss="01:33:32.080" to="02:18:58.240" vmap="0:3" amap="0:1" />
         </scene>
     </source>
-        <!-- <source id="49">
-            <scene qscale="5" name="t-rex">
-                <interval ss="00:00:00.400" to="00:44:55.640" /> pas complet
-            </scene>
-        </source> -->
-    <source id="48">
+    <source id="3b">
+    <!-- <source id="48"> -->
         <scene qscale="3" name="karate-kid-2">
             <interval ss="00:10:05.800" to="00:44:00.480" />
             <interval ss="00:48:10.560" to="01:27:32.840" />
             <interval ss="01:31:49.200" to="02:04:20.120" />
         </scene>
     </source>
-    <!--
-    $ /mnt/d/Users/Mike/work/vidz/ffmpeg-4.2-amd64-static/ffmpeg -f concat -safe 0 -i kk.txt -c copy karate-kid-1.avi
-
-    # this is a comment
-    file '/mnt/f/vidz/karate-kid-1-1-2.avi'
-    file '/mnt/f/vidz/karate-kid-1-2-2.avi'
-    -->
-    <source id="47">
+    <source id="39">
+    <!-- <source id="47"> -->
         <scene qscale="3" name="karate-kid-1-1-2">
             <interval ss="00:00:50.920" to="00:27:38.920" />
             <interval ss="00:31:57.160" to="01:18:25.360" />
         </scene>
     </source>
-    <source id="46">
+    <source id="38">
+    <!-- <source id="46"> -->
         <scene qscale="3" name="karate-kid-1-2-2">
             <interval ss="00:00:48.720" to="00:46:21.320" />
         </scene>
     </source>
 
-    <source id="45">
+    <source id="34">
+    <!-- <source id="45"> -->
         <scene qscale="3" name="harry-potter-6-et-le-prince-de-sang-mele">
             <interval ss="00:12:33.200" to="00:55:28.640" />
             <interval ss="01:00:09.680" to="01:38:20.760" />
@@ -388,28 +477,32 @@
         </scene>
     </source>
 
-    <source id="44">
+    <source id="31">
+    <!-- <source id="44"> -->
         <scene qscale="3" name="harry-potter-3-et-le-prisionnier-d-azkaban">
             <interval ss="00:12:49.347" to="01:06:55.147" vmap="0:0" amap="0:2" />
             <interval ss="01:11:33.187" to="02:22:26.267" vmap="0:0" amap="0:2" />
         </scene>
     </source>
 
-    <source id="43">
+    <source id="32">
+    <!-- <source id="43"> -->
         <scene qscale="3" name="harry-potter-4-et-la-coupe-de-feu">
             <interval ss="00:10:18.600" to="01:02:09.000" vmap="0:0" amap="0:2" />
             <interval ss="01:07:45.880" to="02:34:16.760" vmap="0:0" amap="0:2" />
         </scene>
     </source>
 
-    <source id="42">
+    <source id="33">
+    <!-- <source id="42"> -->
         <scene qscale="3" name="harry-potter-5-et-l-ordre-du-phenix">
             <interval ss="00:12:30.880" to="00:55:35.000" vmap="0:0" amap="0:2" />
             <interval ss="01:01:40.960" to="02:22:20.000" vmap="0:0" amap="0:2" />
         </scene>
     </source>
 
-    <source id="41">
+    <source id="23">
+    <!-- <source id="41"> -->
         <scene qscale="3" name="le-monde-magique-de-salma">
             <interval ss="00:13:44.320" to="00:46:23.840" />
             <interval ss="00:54:23.960" to="01:16:25.320" />
@@ -417,7 +510,8 @@
         </scene>
     </source>
 
-    <source id="40">
+    <source id="21">
+    <!-- <source id="40"> -->
         <scene qscale="3" name="norm">
             <interval ss="00:06:06.800" to="00:39:21.120" />
             <interval ss="00:45:58.520" to="01:11:17.040" />
@@ -425,14 +519,16 @@
         </scene>
     </source>
 
-    <source id="3f">
+    <source id="2d">
+    <!-- <source id="3f"> -->
         <scene qscale="3" name="moi-moche-et-mechant-3">
             <interval ss="00:00:29.200" to="00:50:21.960" />
             <interval ss="00:51:58.600" to="01:20:17.680" />
         </scene>
     </source>
 
-    <source id="3e">
+    <source id="2c">
+    <!-- <source id="3e"> -->
         <scene qscale="3" name="shrek-2">
             <interval ss="00:09:04.920" to="00:33:15.040" />
             <interval ss="00:34:48.520" to="01:03:03.880" />
@@ -440,28 +536,32 @@
         </scene>
     </source>
 
-    <source id="3d">
+    <source id="2b">
+    <!-- <source id="3d"> -->
         <scene qscale="3" name="harry-potter-1-a-l-ecole-des-sorciers">
             <interval ss="00:04:28.720" to="00:57:01.640" vmap="0:0" amap="0:2" />
             <interval ss="01:00:37.720" to="02:26:43.880" vmap="0:0" amap="0:2" />
         </scene>
     </source>
 
-    <source id="3c">
+    <source id="2a">
+    <!-- <source id="3c"> -->
         <scene qscale="3" name="shrek-4">
             <interval ss="00:05:04.680" to="00:36:32.000" />
             <interval ss="00:38:20.200" to="01:35:48.120" />
         </scene>
     </source>
 
-    <source id="3b">
+    <source id="30">
+    <!-- <source id="3b"> -->
         <scene qscale="3" name="harry-potter-2-et-la-chambre-des-secrets">
             <interval ss="00:02:05.520" to="00:52:54.360" vmap="0:0" amap="0:2" />
             <interval ss="00:58:07.760" to="02:33:37.800" vmap="0:0" amap="0:2" />
         </scene>
     </source>
 
-    <source id="3a">
+    <source id="2f">
+    <!-- <source id="3a"> -->
         <scene qscale="3" name="rox-et-rouky">
             <interval ss="00:01:34.920" to="00:28:17.400" vmap="0:0" amap="0:2" />
             <interval ss="00:34:34.400" to="01:13:27.840" vmap="0:0" amap="0:2" />
@@ -469,7 +569,8 @@
         </scene>
     </source>
 
-    <source id="39">
+    <source id="2e">
+    <!-- <source id="39"> -->
         <scene qscale="3" name="les-schtroumpfs-et-le-village-perdu">
             <interval ss="00:10:53.600" to="00:37:10.400" />
             <interval ss="00:44:07.080" to="01:11:38.720" />
@@ -477,13 +578,15 @@
         </scene>
     </source>
 
-    <source id="38">
+    <source id="27">
+    <!-- <source id="38"> -->
         <scene qscale="3" name="comme-des-betes">
             <interval ss="00:04:50.760" to="01:23:49.480" vmap="0:0" amap="0:2" />
         </scene>
     </source>
     
-    <source id="37">
+    <source id="26">
+    <!-- <source id="37"> -->
         <scene qscale="3" name="l-age-de-glace-3">
             <interval ss="00:12:26.840" to="00:32:18.200" />
             <interval ss="00:34:02.200" to="01:12:03.200" />
@@ -491,7 +594,8 @@
         </scene>
     </source>
     
-    <source id="36">
+    <source id="25">
+    <!-- <source id="36"> -->
         <scene qscale="3" name="ballerina">
             <interval ss="00:11:46.800" to="00:44:51.240" />
             <interval ss="00:50:49.480" to="01:20:25.720" />
@@ -499,13 +603,15 @@
         </scene>
     </source>
     
-    <source id="35">
+    <source id="24">
+    <!-- <source id="35"> -->
         <scene qscale="3" name="les-5-legendes">
             <interval ss="00:09:12.200" to="01:33:40.560" vmap="0:0" amap="0:2" />
         </scene>
     </source>
     
-    <source id="34">
+    <source id="22">
+    <!-- <source id="34"> -->
         <scene qscale="3" name="tous-en-scene">
             <interval ss="00:08:48.800" to="00:42:54.920" vmap="0:3" amap="0:1" />
             <interval ss="00:48:12.880" to="01:23:50.120" vmap="0:3" amap="0:1" />
@@ -513,13 +619,15 @@
         </scene>
     </source>
     
-    <source id="33">
+    <source id="28">
+    <!-- <source id="33"> -->
         <scene qscale="3" name="les-as-de-la-jungle-film">
             <interval ss="00:05:07.240" to="01:36:28.360" />
         </scene>
     </source>
     
-    <source id="32">
+    <source id="1e">
+    <!-- <source id="32"> -->
         <scene qscale="3" name="cendrillon">
             <interval ss="00:11:54.960" to="01:23:04.720" />
         </scene>
@@ -528,7 +636,8 @@
         </scene>
     </source>
     
-    <source id="31">
+    <source id="29">
+    <!-- <source id="31"> -->
         <scene qscale="3" name="hotel-transylvanie">
             <interval ss="00:24:08.680" to="00:57:57.840" />
             <interval ss="01:03:57.200" to="01:49:35.960" />
@@ -539,29 +648,30 @@
         </scene>
     </source>
     
-    <source id="30">
+    <source id="20">
+    <!-- <source id="30"> -->
         <scene qscale="3" name="aladdin">
             <interval ss="00:11:13.720" to="01:37:44.360" vmap="0:0" amap="0:2" />
         </scene>
     </source>
     
-    <source id="2f">
-        <scene qscale="3" name="la-reine-des-neiges-une-fete-givree">
-            <interval ss="02:13:12.160" to="02:20:27.400" />
-        </scene>
-        
-        <scene qscale="3" name="la-reine-des-neiges-joyeuses-fetes-avec-olaf">
-            <interval ss="01:51:57.720" to="02:12:36.800" />
-        </scene>
-        
+    <source id="1f">
+    <!-- <source id="2f"> -->
         <scene qscale="3" name="la-reine-des-neiges">
             <interval ss="00:10:33.040" to="00:37:54.800" />
             <interval ss="00:44:11.440" to="01:15:53.040" />
             <interval ss="01:22:10.880" to="01:51:25.080" />
         </scene>
+        <scene qscale="3" name="la-reine-des-neiges-joyeuses-fetes-avec-olaf">
+            <interval ss="01:51:57.720" to="02:12:36.800" />
+        </scene>
+        <scene qscale="3" name="la-reine-des-neiges-une-fete-givree">
+            <interval ss="02:13:12.160" to="02:20:27.400" />
+        </scene>
     </source>
     
-    <source id="2d">
+    <source id="1b">
+    <!-- <source id="2d"> -->
         <scene qscale="3" name="sahara">
             <interval ss="00:03:56.560" to="00:38:10.520" />
             <interval ss="00:44:22.480" to="01:13:35.840" />
@@ -569,7 +679,8 @@
         </scene>
     </source>
     
-    <source id="2c">
+    <source id="1a">
+    <!-- <source id="2c"> -->
         <scene qscale="3" name="planete-dinosaures">
             <interval ss="00:13:53.560" to="01:40:16.640" />
         </scene>
@@ -578,13 +689,15 @@
         </scene>
     </source>
     
-    <source id="2b">
+    <source id="19">
+    <!-- <source id="2b"> -->
         <scene qscale="3" name="le-museum-prend-vie">
             <interval ss="00:16:12.840" to="01:20:07.120" />
         </scene>
     </source>
     
-    <source id="2a">
+    <source id="1d">
+    <!-- <source id="2a"> -->
         <scene qscale="3" name="le-petit-prince">
             <interval ss="00:07:43.680" to="00:26:09.160" />
             <interval ss="00:31:50.920" to="01:11:01.640" />
@@ -592,15 +705,17 @@
         </scene>
     </source>
     
-    <source id="29">
+    <source id="1c">
+    <!-- <source id="29"> -->
         <scene qscale="3" name="rango">
             <interval ss="00:05:22.120" to="01:41:45.880" />
         </scene>
     </source>
 
-    <!-- after this point check vmap/amap -->
+    <!-- below this point check vmap/amap -->
     
-    <source id="28">
+    <source id="16">
+    <!-- <source id="28"> -->
         <scene qscale="5" name="les-as-de-la-jungle-2-07-chasse-au-tigre">
             <interval ss="00:01:42.680" to="00:12:14.520" />
         </scene>
@@ -621,14 +736,16 @@
         </scene>
     </source>
 
-    <source id="27">
+    <source id="15">
+    <!-- <source id="27"> -->
         <scene qscale="3" name="plane-2">
             <interval ss="00:05:19.520" to="01:08:37.440" />
             <interval ss="01:12:55.600" to="01:23:11.000" />
         </scene>
     </source>
 
-    <source id="26">
+    <source id="14">
+    <!-- <source id="26"> -->
         <scene qscale="3" name="turbo">
             <interval ss="00:12:50.120" to="00:44:53.760" />
             <interval ss="00:51:17.400" to="01:17:53.520" />
@@ -636,7 +753,8 @@
         </scene>
     </source>
 
-    <source id="25">
+    <source id="13">
+    <!-- <source id="25"> -->
         <scene qscale="3" name="la-belle-au-bois-dormant">
             <interval ss="00:10:08.920" to="00:41:49.720" />
             <interval ss="00:44:34.600" to="01:09:16.240" />
@@ -644,7 +762,8 @@
         </scene>
     </source>
     
-    <source id="24">
+    <source id="12">
+    <!-- <source id="24"> -->
         <scene qscale="3" name="oggy-et-les-cafards-film">
             <interval ss="00:06:44.600" to="00:32:43.440" />
             <interval ss="00:36:24.960" to="01:08:56.560" />
@@ -652,28 +771,23 @@
         </scene>
     </source>
     
-    <!-- <source id="23">
-        <scene qscale="3" name="oggy-et-les-cafards-film">
-            <interval ss="" to="" />
-            <interval ss="" to="" />
-            <interval ss="" to="" />
-        </scene>
-    </source> -->
-    
-    <source id="22">
+    <source id="10">
+    <!-- <source id="22"> -->
         <scene qscale="3" name="l-apprenti-pere-noel">
             <interval ss="00:07:09.800" to="00:36:20.000" />
             <interval ss="00:42:32.360" to="01:23:39.600" />
         </scene>
     </source>
     
-    <source id="21">
+    <source id="0f">
+    <!-- <source id="21"> -->
         <scene qscale="3" name="la-reine-des-neiges-joyeuses-fetes-avec-olaf">
             <interval ss="00:11:56.560" to="00:32:35.640" />
         </scene>
     </source>
     
-    <source id="20">
+    <source id="0e">
+    <!-- <source id="20"> -->
         <scene qscale="3" name="madagascar">
             <interval ss="00:20:27.040" to="01:39:31.600" />
         </scene>
@@ -682,7 +796,8 @@
         </scene>
     </source>
     
-    <source id="1f">
+    <source id="0d">
+    <!-- <source id="1f"> -->
         <scene qscale="3" name="festin-de-requin-2">
             <interval ss="00:13:24.080" to="00:38:17.880" />
             <interval ss="00:40:10.440" to="01:30:19.400" />
@@ -711,14 +826,16 @@
         </scene>
     </source>
     
-    <source id="1e">
+    <source id="17">
+    <!-- <source id="1e"> -->
         <scene qscale="3" name="gus-petit-oiseau-grand-voyage">
             <interval ss="00:01:49.440" to="00:31:24.840" />
             <interval ss="00:32:20.320" to="01:28:57.120" />
         </scene>
     </source>
     
-    <source id="11">
+    <source id="0b">
+    <!-- <source id="11"> -->
         <scene qscale="3" name="paddington">
             <interval ss="00:05:09.044" to="00:49:48.164" />
             <interval ss="00:55:58.964" to="01:26:35.404" />
@@ -726,13 +843,15 @@
         </scene>
     </source>
     
-    <source id="10">
-        <scene qscale="3" name="shaun">
+    <source id="08">
+    <!-- <source id="10"> -->
+        <scene qscale="3" name="shaun___without-start">
             <interval ss="00:00:00.400" to="01:09:17.800" />
         </scene>
     </source>
     
-    <source id="0f">
+    <source id="11">
+    <!-- <source id="0f"> -->
         <scene qscale="3" name="la-belle-et-le-clochard-2">
             <interval ss="00:07:07.840" to="00:25:42.600" />
             <interval ss="00:31:52.000" to="01:00:03.200" />
@@ -740,12 +859,8 @@
         </scene>
     </source>
     
-    <!-- <source id="0e">
-        <scene qscale="3" name="la-grande-marche-des-dinosaures-without-begin">
-        </scene>
-    </source> -->
-    
-    <source id="0d">
+    <source id="0a">
+    <!-- <source id="0d"> -->
         <scene qscale="3" name="le-monde-de-narnia-2">
             <interval ss="00:06:40.200" to="01:14:00.920" />
             <interval ss="01:20:15.080" to="01:44:20.600" />
@@ -753,7 +868,8 @@
         </scene>
     </source>
 
-    <source id="0c">
+    <source id="09">
+    <!-- <source id="0c"> -->
         <scene qscale="3" name="l-age-de-glace-4">
             <interval ss="00:01:48.360" to="00:38:23.960" />
             <interval ss="00:44:29.760" to="01:09:21.400" />
@@ -761,51 +877,51 @@
         </scene>
     </source>
 
-    <source id="0b">
-        <scene qscale="3" name="maya">
-            <interval ss="00:00:00.160" to="00:12:48.960" />
+    <source id="07">
+    <!-- <source id="0b"> -->
+        <scene qscale="3" name="maya___sd">
+            <interval ss="00:00:59.367" to="00:12:48.960" />
         </scene>
-        <scene qscale="5" name="zig-et-sharko-1-48-a-toutes-jambes">
+        <scene qscale="5" name="zig-et-sharko-1-48-a-toutes-jambes___sd">
             <interval ss="00:16:26.960" to="00:23:05.440" />
         </scene>
-        <scene qscale="5" name="zig-et-sharko-1-13-mon-ami-la-crevette">
+        <scene qscale="5" name="zig-et-sharko-1-13-mon-ami-la-crevette___sd">
             <interval ss="00:23:06.480" to="00:29:44.520" />
         </scene>
     </source>
 
-    <source id="0a">
-        <scene qscale="3" name="le-monde-de-narnia-1">
+    <source id="06">
+    <!-- <source id="0a"> -->
+        <scene qscale="3" name="le-monde-de-narnia-1___sd">
             <interval ss="00:07:11.080" to="00:51:03.000" />
             <interval ss="00:57:14.680" to="01:26:36.840" />
             <interval ss="01:31:23.080" to="02:25:36.960" />
         </scene>
     </source>
 
-    <source id="09">
-        <scene qscale="3" name="l-age-de-glace-4">
-        </scene>
-    </source>
-
-    <source id="08">
+    <source id="05">
+    <!-- <source id="08"> -->
         <scene qscale="3" name="le-monde-de-nemo">
             <interval ss="00:00:55.560" to="00:34:51.600" />
             <interval ss="00:41:01.640" to="01:04:45.960" />
             <interval ss="01:10:29.880" to="01:43:41.360" />
         </scene>
-        <scene qscale="3" name="sammy-2-without-end">
+        <scene qscale="3" name="sammy-2___without-end">
             <interval ss="01:44:07.960" to="02:35:16.880" />
             <interval ss="02:41:23.680" to="02:59:57.360" />
         </scene>
     </source>
 
-    <source id="07">
+    <source id="04">
+    <!-- <source id="07"> -->
         <scene qscale="3" name="rox-et-rouky-2">
             <interval ss="00:13:00.320" to="00:45:06.800" />
             <interval ss="00:51:25.520" to="01:19:16.120" />
         </scene>
     </source>
 
-    <source id="06">
+    <source id="03">
+    <!-- <source id="06"> -->
         <scene qscale="3" name="cendrillon-3-le-sortilege-de-cendrillon">
             <interval ss="00:15:58.160" to="00:48:06.440" />
             <interval ss="00:54:22.240" to="01:17:47.480" />
@@ -824,7 +940,8 @@
         </scene>
     </source>
 
-    <source id="05">
+    <source id="0c">
+    <!-- <source id="05"> -->
         <scene qscale="3" name="rio-2">
             <interval ss="00:13:16.200" to="00:58:00.800" />
             <interval ss="01:04:12.000" to="01:32:35.760" />
@@ -832,33 +949,21 @@
         </scene>
     </source>
 
-    <source id="04">
-        <scene qscale="3" name="rio">
+    <source id="02">
+    <!-- <source id="04"> -->
+        <scene qscale="3" name="rio___sd___without-start">
             <interval ss="00:00:00.040" to="00:38:39.920" />
             <interval ss="00:44:48.760" to="01:10:16.000" />
             <interval ss="01:16:30.400" to="01:32:15.520" />
         </scene>
     </source>
 
-    <source id="03">
+    <source id="01">
+    <!-- <source id="03"> -->
         <scene qscale="3" name="niko">
             <interval ss="00:08:12.560" to="00:47:57.120" />
             <interval ss="00:54:14.080" to="01:29:16.840" />
         </scene>
     </source>
 
-    <!-- <source id="02">
-        <scene qscale="3" name="cendrillon-3-le-sortilege-de-cendrillon">
-        </scene>
-    </source> -->
-
-    <source id="01">
-        <scene qscale="3" name="zorro">
-            <interval ss="00:00:00.120" to="00:16:49.559" />
-        </scene>
-        <scene qscale="3" name="niko-2">
-            <interval ss="00:20:15.479" to="01:28:14.039" />
-        </scene>
-    </source>
-    
 </root>

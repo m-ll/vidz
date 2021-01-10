@@ -53,6 +53,7 @@ class cConcat:
                         '-f', 'concat', 
                         '-safe', '0', 
                         '-i', fp.name, 
+                        '-map', '0', 
                         '-c', 'copy', 
                         self.mConcatPathFile ]
 

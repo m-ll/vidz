@@ -64,7 +64,7 @@ class cSource:
 
 ## Manage dvd source file
 #
-#  It can only manage a harddisk on drive f: and g:
+#  It can only manage a harddisk on drive f: / g: / h:
 #  and the structure inside must be like dvd (f:/LGDVR/000000XXREC/*.TS)
 class cSourceDVD( cSource ):
 
@@ -85,6 +85,12 @@ class cSourceDVD( cSource ):
             return True
 
         path = Path( f'/mnt/g/LGDVR/000000{self.Id()}REC' )
+        source_pathfile = list( path.glob( '*.TS' ) )
+        if source_pathfile:
+            self.mPathFile = Path( source_pathfile[0] )
+            return True
+
+        path = Path( f'/mnt/h/LGDVR/000000{self.Id()}REC' )
         source_pathfile = list( path.glob( '*.TS' ) )
         if source_pathfile:
             self.mPathFile = Path( source_pathfile[0] )

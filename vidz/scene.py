@@ -27,7 +27,6 @@ class cScene:
         
         self.mName = ''
         self.mQScale = -1
-        self.mRestretchAudio = True
         self.mIntervals = []
         
         self.mOutputDirectory = None
@@ -62,18 +61,6 @@ class cScene:
         self.mQScale = int( iQScale )
         return previous_value
 
-    ## To know if restretch audio should be applied
-    #
-    #  @param  iRestretchAudio  bool  Set the restretchaudio (if not None)
-    #  @return                  bool  The previous/current restretchaudio
-    def RestretchAudio( self, iRestretchAudio=None ):
-        if iRestretchAudio is None:
-            return self.mRestretchAudio
-        
-        previous_value = self.mRestretchAudio
-        self.mRestretchAudio = iRestretchAudio
-        return previous_value
-
     ## Get all the intervals
     #
     #  @return  int The intervals
@@ -98,11 +85,11 @@ class cScene:
 
         self.mOutputTmp = self.mOutputDirectory / f'{self.mName}.tmp.avi'
 
-        self.mOutputClean = self.mOutputDirectory / f'{self.mName}.clean.ts'
+        self.mOutputClean = self.mOutputDirectory / f'{self.mName}.clean.mp4'
         self.mOutputList = self.mOutputDirectory / f'{self.mName}.list.txt'
         
         for i, interval in enumerate( self.mIntervals ):
-            self.mOutputParts.append( self.mOutputDirectory / f'{self.mName}.{i+1}.ts' )
+            self.mOutputParts.append( self.mOutputDirectory / f'{self.mName}.{i+1}.mp4' )
 
     ## Get pathfile of the clean file (without ads)
     #
