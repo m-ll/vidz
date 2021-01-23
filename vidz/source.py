@@ -13,6 +13,7 @@
 #  Manage source file
 
 from pathlib import Path
+import random
 
 ## Manage source file
 class cSource:
@@ -23,15 +24,15 @@ class cSource:
     #  @return           cSource  The source depending of the node
     #  @return           None     No source was found for the node
     def Create( iXMLNode ):
-        id = iXMLNode.get( 'id' )
-        if id is None:
-            return None
+        dvd = iXMLNode.get( 'dvd' )
+        if dvd is not None:
+            return cSourceDVD( dvd )
 
-        input = iXMLNode.get( 'file' )
-        if input is not None:
-            return cSourceFile( id, input )
+        pathfile = iXMLNode.get( 'file' )
+        if pathfile is not None:
+            return cSourceFile( pathfile )
 
-        return cSourceDVD( id )
+        return None
 
     #---
 
@@ -107,8 +108,8 @@ class cSourceFile( cSource ):
     #
     #  @param  iId     int     The id of the source
     #  @param  iInput  string  The input pathfile
-    def __init__( self, iId, iInput ):
-        super().__init__( iId )
+    def __init__( self, iInput ):
+        super().__init__( random.randint( 1000, 9999 ) )
         self.mInput = iInput
 
     ## Build the source path

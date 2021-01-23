@@ -25,35 +25,24 @@ class cConvert:
     ## The constructor
     #
     #  @param  iFFmpeg  string   The ffmpeg command pathfile
-    #  @param  iSource  cSource  The source file
-    #  @param  iScene   cScene   The scene to convert
-    def __init__( self, iFFmpeg, iFFprobe, iSource, iScene ):
+    #  @param  iVideo   cVideo   The video file
+    #  @param  iScenes  cScene[] The scenes to convert
+    def __init__( self, iFFmpeg, iFFprobe, iVideo, iScenes ):
         self.mFFmpeg = iFFmpeg
-        self.mFFprobe = iFFprobe
-        self.mSource = iSource
-        self.mScene = iScene
+        self.mVideo = iVideo
+        self.mScenes = iScenes
 
     #---
 
     ## Create a 'clean' file (without ads) of the scene
     def RunClean( self ):
-        if not self.mScene.Intervals():
+        if len( self.mScenes ) == 1 and len( self.mScenes[0].Intervals() ) == 1:
             return
-        elif len( self.mScene.Intervals() ) == 1:
-            self._RunClean1()
-        else:
-            self._RunCleanN()
-            self._RunConcat()
 
-    ## Create a 'clean' file (without ads) of the scene (for 1 interval scene)
-    def _RunClean1( self ):
-        self._RunCleanInterval( self.mScene.Intervals()[0], self.mScene.OutputClean() )
+        for scene in self.mScenes:
+            for interval, segment in zip( scene.Intervals(), scene.Segments() ):
+                self._RunCleanInterval( scene, interval, segment )
 
-    ## Create multiple 'clean' files of the scene (for a scene with multiple intervals)
-    def _RunCleanN( self ):
-        for interval, clean in zip( self.mScene.Intervals(), self.mScene.OutputParts() ):
-            self._RunCleanInterval( interval, clean )
-    
     def _GetAMapParameters( self, iInterval ):
         # All audio streams
         if iInterval.AMap() is None:
@@ -82,39 +71,18 @@ class cConvert:
     #
     #  @param  iInterval  cInterval     The interval to make a clean
     #  @param  iOutput    pathlib.Path  The output 'clean' file of the interval
-    def _RunCleanInterval( self, iInterval, iOutput ):
+    def _RunCleanInterval( self, iScene, iInterval, iOutput ):
         command = [ self.mFFmpeg, 
-                    '-i', self.mSource.PathFile() ]
-        
-        #TODO: add options to get subtitle streams, but do it for each command
-        # '-probesize', '100M', 
-        # '-analyzeduration', str( 10 * 60 * 10**6 ), 
-
-        command += self._GetVMapParameters( iInterval ) + self._GetAMapParameters( iInterval )
-
-        command += ['-c', 'copy', 
+                    '-i', iScene.Source().PathFile(), 
+                        #TODO: add options to get subtitle streams, but do it for each command
+                        # '-probesize', '100M', 
+                        # '-analyzeduration', str( 10 * 60 * 10**6 ), 
+                    *self._GetVMapParameters( iInterval ), 
+                    *self._GetAMapParameters( iInterval ), 
+                    '-c', 'copy', 
                     '-ss', iInterval.SS(), 
                     '-to', iInterval.To(), 
                     iOutput ]
-
-        self._PrintHeader( command )
-        cp = self._Run( command )
-        self._PrintFooter( cp )
-
-    ## Concatenate multiple 'clean' files (from multiple intervals) of the scene
-    def _RunConcat( self ):
-        with open( self.mScene.OutputList(), 'w' ) as outfile:
-            outfile.write( "# this is a comment\n" )
-            for clean in self.mScene.OutputParts():
-                outfile.write( f"file '{clean.name}'\n" )
-
-        command = [ self.mFFmpeg, 
-                    '-f', 'concat', 
-                    '-safe', '0', 
-                    '-i', self.mScene.OutputList(), 
-                    '-map', '0', 
-                    '-c', 'copy', 
-                    self.mScene.OutputClean() ]
 
         self._PrintHeader( command )
         cp = self._Run( command )
@@ -124,21 +92,45 @@ class cConvert:
 
     ## Convert a 'clean' file (without ads) of the scene to an AVI-XVID file
     def RunConvert( self ):
-        if not self.mScene.OutputClean().exists():
-            return
+        if len( self.mScenes ) == 1 and len( self.mScenes[0].Intervals() ) == 1:
+            scene = self.mScenes[0]
+            interval = self.mScenes[0].Intervals()[0]
 
-        # Make convertion
-        command = [ self.mFFmpeg, 
-                    '-i', self.mScene.OutputClean(), 
-                    '-map', '0:v', 
-                    '-map', '0:a', 
-                    '-qscale:v', str( self.mScene.QScale() ), 
-                    '-vtag', 'XVID', 
-                    self.mScene.OutputAvi() ]
+            # Make convertion
+            command = [ self.mFFmpeg, 
+                        '-i', scene.Source().PathFile(), 
+                        *self._GetVMapParameters( interval ), 
+                        *self._GetAMapParameters( interval ), 
+                        '-ss', interval.SS(), 
+                        '-to', interval.To(), 
+                        '-qscale:v', str( self.mVideo.QScale() ), 
+                        '-vtag', 'XVID', 
+                        self.mVideo.OutputAvi() ]
 
-        self._PrintHeader( command )
-        cp = self._Run( command )
-        self._PrintFooter( cp )
+            self._PrintHeader( command )
+            cp = self._Run( command )
+            self._PrintFooter( cp )
+        else:
+            with open( self.mVideo.SegmentList(), 'w' ) as outfile:
+                outfile.write( "# this is a comment\n" )
+                for scene in self.mScenes:
+                    for segment in scene.Segments():
+                        outfile.write( f"file '{segment.name}'\n" )
+
+            # Make concat & convertion
+            command = [ self.mFFmpeg, 
+                        '-f', 'concat', 
+                        '-safe', '0', 
+                        '-i', self.mVideo.SegmentList(), 
+                        '-map', '0', 
+                        '-qscale:v', str( self.mVideo.QScale() ),
+                        '-vtag', 'XVID', 
+                        '-fflags', '+genpts', '-async', '1', 
+                        self.mVideo.OutputAvi() ]
+
+            self._PrintHeader( command )
+            cp = self._Run( command )
+            self._PrintFooter( cp )
 
     #---
 

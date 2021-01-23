@@ -21,44 +21,27 @@ class cScene:
     
     ## The constructor
     #
-    #  @param  iSource  cSource  The source file
-    def __init__( self, iSource ):
-        self.mSource = iSource
+    #  @param  iVideo  cVideo  The video file
+    def __init__( self, iVideo ):
+        self.mVideo = iVideo
         
-        self.mName = ''
-        self.mQScale = -1
+        self.mSource = None
         self.mIntervals = []
         
-        self.mOutputDirectory = None
-        self.mOutputClean = None
-        self.mOutputList = None
-        self.mOutputParts = []
+        # self.mOutputClean = None
+        self.mSegments = []
         self.mOutputAvi = None
-        
-        self.mOutputAviTmp = None
 
-    ## Manage the name of the scene
+    ## Manage the source
     #
-    #  @param  iName  string  Set the name of the scene (if not None)
-    #  @return        string  The previous/current name of the scene
-    def Name( self, iName=None ):
-        if iName is None:
-            return self.mName
+    #  @param  iSource  cSource  Set the source (if not None)
+    #  @return          cSource  The previous/current source
+    def Source( self, iSource=None ):
+        if iSource is None:
+            return self.mSource
         
-        previous_value = self.mName
-        self.mName = iName
-        return previous_value
-    
-    ## Manage the qscale
-    #
-    #  @param  iQScale  int  Set the qscale (if not None)
-    #  @return          int  The previous/current qscale
-    def QScale( self, iQScale=None ):
-        if iQScale is None:
-            return self.mQScale
-        
-        previous_value = self.mQScale
-        self.mQScale = int( iQScale )
+        previous_value = self.mSource
+        self.mSource = iSource
         return previous_value
 
     ## Get all the intervals
@@ -79,48 +62,26 @@ class cScene:
     #
     #  @param  iOutputRoot  pathlib.Path  The directory in which all the output files will be created
     def BuildOutput( self, iOutputRoot ):
-        self.mOutputDirectory = iOutputRoot / f'tmp-{self.mSource.Id()}-{self.mName}'
-        self.mOutputDirectory.mkdir( exist_ok=True )
-        self.mOutputAvi = iOutputRoot / f'{self.mName}.avi'
-
-        self.mOutputTmp = self.mOutputDirectory / f'{self.mName}.tmp.avi'
-
-        self.mOutputClean = self.mOutputDirectory / f'{self.mName}.clean.mp4'
-        self.mOutputList = self.mOutputDirectory / f'{self.mName}.list.txt'
+        output_directory = iOutputRoot / f'tmp-{self.mVideo.Name()}'
+        output_directory.mkdir( exist_ok=True )
+        
+        # self.mOutputClean = output_directory / f'{self.mVideo.Name()}.clean.ts'
         
         for i, interval in enumerate( self.mIntervals ):
-            self.mOutputParts.append( self.mOutputDirectory / f'{self.mName}.{i+1}.mp4' )
+            self.mSegments.append( output_directory / f'{self.mSource.Id()}-{self.mVideo.Name()}.{i+1}.ts' )
 
     ## Get pathfile of the clean file (without ads)
     #
     #  @return  Path  The clean file
-    def OutputClean( self ):
-        return self.mOutputClean
+    # def OutputClean( self ):
+    #     return self.mOutputClean
         
     ## Get pathfiles of all subfiles (1 for each interval)
     #
     #  @return  Path[]  The subfiles
-    def OutputParts( self ):
-        return self.mOutputParts
+    def Segments( self ):
+        return self.mSegments
         
-    ## Get pathfile of the list file (a txt file containing 1 line for each subfile)
-    #
-    #  @return  Path  The list file
-    def OutputList( self ):
-        return self.mOutputList
-        
-    ## Get pathfile of the avi (tmp) file
-    #
-    #  @return  Path  The avi file
-    def OutputAviTmp( self ):
-        return self.mOutputTmp
-
-    ## Get pathfile of the avi (final) file
-    #
-    #  @return  Path  The avi file
-    def OutputAvi( self ):
-        return self.mOutputAvi
-
 #---
         
 ## Manage interval

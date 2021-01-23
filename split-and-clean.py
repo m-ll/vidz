@@ -18,16 +18,15 @@ from colorama import init, Fore, Back, Style
 init( autoreset=True )
 
 from vidz.convert import cConvert
-from vidz.concat import cConcat
 from vidz.scene import cScene, cInterval
 from vidz.source import cSource
+from vidz.video import cVideo
 
 #---
 
 parser = argparse.ArgumentParser( description='Clean and convert .ts to .avi.' )
 parser.add_argument( '-i', '--input',                       nargs='+', default=[],  help='One (or multiple) entry(ies) id in the xml' )
 parser.add_argument( '-t', '-d', '--test-sound', type=int,  nargs='?', const=10,    help='Test sound on small interval' )
-parser.add_argument( '-c', '--concat',                      nargs='+', default=[],  help='Concatenate following entry(ies) ("source-id"-"scene-index")' )
 args = parser.parse_args()
 
 #---
@@ -57,31 +56,34 @@ if not output.exists():
 
 #---
 
-def BuildSourceScenes( iXMLRoot, iEntry ):
-    xml_sources = iXMLRoot.findall( f'./source[@id="{iEntry}"]' )
-    if not xml_sources:
-        print( Back.RED + f'no source for this id: {iEntry}' )
+def BuildVideo( iXMLRoot, iEntry ):
+    xml_videos = iXMLRoot.findall( f'./video[@id="{iEntry}"]' )
+    if not xml_videos:
+        print( Back.RED + f'no video for this id: {iEntry}' )
         return None
-    if len( xml_sources ) > 1:
-        print( Back.RED + f'multiple sources with same id: {iEntry}' )
+    if len( xml_videos ) > 1:
+        print( Back.RED + f'multiple videos with same id: {iEntry}' )
         return None
+    
+    xml_video = xml_videos[0]
 
-    xml_source = xml_sources[0]
+    video = cVideo( xml_video.get( 'id' ), xml_video.get( 'name' ), xml_video.get( 'qscale' ) )
+    video.BuildOutput( output )
 
-    source = cSource.Create( xml_source )
-    if not source.Build():
-        print( Back.RED + f'can\'t build source: {iEntry}' )
-        sys.exit()
-
-    print( Fore.CYAN + f'source: {source.PathFile()}' )
+    print( Fore.CYAN + f'video: {video.Name()}' )
 
     scenes = []
-    for xml_scene in xml_source.findall( 'scene' ):
-        scene = cScene( source )
-        scene.Name( xml_scene.get( 'name' ) )
-        scene.QScale( xml_scene.get( 'qscale' ) )
+    for xml_scene in xml_video.findall( 'scene' ):
+        scene = cScene( video )
 
-        print( Fore.CYAN + f'scene: {scene.Name()}' )
+        source = cSource.Create( xml_scene )
+        if not source.Build():
+            print( Back.RED + f'can\'t build source: {iEntry}' )
+            return None
+
+        scene.Source( source )
+
+        print( Fore.CYAN + f'scene: {scene.Source().PathFile()}' )
 
         for xml_interval in xml_scene.findall( 'interval' ):
             interval = cInterval()
@@ -106,41 +108,14 @@ def BuildSourceScenes( iXMLRoot, iEntry ):
         
         scene.BuildOutput( output )
         scenes.append( scene )
-    
-    return source, scenes
 
-#---
+    return video, scenes
 
 for entry in args.input:
-    source, scenes = BuildSourceScenes( root, entry )
-    if source is None:
+    video, scenes = BuildVideo( root, entry )
+    if video is None:
         continue
 
-    for scene in scenes:
-        convert = cConvert( ffmpeg, ffprobe, source, scene )
-        convert.RunClean()
-        convert.RunConvert()
-
-#---
-
-scenes = []
-for entry in args.concat:
-    scene_index = 0
-    tabs = entry.split( '-' )
-    if len( tabs ):
-        source_id = tabs.pop( 0 )
-    if len( tabs ):
-        scene_index = int( tabs.pop( 0 ) )
-
-    source, source_scenes = BuildSourceScenes( root, source_id )
-    if source is None:
-        continue
-
-    if not 0 <= scene_index < len( source_scenes ):
-        print( Back.RED + f'wrong scene index: {scene_index}/{len( source_scenes )-1}' )
-        sys.exit()
-        
-    scenes.append( source_scenes[scene_index] )
-
-concat = cConcat( ffmpeg, ffprobe, scenes )
-concat.RunConcat()
+    convert = cConvert( ffmpeg, ffprobe, video, scenes )
+    convert.RunClean()
+    convert.RunConvert()

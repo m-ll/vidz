@@ -4,6 +4,33 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="6e" qscale="3" name="kirikou-3-et-les-hommes-et-les-femmes">
+        <scene dvd="6e">
+            <interval ss="00:06:45.160" to="00:27:01.360" amap="1,0,2" />
+            <interval ss="00:28:06.360" to="00:52:39.760" amap="1,0,2" />
+            <interval ss="00:56:00.120" to="01:32:53.440" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="6d" qscale="5" name="le-peuple-miniature">
+        <scene dvd="6d">
+            <interval ss="00:05:48.440" to="01:35:51.520" />
+        </scene>
+    </video>
+    <video id="6c" qscale="5" name="la-vie-secrete-des-animaux-du-village"> <!-- Use this one to test sound, there is a good check at the end when a vase drops slowly -->
+        <scene dvd="6d">
+            <interval ss="01:37:34.000" to="01:39:57.120" />
+        </scene>
+        <scene dvd="6c">
+            <interval ss="00:00:00.981" to="01:16:51.621" />
+        </scene>
+    </video>
+
+
+
+    <!-- Use the new way to structure data, sound may be ok, to check ... -->
+
+
+
     <source id="6b">
         <scene qscale="3" name="le-livre-de-la-jungle">
             <interval ss="00:11:50.020" to="00:49:26.660" amap="1,0,2" />
@@ -38,7 +65,7 @@
         </scene>
     </source>
 
-    <!-- Use the new way to create avi (ts -> mp4 -> avi) from here: sound ok !!! do it with the previous ones and move this comment -->
+    <!-- Use the new way to create avi (ts -> mp4 -> avi) from here: sound ok !!! do it with the previous ones and move this comment ... sound NOT always ok ... -->
 
     <source id="68">
     <!-- <source id="80"> -->

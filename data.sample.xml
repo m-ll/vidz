@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root ffmpeg="./ffmpeg-4.2-amd64-static/ffmpeg" output="/mnt/f/vidz">
 
-    <source id="tt" file="/mnt/f/vidz/test.ts">
-        <scene qscale="5" name="sharko">
+    <video id="test2" qscale="5" name="la-vie-secrete-des-animaux-du-village-single">
+        <scene dvd="6d">
+            <interval ss="00:07:34.000" to="00:09:57.120" />
+        </scene>
+    </video>
+    <video id="test" qscale="5" name="la-vie-secrete-des-animaux-du-village-multi">
+        <scene dvd="6d">
+            <interval ss="01:37:34.000" to="01:39:57.120" />
+        </scene>
+        <scene dvd="6c">
+            <interval ss="00:00:00.981" to="00:02:51.621" />
+            <interval ss="00:11:00.981" to="00:12:51.621" />
+            <interval ss="00:25:00.981" to="00:26:51.621" />
+        </scene>
+    </video>
+
+    <video id="tt" qscale="5" name="sharko">
+        <scene file="/mnt/f/vidz/test.ts">
             <interval ss="00:01:42.680" to="00:02:14.520" />
         </scene>
-    </source>
+    </video>
     
-    <source id="28">
-        <scene qscale="3" name="planes-2">
+    <video id="28-1" qscale="3" name="planes-2">
+        <scene dvd="28">
             <interval ss="00:06:03.200" to="00:06:37.440" />
             <interval ss="00:08:55.600" to="00:09:11.000" />
             <interval ss="00:09:30.440" to="00:10:13.120" />
         </scene>
-        <scene qscale="5" name="les-as-de-la-jungle-2-07">
+    </video>
+    <video id="28-2" qscale="5" name="les-as-de-la-jungle-2-07">
+        <scene dvd="28">
             <interval ss="00:01:42.680" to="00:02:14.520" />
         </scene>
-        <scene qscale="5" name="les-as-de-la-jungle-2-08">
+    </video>
+    <video id="28-3" qscale="5" name="les-as-de-la-jungle-2-08">
+        <scene dvd="28">
             <interval ss="00:02:14.680" to="00:02:46.480" />
         </scene>
-    </source>
-    <source id="27">
-        <scene qscale="3" name="turbo">
-            <interval ss="00:06:03.200" to="00:06:37.440" />
-            <interval ss="00:12:55.600" to="00:13:11.000" />
-        </scene>
-    </source>
-    <source id="26">
-        <scene qscale="5" name="zig2">
-            <interval ss="00:01:42.680" to="00:02:14.520" />
-        </scene>
-        <scene qscale="5" name="oggy2">
-            <interval ss="00:02:14.680" to="00:02:46.480" />
-        </scene>
-    </source>
-    <source id="25">
-        <scene qscale="5" name="zig">
+    </video>
+    
+    <video id="25" qscale="5" name="zig">
+        <scene dvd="25">
             <!-- To be able to switch audio stream if the default one is not french -->
-            <interval ss="00:01:42.680" to="00:02:14.520" vmap="0:0" amap="0:1" />
+            <interval ss="00:01:42.680" to="00:02:14.520" amap="1,0,2" />
         </scene>
-    </source>
+    </video>
 </root>
