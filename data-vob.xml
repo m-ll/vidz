@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root 
+    ffmpeg="./ffmpeg-4.3.1-amd64-static/ffmpeg"
+    ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
+    output="/mnt/f/vidz">
+
+    <source id="119">
+        <video qscale="3" first-audio="1" unknown-streams="0" name="sexe-intentions-2">
+            <file vts="1" position="1" />
+        </video>
+    </source>
+
+    <source id="100">
+        <video qscale="3" name="tele-des-inconnus-1">
+            <file vts="2" position="1" />
+        </video>
+        <!-- <video qscale="3" name="tele-des-inconnus-1-bonus">
+            <file vts="3" position="1" />
+            <file vts="4" position="1" />
+            <file vts="5" position="1" />
+            <file vts="6" position="1" />
+        </video> -->
+    </source>
+
+</root>
