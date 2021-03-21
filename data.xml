@@ -4,6 +4,75 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="78" qscale="3" name="asterix-les-12-travaux">
+        <scene dvd="78">
+            <interval ss="00:03:43.601" to="00:27:48.841" />
+            <interval ss="00:29:37.601" to="01:13:48.641" />
+            <interval ss="01:15:01.841" to="01:23:28.601" />
+        </scene>
+    </video>
+    <video id="77" qscale="3" name="shaun-le-mouton">
+        <scene dvd="77">
+            <interval ss="00:00:16.544" to="00:25:06.784" />
+            <interval ss="00:31:38.464" to="01:02:23.344" />
+            <interval ss="01:08:42.624" to="01:29:23.984" />
+        </scene>
+    </video>
+    <video id="76" qscale="3" name="le-grand-mechant-renard-et-autres-contes">
+        <scene dvd="76">
+            <interval ss="00:09:07.896" to="00:36:14.776" amap="1,2,0" />
+            <interval ss="00:41:27.456" to="01:06:14.416" amap="1,2,0" />
+            <interval ss="01:12:33.456" to="01:39:32.456" amap="1,2,0" />
+        </scene>
+    </video>
+
+    <video id="75" qscale="5" name="sur-la-terre-des-dinosaures">
+        <scene dvd="75">
+            <interval ss="00:13:26.080" to="00:39:51.720" />
+            <interval ss="00:45:34.560" to="01:14:13.040" />
+            <interval ss="01:20:35.600" to="01:41:51.480" />
+        </scene>
+    </video>
+    <video id="74" qscale="5" name="felins___not-finish">
+        <scene dvd="74">
+            <interval ss="00:20:17.920" to="00:47:44.480" />
+            <interval ss="00:53:32.280" to="01:15:42.040" />
+            <interval ss="01:21:20.880" to="01:45:55.960" />
+        </scene>
+    </video>
+    <video id="73" qscale="5" name="une-planete-parfaite">
+        <scene dvd="73">
+            <interval ss="00:08:58.360" to="01:39:42.000" />
+        </scene>
+    </video>
+    <video id="72" qscale="3" name="balto-1">
+        <scene dvd="72">
+            <interval ss="00:12:42.112" to="00:39:26.272" />
+            <interval ss="00:45:51.792" to="01:10:52.992" />
+            <interval ss="01:17:13.592" to="01:34:56.112" />
+        </scene>
+    </video>
+    <video id="71" qscale="3" name="happy-feet-2___sd">
+        <scene dvd="71">
+            <interval ss="00:07:41.269" to="01:34:19.749" />
+        </scene>
+    </video>
+    <video id="70" qscale="3" name="happy-feet___sd">
+        <scene dvd="71">
+            <interval ss="01:36:18.589" to="01:42:04.989" />
+        </scene>
+        <scene dvd="70">
+            <interval ss="00:00:04.029" to="01:28:37.629" />
+        </scene>
+    </video>
+    <video id="6f" qscale="3" name="ferdinand">
+        <scene dvd="6f">
+            <interval ss="00:09:28.954" to="00:45:26.114" amap="1,2,0" />
+            <interval ss="00:51:45.954" to="01:21:35.994" amap="1,2,0" />
+            <interval ss="01:27:56.194" to="01:55:45.234" amap="1,2,0" />
+        </scene>
+    </video>
+
     <video id="6e" qscale="3" name="kirikou-3-et-les-hommes-et-les-femmes">
         <scene dvd="6e">
             <interval ss="00:06:45.160" to="00:27:01.360" amap="1,0,2" />
