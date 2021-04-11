@@ -4,6 +4,42 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="7d" qscale="5" name="plume-la-basse-cour-a-un-incroyable-talent">
+        <scene dvd="7d">
+            <interval ss="00:07:14.720" to="00:25:17.640" />
+            <interval ss="00:31:37.840" to="00:59:46.840" />
+            <interval ss="01:06:09.040" to="01:33:23.680" />
+        </scene>
+    </video>
+    <video id="7c" qscale="3" name="oceans-13">
+        <scene dvd="7c">
+            <interval ss="00:07:37.104" to="00:36:23.624" amap="1,0,2" />
+            <interval ss="00:40:49.424" to="01:33:32.704" amap="1,0,2" />
+            <interval ss="01:37:21.984" to="02:07:15.184" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="7b" qscale="3" name="oceans-11">
+        <scene dvd="7b">
+            <interval ss="00:05:11.080" to="00:44:06.920" />
+            <interval ss="00:49:30.920" to="01:21:44.320" />
+            <interval ss="01:27:55.880" to="02:03:27.520" />
+        </scene>
+    </video>
+    <video id="7a" qscale="3" name="oceans-12">
+        <scene dvd="7a">
+            <interval ss="00:10:44.960" to="00:55:00.200" />
+            <interval ss="01:00:34.720" to="01:35:21.680" />
+            <interval ss="01:38:55.720" to="02:13:46.120" />
+        </scene>
+    </video>
+    <video id="79" qscale="3" name="vaiana-la-legende-du-bout-du-monde-118-2016">
+        <scene dvd="79">
+            <interval ss="00:10:44.781" to="00:40:46.221" amap="2,0,1" />
+            <interval ss="00:44:28.861" to="01:17:46.941" amap="2,0,1" />
+            <interval ss="01:20:41.621" to="01:49:39.621" amap="2,0,1" />
+        </scene>
+    </video>
+
     <video id="78" qscale="3" name="asterix-les-12-travaux">
         <scene dvd="78">
             <interval ss="00:03:43.601" to="00:27:48.841" />
