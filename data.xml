@@ -4,6 +4,100 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="8b" qscale="3" name="kungfu-panda-3">
+        <scene dvd="8b">
+            <interval ss="00:09:42.160" to="00:34:10.960" />
+            <interval ss="00:40:41.200" to="01:09:32.960" />
+            <interval ss="01:15:55.120" to="01:43:41.160" />
+        </scene>
+    </video>
+    <video id="8a" qscale="5" name="sos-fantomes-2">
+        <scene dvd="8a">
+            <interval ss="00:10:16.033" to="00:35:17.393" amap="1,0,2" />
+            <interval ss="00:41:32.153" to="01:16:50.433" amap="1,0,2" />
+            <interval ss="01:23:11.873" to="01:58:32.593" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="89" qscale="5" name="hunger-games-3-la-revolte-2">
+        <scene dvd="89">
+            <interval ss="00:11:01.936" to="00:46:10.416" />
+            <interval ss="00:52:33.176" to="01:17:04.136" />
+            <interval ss="01:23:17.096" to="02:23:45.616" />
+        </scene>
+    </video>
+    <video id="88" qscale="3" name="vice-versa">
+        <scene dvd="88">
+            <interval ss="00:13:10.372" to="00:33:44.212" />
+            <interval ss="00:40:00.812" to="01:13:46.652" />
+            <interval ss="01:19:57.292" to="01:49:34.132" />
+        </scene>
+    </video>
+    <video id="87" qscale="5" name="sos-fantomes-1">
+        <scene dvd="87">
+            <interval ss="00:08:26.721" to="00:32:48.721" />
+            <interval ss="00:39:08.881" to="01:43:26.801" />
+            <interval ss="01:49:43.401" to="01:57:20.241" />
+        </scene>
+    </video>
+    <video id="86" qscale="5" name="hunger-games-3-la-revolte-1">
+        <scene dvd="86">
+            <interval ss="00:13:41.928" to="00:50:43.608" amap="1,0,2" />
+            <interval ss="00:57:02.328" to="01:28:10.448" amap="1,0,2" />
+            <interval ss="01:34:21.688" to="02:12:00.488" amap="1,0,2" />
+        </scene>
+    </video>
+
+    <video id="85" qscale="3" name="tempete-de-boulettes-geantes-2">
+        <scene dvd="85">
+            <interval ss="00:07:19.840" to="00:41:13.560" />
+            <interval ss="00:47:12.760" to="01:09:12.640" />
+            <interval ss="01:15:43.720" to="01:43:32.920" />
+        </scene>
+    </video>
+    <video id="84" qscale="3" name="les-indestructibles">
+        <scene dvd="84">
+            <interval ss="00:09:47.097" to="00:35:09.257" amap="1,0,2" />
+            <interval ss="00:41:01.537" to="01:15:29.177" amap="1,0,2" />
+            <interval ss="01:21:28.297" to="02:04:59.577" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="83" qscale="5" name="hunger-games-2-l-embrasement">
+        <scene dvd="83">
+            <interval ss="00:09:34.632" to="00:51:34.592" />
+            <interval ss="00:57:42.512" to="01:51:44.552" />
+            <interval ss="01:55:38.992" to="02:29:29.712" />
+        </scene>
+    </video>
+    <video id="82" qscale="5" name="hunger-games-1">
+        <scene dvd="82">
+            <interval ss="00:00:11.680" to="00:50:53.880" amap="1,0,2" />
+            <interval ss="00:57:05.680" to="01:39:44.200" amap="1,0,2" />
+            <interval ss="01:45:58.960" to="02:20:12.160" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="81" qscale="3" name="tempete-de-boulettes-geantes-1">
+        <scene dvd="81">
+            <interval ss="00:16:03.640" to="00:43:42.640" />
+            <interval ss="00:45:27.600" to="01:10:17.360" />
+            <interval ss="01:12:27.440" to="01:39:38.320" />
+        </scene>
+    </video>
+
+    <video id="80" qscale="3" name="les-pingouins-de-madagascar">
+        <scene dvd="80">
+            <interval ss="00:09:30.920" to="00:38:22.680" />
+            <interval ss="00:44:47.520" to="01:07:43.720" />
+            <interval ss="01:13:36.200" to="01:39:49.640" />
+        </scene>
+    </video>
+    <video id="7e" qscale="3" name="ratatouille">
+        <scene dvd="7e">
+            <interval ss="00:13:16.200" to="00:40:33.560" />
+            <interval ss="00:46:39.400" to="01:40:59.120" />
+            <interval ss="01:47:08.080" to="02:04:18.240" />
+        </scene>
+    </video>
+
     <video id="7d" qscale="5" name="plume-la-basse-cour-a-un-incroyable-talent">
         <scene dvd="7d">
             <interval ss="00:07:14.720" to="00:25:17.640" />
