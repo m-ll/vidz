@@ -4,6 +4,50 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="91" qscale="3" name="nicky-larson-le-parfum-de-cupidon">
+        <scene dvd="91">
+            <interval ss="00:12:44.680" to="00:31:53.240" />
+            <interval ss="00:38:06.720" to="01:08:24.160" />
+            <interval ss="01:14:37.040" to="01:50:08.480" />
+        </scene>
+    </video>
+    <video id="90" qscale="3" name="lucky-luke-daisy-town">
+        <scene dvd="90">
+            <interval ss="00:11:57.160" to="00:30:55.920" />
+            <interval ss="00:37:15.760" to="01:04:51.680" />
+            <interval ss="01:11:10.240" to="01:35:59.440" />
+        </scene>
+    </video>
+    <video id="8f" qscale="5" name="sherlock-gnomes">
+        <scene dvd="8f">
+            <interval ss="00:08:02.200" to="00:41:19.680" />
+            <interval ss="00:47:42.440" to="01:15:48.520" />
+            <interval ss="01:22:02.000" to="01:34:36.680" />
+        </scene>
+    </video>
+    <video id="8e" qscale="5" name="sammy-1">
+        <scene dvd="8e">
+            <interval ss="00:05:32.720" to="00:35:08.800" />
+            <interval ss="00:40:19.480" to="01:08:36.480" />
+            <interval ss="01:14:22.960" to="01:33:21.320" />
+        </scene>
+    </video>
+    <video id="8d" qscale="5" name="sammy-2">
+        <scene dvd="8d">
+            <interval ss="00:08:42.025" to="00:38:17.225" />
+            <interval ss="00:43:43.865" to="01:25:25.465" />
+            <interval ss="01:31:00.785" to="01:45:41.505" />
+        </scene>
+    </video>
+
+    <video id="8c" qscale="3" name="asterix-chez-les-bretons">
+        <scene dvd="8c">
+            <interval ss="00:05:44.493" to="00:31:00.093" />
+            <interval ss="00:37:16.973" to="01:03:29.893" />
+            <interval ss="01:09:44.693" to="01:30:10.173" />
+        </scene>
+    </video>
+
     <video id="8b" qscale="3" name="kungfu-panda-3">
         <scene dvd="8b">
             <interval ss="00:09:42.160" to="00:34:10.960" />
@@ -1132,10 +1176,10 @@
             <interval ss="00:41:01.640" to="01:04:45.960" />
             <interval ss="01:10:29.880" to="01:43:41.360" />
         </scene>
-        <scene qscale="3" name="sammy-2___without-end">
+        <!-- <scene qscale="3" name="sammy-2___without-end">
             <interval ss="01:44:07.960" to="02:35:16.880" />
             <interval ss="02:41:23.680" to="02:59:57.360" />
-        </scene>
+        </scene> -->
     </source>
 
     <source id="04">
