@@ -4,6 +4,33 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="95" qscale="5" name="un-monstre-a-paris___without-start">
+        <scene dvd="95">
+            <interval ss="00:00:00.909" to="00:25:14.549" />
+            <interval ss="00:31:24.589" to="01:01:56.669" />
+            <interval ss="01:08:13.469" to="01:28:48.669" />
+        </scene>
+    </video>
+    <video id="94" qscale="3" name="mirai-ma-petite-soeur">
+        <scene dvd="94">
+            <interval ss="00:08:04.840" to="01:39:09.000" amap="3,1,2,0" />
+        </scene>
+    </video>
+    <video id="93" qscale="3" name="asterix-le-gaulois">
+        <scene dvd="93">
+            <interval ss="00:14:00.800" to="00:52:20.800" />
+            <interval ss="00:54:34.520" to="01:16:35.480" />
+            <interval ss="01:22:19.440" to="01:26:38.200" />
+        </scene>
+    </video>
+    <video id="92" qscale="3" name="lucky-luke-la-ballade-des-dalton">
+        <scene dvd="92">
+            <interval ss="00:08:01.912" to="00:33:14.312" />
+            <interval ss="00:39:39.472" to="01:08:59.552" />
+            <interval ss="01:14:47.112" to="01:38:26.032" />
+        </scene>
+    </video>
+
     <video id="91" qscale="3" name="nicky-larson-le-parfum-de-cupidon">
         <scene dvd="91">
             <interval ss="00:12:44.680" to="00:31:53.240" />
