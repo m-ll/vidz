@@ -4,6 +4,29 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="98" qscale="3" name="cars-3">
+        <scene dvd="98">
+            <interval ss="00:12:42.393" to="00:31:29.553" />
+            <interval ss="00:36:12.873" to="01:34:10.673" />
+            <interval ss="01:35:24.673" to="01:48:57.633" />
+        </scene>
+    </video>
+    <video id="97" qscale="3" name="asterix-et-les-indiens">
+        <scene dvd="97">
+            <interval ss="00:02:53.453" to="00:35:49.533" />
+            <interval ss="00:39:06.413" to="01:06:09.133" />
+            <interval ss="01:07:53.813" to="01:22:50.733" />
+        </scene>
+    </video>
+
+    <video id="96" qscale="3" name="lucky-luke-les-dalton-en-cavale">
+        <scene dvd="96">
+            <interval ss="00:08:01.040" to="00:39:08.040" />
+            <interval ss="00:42:55.120" to="01:12:07.000" />
+            <interval ss="01:18:33.720" to="01:37:39.640" />
+        </scene>
+    </video>
+
     <video id="95" qscale="5" name="un-monstre-a-paris___without-start">
         <scene dvd="95">
             <interval ss="00:00:00.909" to="00:25:14.549" />
