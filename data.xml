@@ -4,6 +4,14 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <video id="99" qscale="3" name="asterix-et-les-vikings">
+        <scene dvd="99">
+            <interval ss="00:00:09.261" to="00:26:08.101" />
+            <interval ss="00:32:25.061" to="01:07:37.461" />
+            <interval ss="01:13:41.461" to="01:21:38.621" />
+        </scene>
+    </video>
+
     <video id="98" qscale="3" name="cars-3">
         <scene dvd="98">
             <interval ss="00:12:42.393" to="00:31:29.553" />
