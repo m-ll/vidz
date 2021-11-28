@@ -4,6 +4,156 @@
     ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
     output="/mnt/f/vidz">
 
+    <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
+
+    <video id="kp-01.01" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x01-l-entree-du-maitre-dragon">                   <scene dvd="9d"><interval ss="00:12:17.040" to="00:33:35.160" /></scene></video>
+    <video id="kp-01.02" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x02-dragon-bleu-joue-avec-le-feu">                <scene dvd="9d"><interval ss="00:33:36.160" to="00:54:47.280" /></scene></video>
+    <video id="kp-01.03" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x03-l-epee-du-phenix-rouge">                      <scene dvd="9d"><interval ss="01:02:02.480" to="01:23:46.160" /></scene></video>
+    <video id="kp-01.04" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x04-tortueux-est-le-chemin-emprunte-par-l-intrus"><scene dvd="9d"><interval ss="01:31:16.480" to="01:52:52.360" /></scene></video>
+    <video id="kp-01.05" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x05-une-pincee-d-herbes">                         <scene dvd="9b"><interval ss="01:58:47.600" to="02:20:31.240" /></scene></video>
+    <video id="kp-01.06" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x06-le-ver-est-dans-la-prune">                    <scene dvd="9b"><interval ss="02:28:57.920" to="02:50:41.480" /></scene></video>
+    <video id="kp-01.07" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x07-menace-sur-le-village-des-pandas">            <scene dvd="9b"><interval ss="02:58:56.080" to="03:20:39.760" /></scene></video>
+    <video id="kp-01.08" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x08-secrets-enfouis">                             <scene dvd="9b"><interval ss="03:20:41.040" to="03:41:53.520" /></scene></video>
+    <video id="kp-01.09" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x09-une-aventure-risquee">                        <scene dvd="9b"><interval ss="00:09:28.280" to="00:31:11.920" /></scene></video>
+    <video id="kp-01.10" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x10-le-retour-des-quatre-constellations">         <scene dvd="9b"><interval ss="00:31:12.960" to="00:52:26.640" /></scene></video>
+    <video id="kp-01.11" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x11-le-retour-a-la-montagne-du-dragon-diabolique"><scene dvd="9b"><interval ss="00:59:18.080" to="01:21:01.760" /></scene></video>
+    <video id="kp-01.12" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x12-le-sacrifice">                                <scene dvd="9b"><interval ss="01:28:38.840" to="01:50:22.520" /></scene></video>
+    <video id="kp-01.13" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x13-la-fin-du-maitre-dragon">                     <scene dvd="9a"><interval ss="00:09:59.584" to="00:31:47.544" /></scene></video>
+
+    <video id="kp-02.01" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x01-voyage-vers-l-orient">                        <scene dvd="9a"><interval ss="00:31:48.824" to="00:53:02.584" /></scene></video>
+    <video id="kp-02.02" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x02-la-malediction-du-singe-roi">                 <scene dvd="9a"><interval ss="01:00:36.704" to="01:22:20.024" /></scene></video>
+    <video id="kp-02.03" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x03-jeu-de-vilains">                              <scene dvd="9a"><interval ss="01:29:50.224" to="01:51:33.704" /></scene></video>
+    <video id="kp-02.04" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x04-le-monstre-du-desert">                        <scene dvd="9e"><interval ss="00:09:22.840" to="00:31:06.520" /></scene></video>
+    <video id="kp-02.05" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x05-menace-sur-la-cite-interdite">                <scene dvd="9e"><interval ss="00:31:07.200" to="00:52:50.880" /></scene></video>
+    <video id="kp-02.06" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x06-la-bataille-du-gong-meun">                    <scene dvd="9e"><interval ss="01:00:26.520" to="01:22:10.160" /></scene></video>
+    <video id="kp-02.07" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x07-la-taverne-aux-embrouilles">                  <scene dvd="9e"><interval ss="01:30:03.000" to="01:51:46.680" /></scene></video>
+    <video id="kp-02.08" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x08-le-demon-aux-os-blancs">                      <scene dvd="a1"><interval ss="00:08:42.640" to="00:30:26.080" /></scene></video>
+    <video id="kp-02.09" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x09-un-grand-pas-pour-l-imperatrice">             <scene dvd="a1"><interval ss="00:30:27.360" to="00:51:41.040" /></scene></video>
+    <video id="kp-02.10" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x10-chaud-comme-la-lave">                         <scene dvd="a1"><interval ss="00:58:55.760" to="01:20:39.080" /></scene></video>
+    <video id="kp-02.11" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x11-la-maison-des-pandas-volants">                <scene dvd="a1"><interval ss="01:29:04.080" to="01:50:46.680" /></scene></video>
+    <video id="kp-02.12" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x12-le-sacre-de-la-deesse-de-fer">                <scene dvd="a1"><interval ss="01:58:18.400" to="02:20:01.960" /></scene></video>
+    <video id="kp-02.13" qscale="3" name="kungfu-panda-les-pattes-du-destin-02x13-l-armure-invincible">                         <scene dvd="a1"><interval ss="02:28:17.840" to="02:50:01.360" /></scene></video>
+
+    <!-- this should not be used, it's only for information to better know what are inside each video -->
+    <video id="---" qscale="3" name="kungfu-panda-les-pattes-du-destin">
+        <scene dvd="a1">
+            <!-- 02.08 - le démon aux os blancs -->
+            <interval ss="00:08:42.640" to="00:30:26.080" />
+            <!-- 02.09 - un grand pas pour l'impératrice -->
+            <interval ss="00:30:27.360" to="00:51:41.040" />
+            <!-- 02.10 - chaud comme la lave -->
+            <interval ss="00:58:55.760" to="01:20:39.080" />
+            <!-- 02.11 - la maison des pandas volants -->
+            <interval ss="01:29:04.080" to="01:50:46.680" />
+            <!-- 02.12 - le sacre de la déesse de fer -->
+            <interval ss="01:58:18.400" to="02:20:01.960" />
+            <!-- 02.13 - l'armure invincible -->
+            <interval ss="02:28:17.840" to="02:50:01.360" />
+            <!-- 02.04 - le monstre du désert -->
+            <!-- <interval ss="" to="" /> -->
+            <!-- cut - 02.05 - menace sur la cité interdite -->
+            <!-- <interval ss="" to="cut" /> -->
+        </scene>
+        <scene dvd="9e">
+            <!-- 02.04 - le monstre du désert -->
+            <interval ss="00:09:22.840" to="00:31:06.520" />
+            <!-- 02.05 - menace sur la cité interdite -->
+            <interval ss="00:31:07.200" to="00:52:50.880" />
+            <!-- 02.06 - la bataille du gong meun -->
+            <interval ss="01:00:26.520" to="01:22:10.160" />
+            <!-- 02.07 - la taverne aux embrouilles -->
+            <interval ss="01:30:03.000" to="01:51:46.680" />
+            <!-- 01.13 - la fin du maitre dragon -->
+            <interval ss="02:00:17.120" to="02:22:05.080" />
+            <!-- 02.01 - voyage vers l'orient -->
+            <interval ss="02:30:32.720" to="02:52:16.400" />
+            <!-- 02.02 - la malédiction du singe roi -->
+            <interval ss="03:00:24.560" to="03:22:07.880" />
+            <!-- cut - 02.03 - jeu de vilains -->
+            <!-- <interval ss="03:22:09.000" to="cut" /> -->
+        </scene>
+        <scene dvd="9d">
+            <!-- 01.01 - l'entrée du maitre dragon -->
+            <interval ss="00:12:17.040" to="00:33:35.160" />
+            <!-- 01.02 - dragon bleu joue avec le feu -->
+            <interval ss="00:33:36.160" to="00:54:47.280" />
+            <!-- 01.03 - l'épée du phénix rouge -->
+            <interval ss="01:02:02.480" to="01:23:46.160" />
+            <!-- 01.04 - tortueux est le chemin emprunté par l'intrus -->
+            <interval ss="01:31:16.480" to="01:52:52.360" />
+        </scene>
+        <scene dvd="9b">
+            <!-- 01.09 - une aventure risquée -->
+            <interval ss="00:09:28.280" to="00:31:11.920" />
+            <!-- 01.10 - le retour des quatre constellations -->
+            <interval ss="00:31:12.960" to="00:52:26.640" />
+            <!-- 01.11 - le retour à la montagne du dragon diabolique -->
+            <interval ss="00:59:18.080" to="01:21:01.760" />
+            <!-- 01.12 - le sacrifice -->
+            <interval ss="01:28:38.840" to="01:50:22.520" />
+            <!-- 01.05 - une pincée d'herbes -->
+            <interval ss="01:58:47.600" to="02:20:31.240" />
+            <!-- 01.06 - le ver est dans la prune -->
+            <interval ss="02:28:57.920" to="02:50:41.480" />
+            <!-- 01.07 - menace sur le village des pandas -->
+            <interval ss="02:58:56.080" to="03:20:39.760" />
+            <!-- 01.08 - secrets enfouis -->
+            <interval ss="03:20:41.040" to="03:41:53.520" />
+        </scene>
+        <scene dvd="9a">
+            <!-- 01.13 - la fin du maitre dragon -->
+            <interval ss="00:09:59.584" to="00:31:47.544" />
+            <!-- 02.01 - voyage vers l'orient -->
+            <interval ss="00:31:48.824" to="00:53:02.584" />
+            <!-- 02.02 - la malédiction du singe roi -->
+            <interval ss="01:00:36.704" to="01:22:20.024" />
+            <!-- 02.03 - jeu de vilains -->
+            <interval ss="01:29:50.224" to="01:51:33.704" />
+            <!-- 01.09 - une aventure risquée -->
+            <interval ss="01:59:29.184" to="02:21:12.824" />
+            <!-- 01.10 - le retour des quatre constellations -->
+            <interval ss="02:30:08.704" to="02:51:52.264" />
+            <!-- 01.11 - le retour à la montagne du dragon diabolique -->
+            <interval ss="02:59:59.304" to="03:21:42.984" />
+            <!-- cut - 01.12 - le sacrifice -->
+            <!-- <interval ss="03:29:36.224" to="cut" /> -->
+        </scene>
+    </video>
+    <video id="a0" qscale="5" name="alvin-et-les-chipmunks-2___end-generic-cut">
+        <scene dvd="a0">
+            <interval ss="00:09:18.192" to="00:34:14.952" />
+            <interval ss="00:40:36.072" to="01:07:14.472" />
+            <interval ss="01:13:37.632" to="01:40:54.672" />
+        </scene>
+    </video>
+    <video id="9f" qscale="3" name="shrek-1">
+        <scene dvd="9f">
+            <interval ss="00:09:17.120" to="00:34:28.840" />
+            <interval ss="00:40:52.280" to="01:14:01.440" />
+            <interval ss="01:20:22.360" to="01:41:49.880" />
+        </scene>
+    </video>
+    <video id="9c" qscale="5" name="kungfu-panda-les-pattes-du-destin-2">
+        <scene dvd="9c">
+            <!-- 01.05 - une pincée d'herbes -->
+            <interval ss="00:09:33.104" to="00:31:16.744" />
+            <!-- 01.06 - le ver est dans la prune -->
+            <interval ss="00:31:17.744" to="00:52:23.544" />
+            <!-- 01.07 - menace sur le village des pandas -->
+            <interval ss="00:59:00.664" to="01:20:35.704" />
+            <!-- 01.08 - secrets enfouis -->
+            <interval ss="01:26:34.624" to="01:48:09.824" />
+            <!-- 01.01 - l'entrée du maitre dragon -->
+            <interval ss="01:54:13.184" to="02:15:23.264" />
+            <!-- 01.02 - dragon bleu joue avec le feu -->
+            <interval ss="02:19:43.504" to="02:41:18.464" />
+            <!-- 01.03 - l'épée du phénix rouge -->
+            <interval ss="02:46:40.464" to="03:08:15.504" />
+            <!-- 01.04 - tortueux est le chemin emprunté par l'intrus -->
+            <interval ss="03:14:57.504" to="03:36:33.384" />
+        </scene>
+    </video>
+
     <video id="99" qscale="3" name="asterix-et-les-vikings">
         <scene dvd="99">
             <interval ss="00:00:09.261" to="00:26:08.101" />
