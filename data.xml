@@ -6,6 +6,26 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="a4" qscale="5" name="planete-bleue-1-voyage-au-coeur-des-oceans">
+        <scene dvd="a4">
+            <interval ss="00:07:59.581" to="01:38:01.781" />
+        </scene>
+    </video>
+    <video id="a3" qscale="5" name="gris-le-pas-si-grand-mechant-loup">
+        <scene dvd="a3">
+            <interval ss="00:07:28.864" to="00:29:07.224" amap="1,2,0" />
+            <interval ss="00:35:35.224" to="01:12:37.864" amap="1,2,0" />
+            <interval ss="01:18:59.584" to="01:41:22.544" amap="1,2,0" />
+        </scene>
+    </video>
+    <video id="a2" qscale="5" name="alvin-et-les-chipmunks-4-a-fond-la-caisse">
+        <scene dvd="a2">
+            <interval ss="00:10:23.784" to="00:43:45.544" />
+            <interval ss="00:50:16.384" to="01:15:20.664" />
+            <interval ss="01:21:49.784" to="01:45:31.904" />
+        </scene>
+    </video>
+
     <video id="kp-01.01" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x01-l-entree-du-maitre-dragon">                   <scene dvd="9d"><interval ss="00:12:17.040" to="00:33:35.160" /></scene></video>
     <video id="kp-01.02" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x02-dragon-bleu-joue-avec-le-feu">                <scene dvd="9d"><interval ss="00:33:36.160" to="00:54:47.280" /></scene></video>
     <video id="kp-01.03" qscale="3" name="kungfu-panda-les-pattes-du-destin-01x03-l-epee-du-phenix-rouge">                      <scene dvd="9d"><interval ss="01:02:02.480" to="01:23:46.160" /></scene></video>
