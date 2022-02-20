@@ -6,6 +6,91 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="b0" qscale="5" name="beethoven-3">
+        <scene dvd="b0">
+            <interval ss="00:26:12.800" to="00:52:03.160" />
+            <interval ss="00:57:42.000" to="01:28:02.080" />
+            <interval ss="01:30:48.120" to="02:05:25.520" />
+        </scene>
+    </video>
+    <video id="af" qscale="5" name="beethoven-4">
+        <scene dvd="af">
+            <interval ss="00:09:30.408" to="00:32:15.008" />
+            <interval ss="00:35:38.848" to="01:13:14.408" />
+            <interval ss="01:17:57.808" to="01:44:02.008" />
+        </scene>
+    </video>
+    <video id="ae" qscale="5" name="jumanji">
+        <scene dvd="ae">
+            <interval ss="00:10:39.480" to="00:41:56.200" />
+            <interval ss="00:47:19.160" to="01:10:14.760" />
+            <interval ss="01:15:33.320" to="01:55:35.200" />
+        </scene>
+    </video>
+
+    <video id="ad" qscale="3" name="chicken-run">
+        <scene dvd="ad">
+            <interval ss="00:09:26.256" to="00:33:47.416" />
+            <interval ss="00:39:35.936" to="01:07:17.096" />
+            <interval ss="01:11:53.856" to="01:40:05.136" />
+        </scene>
+    </video>
+    <video id="ac" qscale="3" name="toy-story-1">
+        <scene dvd="ac">
+            <interval ss="00:18:01.074" to="00:46:13.754" />
+            <interval ss="00:51:50.914" to="01:11:58.034" />
+            <interval ss="01:17:50.754" to="01:43:01.834" />
+        </scene>
+    </video>
+    <video id="ab" qscale="3" name="toy-story-2">
+        <scene dvd="ab">
+            <interval ss="00:00:00.986" to="00:43:57.146" />
+            <interval ss="00:49:53.466" to="01:15:51.706" />
+            <interval ss="01:21:19.746" to="01:32:49.746" />
+        </scene>
+    </video>
+
+    <video id="aa" qscale="3" name="comme-des-betes-2">
+        <scene dvd="aa">
+            <interval ss="00:10:20.920" to="01:28:10.920" />
+        </scene>
+    </video>
+    <video id="a9" qscale="3" name="le-voyage-d-arlo">
+        <scene dvd="a9">
+            <interval ss="00:13:53.866" to="01:07:00.146" amap="2,1,0" />
+            <interval ss="01:13:08.466" to="01:35:03.946" amap="2,1,0" />
+            <interval ss="01:41:14.946" to="01:48:06.786" amap="2,1,0" />
+        </scene>
+    </video>
+    <video id="a8" qscale="3" name="bambi">
+        <scene dvd="a8">
+            <interval ss="00:11:01.418" to="00:41:23.458" amap="1,2,0" />
+            <interval ss="00:47:32.698" to="01:10:14.578" amap="1,2,0" />
+            <interval ss="01:16:29.058" to="01:30:28.618" amap="1,2,0" />
+        </scene>
+    </video>
+
+    <video id="a7" qscale="3" name="l-age-de-glace-5-les-rois-de-l-univers">
+        <scene dvd="a7">
+            <interval ss="00:09:01.040" to="00:41:31.120" amap="1,2,0" />
+            <interval ss="00:47:52.520" to="01:16:21.600" amap="1,2,0" />
+            <interval ss="01:22:39.720" to="01:43:53.440" amap="1,2,0" />
+        </scene>
+    </video>
+    <video id="a6" qscale="3" name="moi-moche-et-mechant">
+        <scene dvd="a6">
+            <interval ss="00:13:46.920" to="01:03:46.840" amap="1,2,0" />
+            <interval ss="01:08:23.720" to="01:44:50.720" amap="1,2,0" />
+        </scene>
+    </video>
+    <video id="a5" qscale="3" name="la-reine-des-neiges-2">
+        <scene dvd="a5">
+            <interval ss="00:16:24.298" to="01:08:47.218" />
+            <interval ss="01:15:00.098" to="01:36:07.458" />
+            <interval ss="01:42:21.178" to="01:56:30.458" />
+        </scene>
+    </video>
+
     <video id="a4" qscale="5" name="planete-bleue-1-voyage-au-coeur-des-oceans">
         <scene dvd="a4">
             <interval ss="00:07:59.581" to="01:38:01.781" />
