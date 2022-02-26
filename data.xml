@@ -6,6 +6,14 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="b1" qscale="3" name="la-haut">
+        <scene dvd="b1">
+            <interval ss="00:08:54.441" to="00:57:01.321" />
+            <interval ss="01:03:11.401" to="01:24:55.401" />
+            <interval ss="01:31:09.041" to="01:46:26.201" />
+        </scene>
+    </video>
+
     <video id="b0" qscale="5" name="beethoven-3">
         <scene dvd="b0">
             <interval ss="00:26:12.800" to="00:52:03.160" />
