@@ -6,6 +6,22 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="b3" qscale="3" name="l-age-de-glace-2">
+        <scene dvd="b3">
+            <interval ss="00:09:16.160" to="00:54:34.600" amap="1,0,2" />
+            <interval ss="01:00:55.040" to="01:22:51.840" amap="1,0,2" />
+            <interval ss="01:28:05.800" to="01:40:45.760" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="b2" qscale="5" name="harry-potter-20-ans">
+        <scene dvd="b2">
+            <interval ss="00:08:06.550" to="00:45:55.390" />
+            <interval ss="00:55:19.510" to="01:15:12.870" />
+            <interval ss="01:23:31.070" to="01:47:15.430" />
+            <interval ss="01:55:48.950" to="02:12:55.750" />
+        </scene>
+    </video>
+
     <video id="b1" qscale="3" name="la-haut">
         <scene dvd="b1">
             <interval ss="00:08:54.441" to="00:57:01.321" />
