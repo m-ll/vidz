@@ -6,6 +6,30 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="b6" qscale="3" name="la petite-sirene-3">
+        <scene dvd="b6">
+            <interval ss="00:15:56.985" to="00:38:22.225" />
+            <interval ss="00:44:30.825" to="01:19:24.065" />
+            <interval ss="01:25:38.545" to="01:35:44.865" />
+        </scene>
+    </video>
+
+    <video id="b5" qscale="3" name="l-age-de-glace">
+        <scene dvd="b5">
+            <interval ss="00:24:39.317" to="00:48:36.797" />
+            <interval ss="00:54:30.957" to="01:16:14.677" />
+            <interval ss="01:22:08.557" to="01:48:38.197" />
+        </scene>
+    </video>
+
+    <video id="b4" qscale="3" name="hotel-transylvanie-3">
+        <scene dvd="b4">
+            <interval ss="00:09:50.098" to="00:44:44.298" />
+            <interval ss="00:50:55.498" to="01:19:04.778" />
+            <interval ss="01:25:10.458" to="01:45:50.418" />
+        </scene>
+    </video>
+
     <video id="b3" qscale="3" name="l-age-de-glace-2">
         <scene dvd="b3">
             <interval ss="00:09:16.160" to="00:54:34.600" amap="1,0,2" />
