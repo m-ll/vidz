@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root 
-    ffmpeg="./ffmpeg-4.3.1-amd64-static/ffmpeg"
-    ffprobe="./ffmpeg-4.3.1-amd64-static/ffprobe"
-    output="/mnt/f/vidz">
+    ffmpeg="./ffmpeg-6.0-essentials_build-win64/bin/ffmpeg.exe"
+    ffprobe="./ffmpeg-6.0-essentials_build-win64/bin/ffprobe.exe"
+    output="F:/vidz">
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 

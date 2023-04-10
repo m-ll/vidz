@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 #
 # Copyright (c) 2020 m-ll. All Rights Reserved.
 #
@@ -34,9 +34,7 @@ if not directory.exists():
 	print( Back.RED + f'directory doesn\'t exist: {directory}' )
 	sys.exit()
 
-ffmpeg = Path( './ffmpeg-4.2-amd64-static/ffmpeg' )
-# if platform.system().lower().startswith( 'cygwin' ):
-#     ffmpeg = Path( './ffmpeg-4.2.2-win64-static/bin/ffmpeg' )
+ffmpeg = Path( './ffmpeg-6.0-essentials_build-win64/bin/ffmpeg.exe' )
 if not ffmpeg.exists():
 	print( Back.RED + f'ffmpeg binary path doesn\'t exist: {ffmpeg}' )
 	sys.exit()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 #
 # Copyright (c) 2020 m-ll. All Rights Reserved.
 #
@@ -79,7 +79,7 @@ class cSource:
 
     ## Build source
     def Build( self ):
-        path = Path( f'/mnt/g/' )
+        path = Path( f'G:' )
         paths = [ p for p in path.rglob( '*' ) if p.is_dir() and p.name.startswith( self.mId + '.' ) ]
         if len( paths) != 1:
             return

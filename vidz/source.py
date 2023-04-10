@@ -79,19 +79,19 @@ class cSourceDVD( cSource ):
     #
     #  @return  bool  The file has been build and found
     def Build( self ):
-        path = Path( f'/mnt/f/LGDVR/000000{self.Id()}REC' )
+        path = Path( 'F:' ) / 'LGDVR' / f'000000{self.Id()}REC'
         source_pathfile = list( path.glob( '*.TS' ) )
         if source_pathfile:
             self.mPathFile = Path( source_pathfile[0] )
             return True
 
-        path = Path( f'/mnt/g/LGDVR/000000{self.Id()}REC' )
+        path = Path( 'G:' ) / 'LGDVR' / f'000000{self.Id()}REC'
         source_pathfile = list( path.glob( '*.TS' ) )
         if source_pathfile:
             self.mPathFile = Path( source_pathfile[0] )
             return True
 
-        path = Path( f'/mnt/h/LGDVR/000000{self.Id()}REC' )
+        path = Path( 'H:' ) / 'LGDVR' / f'000000{self.Id()}REC'
         source_pathfile = list( path.glob( '*.TS' ) )
         if source_pathfile:
             self.mPathFile = Path( source_pathfile[0] )
