@@ -22,7 +22,7 @@ class cVideo:
     def __init__( self, iId, iName, iQScale ):
         self.mId = iId
         self.mName = iName
-        
+
         self.mQScale = int( iQScale )
 
         # self.mOutputClean = None
@@ -34,7 +34,7 @@ class cVideo:
     #  @return  string  The id
     def Id( self ):
         return self.mId
-        
+
     ## Get the name
     #
     #  @return  string  The name
@@ -55,7 +55,7 @@ class cVideo:
         output_directory.mkdir( exist_ok=True )
 
         self.mSegmentList = output_directory / f'{self.mName}.list.txt'
-        
+
         self.mOutputAvi = iOutputRoot / f'{self.mName}.avi'
 
     ## Get pathfile of the list file (a txt file containing 1 line for each subfile)
@@ -63,7 +63,7 @@ class cVideo:
     #  @return  Path  The list file
     def SegmentList( self ):
         return self.mSegmentList
-        
+
     ## Get pathfile of the avi (final) file
     #
     #  @return  Path  The avi file

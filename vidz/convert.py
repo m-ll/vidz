@@ -20,7 +20,7 @@ from colorama import init, deinit, Fore, Back, Style
 #
 #  Convert/export each scene of the source file to its own file
 class cConvert:
-    
+
     ## The constructor
     #
     #  @param  iFFmpeg  string   The ffmpeg command pathfile
@@ -71,16 +71,16 @@ class cConvert:
     #  @param  iInterval  cInterval     The interval to make a clean
     #  @param  iOutput    pathlib.Path  The output 'clean' file of the interval
     def _RunCleanInterval( self, iScene, iInterval, iOutput ):
-        command = [ self.mFFmpeg, 
-                    '-i', iScene.Source().PathFile(), 
+        command = [ self.mFFmpeg,
+                    '-i', iScene.Source().PathFile(),
                         #TODO: add options to get subtitle streams, but do it for each command
-                        # '-probesize', '100M', 
-                        # '-analyzeduration', str( 10 * 60 * 10**6 ), 
-                    *self._GetVMapParameters( iInterval ), 
-                    *self._GetAMapParameters( iInterval ), 
-                    '-c', 'copy', 
-                    '-ss', iInterval.SS(), 
-                    '-to', iInterval.To(), 
+                        # '-probesize', '100M',
+                        # '-analyzeduration', str( 10 * 60 * 10**6 ),
+                    *self._GetVMapParameters( iInterval ),
+                    *self._GetAMapParameters( iInterval ),
+                    '-c', 'copy',
+                    '-ss', iInterval.SS(),
+                    '-to', iInterval.To(),
                     iOutput ]
 
         self._PrintHeader( command )
@@ -96,14 +96,14 @@ class cConvert:
             interval = self.mScenes[0].Intervals()[0]
 
             # Make convertion
-            command = [ self.mFFmpeg, 
-                        '-i', scene.Source().PathFile(), 
-                        *self._GetVMapParameters( interval ), 
-                        *self._GetAMapParameters( interval ), 
-                        '-ss', interval.SS(), 
-                        '-to', interval.To(), 
-                        '-qscale:v', str( self.mVideo.QScale() ), 
-                        '-vtag', 'XVID', 
+            command = [ self.mFFmpeg,
+                        '-i', scene.Source().PathFile(),
+                        *self._GetVMapParameters( interval ),
+                        *self._GetAMapParameters( interval ),
+                        '-ss', interval.SS(),
+                        '-to', interval.To(),
+                        '-qscale:v', str( self.mVideo.QScale() ),
+                        '-vtag', 'XVID',
                         self.mVideo.OutputAvi() ]
 
             self._PrintHeader( command )
@@ -117,14 +117,14 @@ class cConvert:
                         outfile.write( f"file '{segment.name}'\n" )
 
             # Make concat & convertion
-            command = [ self.mFFmpeg, 
-                        '-f', 'concat', 
-                        '-safe', '0', 
-                        '-i', self.mVideo.SegmentList(), 
-                        '-map', '0', 
+            command = [ self.mFFmpeg,
+                        '-f', 'concat',
+                        '-safe', '0',
+                        '-i', self.mVideo.SegmentList(),
+                        '-map', '0',
                         '-qscale:v', str( self.mVideo.QScale() ),
-                        '-vtag', 'XVID', 
-                        '-fflags', '+genpts', '-async', '1', 
+                        '-vtag', 'XVID',
+                        '-fflags', '+genpts', '-async', '1',
                         self.mVideo.OutputAvi() ]
 
             self._PrintHeader( command )

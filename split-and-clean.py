@@ -64,7 +64,7 @@ def BuildVideo( iXMLRoot, iEntry ):
     if len( xml_videos ) > 1:
         print( Back.RED + f'multiple videos with same id: {iEntry}' )
         return None
-    
+
     xml_video = xml_videos[0]
 
     video = cVideo( xml_video.get( 'id' ), xml_video.get( 'name' ), xml_video.get( 'qscale' ) )
@@ -102,10 +102,10 @@ def BuildVideo( iXMLRoot, iEntry ):
             interval.VMap( xml_interval.get( 'vmap' ) )
             interval.AMap( xml_interval.get( 'amap' ) )
             scene.AddInterval( interval )
-            
+
             if args.test_sound is not None:
                 break
-        
+
         scene.BuildOutput( output )
         scenes.append( scene )
 

@@ -53,13 +53,13 @@ class cSource:
     #  @return  string  The id
     def Id( self ):
         return self.mId
-        
+
     ## Get the pathfile
     #
     #  @return  pathlib.Path  The source pathfile
     def PathFile( self ):
         return self.mPathFile
-        
+
 #---
 
 ## Manage dvd source file
@@ -118,7 +118,7 @@ class cSourceFile( cSource ):
         path = Path( self.mInput )
         if not path.exists():
             return False
-        
+
         self.mPathFile = path
 
         return True

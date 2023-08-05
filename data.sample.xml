@@ -22,7 +22,7 @@
             <interval ss="00:01:42.680" to="00:02:14.520" />
         </scene>
     </video>
-    
+
     <video id="28-1" qscale="3" name="planes-2">
         <scene dvd="28">
             <interval ss="00:06:03.200" to="00:06:37.440" />
@@ -40,7 +40,7 @@
             <interval ss="00:02:14.680" to="00:02:46.480" />
         </scene>
     </video>
-    
+
     <video id="25" qscale="5" name="zig">
         <scene dvd="25">
             <!-- To be able to switch audio stream if the default one is not french -->

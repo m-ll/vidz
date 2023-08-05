@@ -31,13 +31,13 @@ args = parser.parse_args()
 
 directory = Path( args.directory[0] ).resolve()
 if not directory.exists():
-	print( Back.RED + f'directory doesn\'t exist: {directory}' )
-	sys.exit()
+    print( Back.RED + f'directory doesn\'t exist: {directory}' )
+    sys.exit()
 
 ffmpeg = Path( './ffmpeg-6.0-essentials_build-win64/bin/ffmpeg.exe' )
 if not ffmpeg.exists():
-	print( Back.RED + f'ffmpeg binary path doesn\'t exist: {ffmpeg}' )
-	sys.exit()
+    print( Back.RED + f'ffmpeg binary path doesn\'t exist: {ffmpeg}' )
+    sys.exit()
 
 #---
 

@@ -98,7 +98,7 @@ class cConsecutiveFiles:
     #  @param  iSource  cSource  The source of the video
     def __init__( self ):
         self.mFiles = []
-    
+
     def GetFiles( self ):
         return self.mFiles
 
@@ -187,7 +187,7 @@ class cConcat:
     ## The constructor
     def __init__( self, iVideo ):
         self.mVideo = iVideo
-    
+
     ## Concat all the files
     def Concat( self ):
         if self.mVideo.GetOutputConcat().exists():
@@ -248,19 +248,19 @@ class cConvert:
             self.mDebugStop = [ '-to', '00:15:00.000' ]
 
     def Convert( self ):
-        command = [ self.mFFmpeg, 
-                    '-probesize', '100M', 
-                    '-analyzeduration', str( 10 * 60 * 10**6 ), 
-                    '-i', self.mVideo.GetOutputConcat(), 
-                    *self.mDebugStart, 
-                    *self.mDebugStop, 
-                    '-map', '0:v', 
-                    *self.mAudioStreams, 
-                    # '-map', '0:s', 
-                    *self.mUnknownStreams, 
+        command = [ self.mFFmpeg,
+                    '-probesize', '100M',
+                    '-analyzeduration', str( 10 * 60 * 10**6 ),
+                    '-i', self.mVideo.GetOutputConcat(),
+                    *self.mDebugStart,
+                    *self.mDebugStop,
+                    '-map', '0:v',
+                    *self.mAudioStreams,
+                    # '-map', '0:s',
+                    *self.mUnknownStreams,
                     '-vf', 'yadif', # https://ffmpeg.org/ffmpeg-filters.html#yadif-1
-                    '-qscale:v', str( self.mVideo.GetQScale() ), '-vtag', 'XVID', 
-                    '-c:a', 'copy', 
+                    '-qscale:v', str( self.mVideo.GetQScale() ), '-vtag', 'XVID',
+                    '-c:a', 'copy',
                     self.mVideo.GetOutputAvi() ]
 
         deinit()
