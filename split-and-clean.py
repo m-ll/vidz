@@ -25,8 +25,8 @@ from vidz.video import cVideo
 #---
 
 parser = argparse.ArgumentParser( description='Clean and convert .ts to .avi.' )
-parser.add_argument( '-i', '--input',                       nargs='+', default=[],  help='One (or multiple) entry(ies) id in the xml' )
-parser.add_argument( '-t', '-d', '--test-sound', type=int,  nargs='?', const=10,    help='Test sound on small interval' )
+parser.add_argument( '-i', '--input',                       nargs='+', default=[],  help='List of id in the xml' )
+parser.add_argument( '-t', '-d', '--test-sound', type=int,  nargs='?', const=10,    help='Test sound (language) on small interval' )
 args = parser.parse_args()
 
 #---
