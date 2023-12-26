@@ -6,6 +6,27 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="b9" qscale="3" name="encanto">
+        <scene dvd="b9">
+            <interval ss="00:06:34.366" to="00:49:02.206" amap="1,0,2" />
+            <interval ss="00:55:14.486" to="01:25:35.126" amap="1,0,2" />
+            <interval ss="01:31:50.126" to="01:47:30.766" amap="1,0,2" />
+        </scene>
+    </video>
+    <video id="b8" qscale="3" name="101-dalmatiens">
+        <scene dvd="b8">
+            <interval ss="00:02:58.840" to="00:32:06.480" />
+            <interval ss="00:38:10.280" to="01:07:55.600" />
+            <interval ss="01:14:07.040" to="01:31:07.040" />
+        </scene>
+    </video>
+    <video id="b7" qscale="3" name="101-dalmatiens-2">
+        <scene dvd="b7">
+            <interval ss="00:07:08.918" to="01:02:56.478" />
+            <interval ss="01:09:07.398" to="01:18:54.518" />
+        </scene>
+    </video>
+
     <video id="b6" qscale="3" name="la petite-sirene-3">
         <scene dvd="b6">
             <interval ss="00:15:56.985" to="00:38:22.225" />
