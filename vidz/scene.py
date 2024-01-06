@@ -67,7 +67,7 @@ class cScene:
         # self.mOutputClean = output_directory / f'{self.mVideo.Name()}.clean.ts'
 
         for i, interval in enumerate( self.mIntervals ):
-            self.mSegments.append( output_directory / f'{self.mSource.Id()}-{self.mVideo.Name()}.{i+1}.ts' )
+            self.mSegments.append( output_directory / f'{self.mSource.Id()}-{self.mVideo.Name()}.{i+1}{self.mSource.PathFile().suffix}' )
 
     ## Get pathfile of the clean file (without ads)
     #

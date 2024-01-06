@@ -61,7 +61,7 @@ class cVideo:
     ## Get pathfile of the list file (a txt file containing 1 line for each subfile)
     #
     #  @return  Path  The list file
-    def SegmentList( self ):
+    def SegmentList( self ) -> Path:
         return self.mSegmentList
 
     ## Get pathfile of the avi (final) file

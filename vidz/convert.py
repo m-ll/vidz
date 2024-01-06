@@ -103,6 +103,7 @@ class cConvert:
                         '-ss', interval.SS(),
                         '-to', interval.To(),
                         '-qscale:v', str( self.mVideo.QScale() ),
+                        '-acodec', 'mp3',
                         '-vtag', 'XVID',
                         self.mVideo.OutputAvi() ]
 
@@ -123,6 +124,7 @@ class cConvert:
                         '-i', self.mVideo.SegmentList(),
                         '-map', '0',
                         '-qscale:v', str( self.mVideo.QScale() ),
+                        '-acodec', 'mp3',
                         '-vtag', 'XVID',
                         '-fflags', '+genpts', '-async', '1',
                         self.mVideo.OutputAvi() ]
