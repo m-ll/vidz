@@ -6,6 +6,14 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="bb" qscale="3" name="le-monde-magique-de-la-belle-et-la-bete-3">
+        <scene dvd="bb">
+            <interval ss="00:07:54.360" to="00:34:22.920" />
+            <interval ss="00:38:14.920" to="01:13:47.680" />
+            <interval ss="01:18:09.680" to="01:42:29.560" />
+        </scene>
+    </video>
+
     <video id="ba" qscale="3" name="la-belle-et-la-bete-2">
         <scene dvd="ba">
             <interval ss="00:07:57.768" to="00:40:24.728" />
