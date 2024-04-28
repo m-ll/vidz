@@ -6,6 +6,25 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="bd" qscale="3" name="cendrillon-2"> <!-- 63 2002 -->
+        <scene dvd="bd">
+            <interval ss="00:08:29.120" to="00:35:11.200" />
+            <interval ss="00:41:05.920" to="01:01:46.160" />
+            <interval ss="01:07:57.560" to="01:19:57.880" />
+        </scene>
+        <!-- manque un petit bout entre les 2 -->
+        <scene dvd="bc">
+            <interval ss="00:00:00.464" to="00:05:16.984" />
+        </scene>
+    </video>
+    <video id="bc" qscale="3" name="pocahontas-2">
+        <scene dvd="bc">
+            <interval ss="00:05:15.024" to="00:20:01.424" amap="1,0,2" />
+            <interval ss="00:26:07.184" to="00:51:38.144" amap="1,0,2" />
+            <interval ss="00:58:18.584" to="01:23:32.464" amap="1,0,2" />
+        </scene>
+    </video>
+
     <video id="bb" qscale="3" name="le-monde-magique-de-la-belle-et-la-bete-3">
         <scene dvd="bb">
             <interval ss="00:07:54.360" to="00:34:22.920" />
