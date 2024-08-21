@@ -6,6 +6,30 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="c0" qscale="3" name="minuscule-2">
+        <scene dvd="c0">
+            <interval ss="00:19:55.880" to="00:47:11.920" />
+            <interval ss="00:53:29.520" to="01:28:53.960" />
+            <interval ss="01:30:48.400" to="01:50:51.800" />
+        </scene>
+    </video>
+
+    <video id="bf" qscale="3" name="tous-en-scene-2">
+        <scene dvd="bf">
+            <interval ss="00:09:30.594" to="00:54:06.154" />
+            <interval ss="00:59:37.714" to="01:30:37.634" />
+            <interval ss="01:35:03.834" to="01:56:58.874" />
+        </scene>
+    </video>
+
+    <video id="be" qscale="3" name="ready-player-one">
+        <scene dvd="be">
+            <interval ss="00:11:31.616" to="00:49:39.936" amap="2,0,1" />
+            <interval ss="00:56:01.376" to="01:27:07.016" amap="2,0,1" />
+            <interval ss="01:33:29.536" to="02:27:32.016" amap="2,0,1" />
+        </scene>
+    </video>
+
     <video id="bd" qscale="3" name="cendrillon-2"> <!-- 63 2002 -->
         <scene dvd="bd">
             <interval ss="00:08:29.120" to="00:35:11.200" />
