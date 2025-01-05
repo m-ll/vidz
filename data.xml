@@ -6,6 +6,14 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="c1" qscale="3" name="la-belle-et-la-bete">
+        <scene dvd="c1">
+            <interval ss="00:06:51.439" to="00:31:12.879" amap="1,2,0" />
+            <interval ss="00:33:47.839" to="01:14:39.519" amap="1,2,0" />
+            <interval ss="01:17:30.399" to="01:28:53.279" amap="1,2,0" />
+        </scene>
+    </video>
+
     <video id="c0" qscale="3" name="minuscule-2">
         <scene dvd="c0">
             <interval ss="00:19:55.880" to="00:47:11.920" />
