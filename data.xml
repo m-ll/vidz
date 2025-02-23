@@ -6,6 +6,38 @@
 
     <!-- if error on video, try to execute `ll /mnt/h/LGDVR/*` to 'update' all folders ... -->
 
+    <video id="c6" qscale="5" name="ainbo">
+        <scene dvd="c6">
+            <interval ss="00:08:36.841" to="00:31:17.881" amap="1,2,0" />
+            <interval ss="00:37:42.481" to="01:13:28.961" amap="1,2,0" />
+            <interval ss="01:19:46.841" to="01:37:24.281" amap="1,2,0" />
+        </scene>
+    </video>
+
+    <video id="c4" qscale="3" name="wasabi">
+        <scene dvd="c4">
+            <interval ss="00:09:31.776" to="01:02:00.736" />
+            <interval ss="01:08:16.176" to="01:29:02.416" />
+            <interval ss="01:35:17.576" to="01:49:31.496" />
+        </scene>
+    </video>
+
+    <video id="c3" qscale="3" name="jumanji-3-next-level">
+        <scene dvd="c3">
+            <interval ss="00:09:35.400" to="00:50:41.400" amap="1,2,0" />
+            <interval ss="00:57:01.040" to="01:37:52.120" amap="1,2,0" />
+            <interval ss="01:44:13.480" to="02:11:18.040" amap="1,2,0" />
+        </scene>
+    </video>
+
+    <video id="c2" qscale="3" name="jumanji-2-bienvenue-dans-la-jungle">
+        <scene dvd="c2">
+            <interval ss="00:11:34.392" to="00:47:18.312" />
+            <interval ss="00:53:31.512" to="01:29:45.272" />
+            <interval ss="01:35:51.592" to="02:09:21.152" />
+        </scene>
+    </video>
+
     <video id="c1" qscale="3" name="la-belle-et-la-bete">
         <scene dvd="c1">
             <interval ss="00:06:51.439" to="00:31:12.879" amap="1,2,0" />
